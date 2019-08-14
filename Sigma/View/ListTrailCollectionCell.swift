@@ -10,11 +10,27 @@ import UIKit
 
 class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView {
     
+    let trailImage: UIImageView = {
+        let image = RoundableImage(frame: .zero)
+        image.image = UIImage(named: "gallery")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.widthAnchor.constraint(equalToConstant: 65).isActive = true
+        return image
+    }()
+    
     let trailName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Swift: The Basics"
-        label.textColor = .white
+        label.textColor = .black
+        return label
+    }()
+    
+    let trailPublisher: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Published by: @Crhis Lattner"
+        label.textColor = .lightGray
         return label
     }()
     
@@ -22,7 +38,6 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,13 +45,25 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-        addSubViews([trailName])
+        addSubviews([trailImage,trailName, trailPublisher])
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            trailName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            trailName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
+            trailImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            trailImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            trailImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
+            
+            trailName.leadingAnchor.constraint(equalTo: trailImage.trailingAnchor, constant: 20),
+            trailName.topAnchor.constraint(equalTo: trailImage.topAnchor, constant: 5),
+            
+            
+            trailPublisher.topAnchor.constraint(equalTo: trailName.bottomAnchor, constant: 5),
+            trailPublisher.leadingAnchor.constraint(equalTo: trailName.leadingAnchor)
+            
+            
+            
+            
             ])
     }
     

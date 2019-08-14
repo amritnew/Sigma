@@ -20,5 +20,6 @@ disabled_rules:
  - colon
  - switch_case_alignment
  - trailing_semicolon
+ - class_delegate_protocol
 excluded:
  - Pods

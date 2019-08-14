@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+protocol ListTrailHeaderDelegate: class {
+    func imageHeaderDidClick()
+}
+
 class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView{
   
     let tagHeader: UILabel = {
@@ -15,7 +20,6 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView{
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Swift"
         label.textColor = .orange
-        
         return label
     }()
     
@@ -27,7 +31,6 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView{
         label.font = UIFont.systemFont(ofSize: 22)
         label.numberOfLines = 2
         label.lineBreakMode = .byWordWrapping
-        
         return label
     }()
     
@@ -40,13 +43,16 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView{
     }()
     
     let imageHeader: UIImageView = {
-        let image = UIImageView()
+        let image = RoundableImage(frame: .zero)
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "swift")
-        image.layer.cornerRadius = 30
-        image.layer.masksToBounds = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageHeaderDidClick(_:)))
+        image.addGestureRecognizer(tapGesture)
         return image
     }()
+    
+    
+    weak var delegate: ListTrailHeaderDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,7 +65,7 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView{
     }
     
     func buildViewHierarchy() {
-        addSubViews([tagHeader, publisherHeader, titleHeader,imageHeader])
+        addSubviews([tagHeader, publisherHeader, titleHeader,imageHeader])
     }
     
     func setupConstraints() {
@@ -79,14 +85,12 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView{
             imageHeader.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             imageHeader.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             imageHeader.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
-            
-           
-           
-            
-            
             ])
     }
-    
-    
-    
+}
+
+extension ListTrailCollectionHeader {
+    @objc func imageHeaderDidClick(_ gesture: UITapGestureRecognizer) {
+        delegate?.imageHeaderDidClick()
+    }
 }

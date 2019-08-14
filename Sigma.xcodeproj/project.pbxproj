@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79246F25230346160024A271 /* TrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F24230346160024A271 /* TrailController.swift */; };
+		79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F262303E7940024A271 /* TopicCollectionViewCell.swift */; };
 		792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EA2301D743005859AB /* BaseCollectionController.swift */; };
 		792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */; };
 		792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EF2301DE61005859AB /* ConfigurableView.swift */; };
 		792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F12301E21D005859AB /* UIView+Extension.swift */; };
 		792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F32301FA70005859AB /* ListTrailCollectionCell.swift */; };
+		792D70F62302F08C005859AB /* RoundableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F52302F08C005859AB /* RoundableImage.swift */; };
+		792D70F823031861005859AB /* MyTrailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F723031861005859AB /* MyTrailsController.swift */; };
 		793B05B822F25925005F3878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05B722F25925005F3878 /* AppDelegate.swift */; };
 		793B05BA22F25925005F3878 /* ListTrailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05B922F25925005F3878 /* ListTrailsController.swift */; };
 		793B05BF22F25925005F3878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793B05BE22F25925005F3878 /* Assets.xcassets */; };
@@ -31,11 +35,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79246F24230346160024A271 /* TrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailController.swift; sourceTree = "<group>"; };
+		79246F262303E7940024A271 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		792D70EA2301D743005859AB /* BaseCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionController.swift; sourceTree = "<group>"; };
 		792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrailCollectionHeader.swift; sourceTree = "<group>"; };
 		792D70EF2301DE61005859AB /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		792D70F12301E21D005859AB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		792D70F32301FA70005859AB /* ListTrailCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrailCollectionCell.swift; sourceTree = "<group>"; };
+		792D70F52302F08C005859AB /* RoundableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundableImage.swift; sourceTree = "<group>"; };
+		792D70F723031861005859AB /* MyTrailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrailsController.swift; sourceTree = "<group>"; };
 		793B05B422F25925005F3878 /* Sigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		793B05B722F25925005F3878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		793B05B922F25925005F3878 /* ListTrailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrailsController.swift; sourceTree = "<group>"; };
@@ -131,6 +139,8 @@
 				793B05B922F25925005F3878 /* ListTrailsController.swift */,
 				793B05DB22F25B38005F3878 /* CustomTabBarController.swift */,
 				792D70EA2301D743005859AB /* BaseCollectionController.swift */,
+				792D70F723031861005859AB /* MyTrailsController.swift */,
+				79246F24230346160024A271 /* TrailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -147,6 +157,8 @@
 			children = (
 				792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */,
 				792D70F32301FA70005859AB /* ListTrailCollectionCell.swift */,
+				792D70F52302F08C005859AB /* RoundableImage.swift */,
+				79246F262303E7940024A271 /* TopicCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,13 +286,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
+				79246F25230346160024A271 /* TrailController.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
 				793B05BA22F25925005F3878 /* ListTrailsController.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
+				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
+				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
 				793B05B822F25925005F3878 /* AppDelegate.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
+				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
