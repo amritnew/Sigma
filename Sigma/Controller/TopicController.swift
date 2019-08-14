@@ -17,11 +17,11 @@ class TopicController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(mdView)
-    mdView.translatesAutoresizingMaskIntoConstraints = false
-        mdView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor).isActive = true
+        mdView.translatesAutoresizingMaskIntoConstraints = false
+        mdView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         mdView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mdView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        mdView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
+        mdView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         
         let session = URLSession(configuration: .default)
