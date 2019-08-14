@@ -14,7 +14,6 @@ class TrailController: BaseCollectionController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
-        
     }
 }
 
@@ -54,8 +53,11 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(TopicController(), animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 75)
     }
-    
 }
