@@ -9,42 +9,18 @@
 import UIKit
 
 
-protocol ListTrailHeaderDelegate: class {
+protocol ListTrailHeaderDelegate: ListTrailsController {
     func imageHeaderDidClick()
 }
 
 class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView{
   
-    let tagHeader: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Swift"
-        label.textColor = .orange
-        return label
-    }()
-    
-    let titleHeader: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Basic Swift, Learning the new things about the awesome language"
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 22)
-        label.numberOfLines = 2
-        label.lineBreakMode = .byWordWrapping
-        return label
-    }()
-    
-    let publisherHeader: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Published by: @Crhis Lattner"
-        label.textColor = .lightGray
-        return label
-    }()
+    let tagHeader = UILabel(text: "Swift", textColor: .orange,font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let publisherHeader = UILabel(text: "Published by: @Chris Lattner", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let titleHeader = UILabel(text: "Basic Swift, Learning the new things about the awesome language", textColor: .black, font: UIFont.systemFont(ofSize: 22), numberOfLines: 2, lineBreakMode: .byWordWrapping)
     
     let imageHeader: UIImageView = {
         let image = RoundableImage(frame: .zero)
-        image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "swift")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageHeaderDidClick(_:)))
         image.addGestureRecognizer(tapGesture)
@@ -76,7 +52,7 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView{
             
             titleHeader.leadingAnchor.constraint(equalTo: tagHeader.leadingAnchor),
             titleHeader.topAnchor.constraint(equalTo: tagHeader.bottomAnchor, constant: 10),
-              titleHeader.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            titleHeader.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
             publisherHeader.leadingAnchor.constraint(equalTo: tagHeader.leadingAnchor),
             publisherHeader.topAnchor.constraint(equalTo: titleHeader.bottomAnchor, constant: 10),

@@ -18,21 +18,9 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView {
         return image
     }()
     
-    let trailName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Swift: The Basics"
-        label.textColor = .black
-        return label
-    }()
+    let trailName = UILabel(text: "Swift: The Basics", textColor: .black, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let trailPublisher = UILabel(text: "Published by: @Chris Lattner", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
-    let trailPublisher: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Published by: @Crhis Lattner"
-        label.textColor = .lightGray
-        return label
-    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,10 +48,6 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView {
             
             trailPublisher.topAnchor.constraint(equalTo: trailName.bottomAnchor, constant: 5),
             trailPublisher.leadingAnchor.constraint(equalTo: trailName.leadingAnchor)
-            
-            
-            
-            
             ])
     }
     

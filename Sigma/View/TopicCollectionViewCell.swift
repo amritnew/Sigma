@@ -18,23 +18,8 @@ class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView {
         return image
     }()
     
-    let topicName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "How to declare Generics in Swift"
-        label.textColor = .black
-        return label
-    }()
-    
-    let topicPublisher: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Class 1"
-        label.textColor = .lightGray
-        return label
-    }()
-    
-    
+    let topicName = UILabel(text: "How to declare Generics in Swift", textColor: .black, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let topicPublisher = UILabel(text: "Class 1", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,7 +49,6 @@ class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView {
             
             topicPublisher.topAnchor.constraint(equalTo: topicName.bottomAnchor, constant: 5),
             topicPublisher.leadingAnchor.constraint(equalTo: topicName.leadingAnchor)
-            
             ])
         
     }

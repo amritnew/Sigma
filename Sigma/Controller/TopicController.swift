@@ -22,8 +22,7 @@ class TopicController: UIViewController {
         mdView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mdView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         mdView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
-        
+       
         let session = URLSession(configuration: .default)
         let url = URL(string: "https://raw.githubusercontent.com/matteocrippa/awesome-swift/master/README.md")!
         let task = session.dataTask(with: url) { [weak self] data, _, _ in
