@@ -1,6 +1,16 @@
 os: osx
 language: objective-c
 osx_image: xcode10.3
-script:
-  - set -o pipefail && xcodebuild build -workspace Sigma.xcworkspace -scheme Sigma -sdk iphonesimulator12.4 -destination 'name=iPhone 7,OS=12.4' ONLY_ACTIVE_ARCH=NO | xcpretty
+
+jobs:
+  include:
+    - stage: test
+      if: branch = add-fastlane
+      script: skip
+      deploy:
+        provider: script
+        script: bundle exec fastlane tests
+        on:
+          branch: add-fastlane
+          condition: $TRAVIS_BRANCH = add-fastlane
 
