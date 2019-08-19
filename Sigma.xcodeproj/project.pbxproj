@@ -24,6 +24,8 @@
 		793B05C222F25925005F3878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793B05C022F25925005F3878 /* LaunchScreen.storyboard */; };
 		793B05CD22F25925005F3878 /* SigmaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05CC22F25925005F3878 /* SigmaTests.swift */; };
 		793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05DB22F25B38005F3878 /* CustomTabBarController.swift */; };
+		79921881230872CA00EA5054 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921880230872CA00EA5054 /* Service.swift */; };
+		79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921882230877A500EA5054 /* Decodable+Extension.swift */; };
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
 		BBB1398BAB3B9E1ACECA723F /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA70667EC90522D96CC6BC /* Pods_SigmaTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,8 @@
 		793B05CC22F25925005F3878 /* SigmaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaTests.swift; sourceTree = "<group>"; };
 		793B05CE22F25925005F3878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		793B05DB22F25B38005F3878 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		79921880230872CA00EA5054 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		79921882230877A500EA5054 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
 		7C098CBE109959BED4A69444 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		BE14C4DE8BB3F43FB3E6048E /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		793B05B622F25925005F3878 /* Sigma */ = {
 			isa = PBXGroup;
 			children = (
+				7992187F230872AE00EA5054 /* Service */,
 				A45F788A230448E800EBAD28 /* Extensions */,
 				792D70EE2301DE4E005859AB /* Protocol */,
 				793B05DA22F2596E005F3878 /* View */,
@@ -189,11 +194,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7992187F230872AE00EA5054 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				79921880230872CA00EA5054 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A45F788A230448E800EBAD28 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */,
 				792D70F12301E21D005859AB /* UIView+Extension.swift */,
+				79921882230877A500EA5054 /* Decodable+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -397,6 +411,7 @@
 			files = (
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
 				79246F25230346160024A271 /* TrailController.swift in Sources */,
+				79921881230872CA00EA5054 /* Service.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
 				793B05BA22F25925005F3878 /* ListTrailsController.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
@@ -407,6 +422,7 @@
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
 				793B05B822F25925005F3878 /* AppDelegate.swift in Sources */,
+				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
 				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
 			);
