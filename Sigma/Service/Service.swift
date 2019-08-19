@@ -15,7 +15,7 @@ enum HTTPMethod: String {
     case get = "GET"
 }
 
-struct Service<T: Decodable> {
+struct Service<T: Decodable>{
     func get(url: String, completion: @escaping (Result<T, Error>) -> ()) {
         guard let url = URL(string: url) else {return print("Does not parse String to URL")}
         
@@ -33,7 +33,7 @@ struct Service<T: Decodable> {
     }
     
     
-    func post(params: [String: T], url: String, completion: @escaping (Error?) -> ()) {
+    func post(params: [String: String], url: String, completion: @escaping (Error?) -> ()) {
         guard let url = URL(string: url) else {return print("Does not parse String to URL")}
         
         var urlRequest = URLRequest(url: url)
