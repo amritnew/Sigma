@@ -8,12 +8,6 @@ install:
 jobs:
   include:
     - stage: test
-      if: branch = add-fastlane
+      if: branch = master
       script: bundle exec fastlane tests
-      #      deploy:
-      # provider: script
-      # script: bundle exec fastlane tests
-      # on:
-      #   branch: add-fastlane
-      #   condition: $TRAVIS_BRANCH = add-fastlane
 
