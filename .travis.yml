@@ -2,6 +2,14 @@ os: osx
 language: objective-c
 osx_image: xcode10.3
 
+addons:
+  homebrew:
+    packages:
+    - rbenv
+    - rbenv-gem-rehash
+    - ruby-build
+    update: true
+
 install:
   - bundle install
 
