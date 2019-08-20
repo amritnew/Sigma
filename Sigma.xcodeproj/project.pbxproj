@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		654230DEEC1A7ECC1D962AC0 /* Pods_Sigma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C098CBE109959BED4A69444 /* Pods_Sigma.framework */; };
+		790396AC230C342600F06EBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396AB230C342600F06EBD /* User.swift */; };
+		790396AE230C348200F06EBD /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396AD230C348200F06EBD /* Trail.swift */; };
+		790396B0230C350600F06EBD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396AF230C350600F06EBD /* Topic.swift */; };
+		790396B2230C356B00F06EBD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396B1230C356B00F06EBD /* Post.swift */; };
 		79246F25230346160024A271 /* TrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F24230346160024A271 /* TrailController.swift */; };
 		79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F262303E7940024A271 /* TopicCollectionViewCell.swift */; };
 		79246F292303EEF20024A271 /* TopicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F282303EEF20024A271 /* TopicController.swift */; };
@@ -43,6 +47,10 @@
 /* Begin PBXFileReference section */
 		0421130ED87227E76520C0B4 /* Pods-Sigma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.debug.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.debug.xcconfig"; sourceTree = "<group>"; };
 		50CA70667EC90522D96CC6BC /* Pods_SigmaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SigmaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		790396AB230C342600F06EBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../../../../Documents/User.swift; sourceTree = "<group>"; };
+		790396AD230C348200F06EBD /* Trail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Trail.swift; path = ../../../../Documents/Trail.swift; sourceTree = "<group>"; };
+		790396AF230C350600F06EBD /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Topic.swift; path = ../../../../Documents/Topic.swift; sourceTree = "<group>"; };
+		790396B1230C356B00F06EBD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../../../../Documents/Post.swift; sourceTree = "<group>"; };
 		79246F24230346160024A271 /* TrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailController.swift; sourceTree = "<group>"; };
 		79246F262303E7940024A271 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		79246F282303EEF20024A271 /* TopicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicController.swift; sourceTree = "<group>"; };
@@ -159,6 +167,10 @@
 		793B05D722F2595E005F3878 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				790396AB230C342600F06EBD /* User.swift */,
+				790396AD230C348200F06EBD /* Trail.swift */,
+				790396AF230C350600F06EBD /* Topic.swift */,
+				790396B1230C356B00F06EBD /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,10 +424,13 @@
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
 				79246F25230346160024A271 /* TrailController.swift in Sources */,
 				79921881230872CA00EA5054 /* Service.swift in Sources */,
+				790396B0230C350600F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
+				790396AE230C348200F06EBD /* Trail.swift in Sources */,
 				793B05BA22F25925005F3878 /* ListTrailsController.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
 				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
+				790396AC230C342600F06EBD /* User.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
 				79246F292303EEF20024A271 /* TopicController.swift in Sources */,
@@ -425,6 +440,7 @@
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
 				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
+				790396B2230C356B00F06EBD /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N96A4XNBA6;
+				DEVELOPMENT_TEAM = F6FYGZ29HL;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -600,7 +616,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N96A4XNBA6;
+				DEVELOPMENT_TEAM = F6FYGZ29HL;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
