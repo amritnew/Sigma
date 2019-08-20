@@ -2,12 +2,16 @@ os: osx
 language: objective-c
 osx_image: xcode10.3
 
+cache:
+  bundler: true
+  cocoapods: true
+
 install:
   - bundle install
 
 jobs:
   include:
     - stage: test
-      if: branch = master
+      if: branch =~ /^master|develop$/
       script: bundle exec fastlane tests
 
