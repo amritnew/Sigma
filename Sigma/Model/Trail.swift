@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Trail: Decodable{
+struct Trail: Decodable {
     let title: String
     let topics: [Topic]
 }

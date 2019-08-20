@@ -10,9 +10,10 @@ import Foundation
 
 struct PostViewModel {
     let title: String
+    let markdownText: String
     
     init(post: Post) {
         self.title = post.title
+        self.markdownText = post.markdownText
     }
-    
 }

@@ -16,6 +16,8 @@
 		790396D7230C403200F06EBD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396D6230C403200F06EBD /* UserViewModel.swift */; };
 		790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396D8230C404800F06EBD /* TopicViewModel.swift */; };
 		790396DB230C405200F06EBD /* TrailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DA230C405200F06EBD /* TrailViewModel.swift */; };
+		790396DD230CA7C300F06EBD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DC230CA7C300F06EBD /* Reusable.swift */; };
+		790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DE230CA7E300F06EBD /* Reusable+Extension.swift */; };
 		79246F25230346160024A271 /* TrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F24230346160024A271 /* TrailController.swift */; };
 		79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F262303E7940024A271 /* TopicCollectionViewCell.swift */; };
 		79246F292303EEF20024A271 /* TopicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F282303EEF20024A271 /* TopicController.swift */; };
@@ -59,6 +61,8 @@
 		790396D6230C403200F06EBD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		790396D8230C404800F06EBD /* TopicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewModel.swift; sourceTree = "<group>"; };
 		790396DA230C405200F06EBD /* TrailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailViewModel.swift; sourceTree = "<group>"; };
+		790396DC230CA7C300F06EBD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		790396DE230CA7E300F06EBD /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
 		79246F24230346160024A271 /* TrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailController.swift; sourceTree = "<group>"; };
 		79246F262303E7940024A271 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		79246F282303EEF20024A271 /* TopicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicController.swift; sourceTree = "<group>"; };
@@ -120,8 +124,8 @@
 		790396C9230C3E0300F06EBD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				790396D4230C401E00F06EBD /* PostViewModel.swift */,
 				790396D6230C403200F06EBD /* UserViewModel.swift */,
+				790396D4230C401E00F06EBD /* PostViewModel.swift */,
 				790396D8230C404800F06EBD /* TopicViewModel.swift */,
 				790396DA230C405200F06EBD /* TrailViewModel.swift */,
 			);
@@ -131,8 +135,8 @@
 		790396CA230C3E0900F06EBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				790396CB230C3EBC00F06EBD /* Post.swift */,
 				790396CD230C3EC600F06EBD /* User.swift */,
+				790396CB230C3EBC00F06EBD /* Post.swift */,
 				790396CF230C3ECD00F06EBD /* Topic.swift */,
 				790396D1230C3EDB00F06EBD /* Trail.swift */,
 			);
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				792D70EF2301DE61005859AB /* ConfigurableView.swift */,
+				790396DC230CA7C300F06EBD /* Reusable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */,
 				792D70F12301E21D005859AB /* UIView+Extension.swift */,
 				79921882230877A500EA5054 /* Decodable+Extension.swift */,
+				790396DE230CA7E300F06EBD /* Reusable+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -437,7 +443,9 @@
 				790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				79246F25230346160024A271 /* TrailController.swift in Sources */,
+				790396DD230CA7C300F06EBD /* Reusable.swift in Sources */,
 				79921881230872CA00EA5054 /* Service.swift in Sources */,
+				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
 				790396D0230C3ECD00F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
 				790396CC230C3EBC00F06EBD /* Post.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView {
+class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable {
     
     let trailImage: UIImageView = {
         let image = RoundableImage(frame: .zero)
@@ -33,7 +33,7 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-        addSubviews([trailImage,trailName, trailPublisher])
+        addSubviews([ trailImage,trailName, trailPublisher ])
     }
     
     func setupConstraints() {

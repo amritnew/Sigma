@@ -10,9 +10,11 @@ import Foundation
 
 struct TopicViewModel {
     let title: String
+    let posts: [Post]?
     
     init(topic: Topic) {
         self.title = topic.title
+        self.posts = topic.posts
     }
     
 }

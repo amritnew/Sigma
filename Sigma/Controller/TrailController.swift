@@ -25,8 +25,8 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
         navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), landscapeImagePhone: nil, style: .done, target: self, action: #selector(popView))
         collectionView.backgroundColor = .white
-        collectionView.register(TopicCollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
-        collectionView.register(ListTrailCollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
+        collectionView.register(cellType: TopicCollectionViewCell.self)
+        collectionView.register(supplementaryViewType: ListTrailCollectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
     }
     
     @objc fileprivate func popView() {
@@ -35,7 +35,7 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! ListTrailCollectionHeader
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: ListTrailCollectionHeader.self)
         return header
     }
     
@@ -49,7 +49,7 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! TopicCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TopicCollectionViewCell.self)
         return cell
     }
     

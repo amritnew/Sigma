@@ -11,10 +11,12 @@ import Foundation
 struct UserViewModel {
     let name: String
     let photoUrl: String
+    let trails: [Trail]?
     
     init(user: User) {
         self.name = user.name
         self.photoUrl = user.photoUrl ?? ""
+        self.trails = user.trails
     }
     
     
