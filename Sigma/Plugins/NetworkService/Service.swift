@@ -14,7 +14,6 @@ enum HTTPMethod: String {
     case delete = "DELETE"
     case get = "GET"
 }
-
 struct Service<T: Decodable> {
     func get(url: String, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: url) else {return print("Does not parse String to URL")}
