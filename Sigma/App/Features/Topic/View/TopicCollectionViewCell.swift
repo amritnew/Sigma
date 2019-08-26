@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView {
+class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView, Reusable {
   
     let topicImage: UIImageView = {
         let image = RoundableImage(frame: .zero)
@@ -33,7 +33,7 @@ class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView {
     
     
     func buildViewHierarchy() {
-        addSubviews([topicImage,topicName, topicPublisher])
+        addSubviews([ topicImage,topicName, topicPublisher ])
     }
     
     func setupConstraints() {

@@ -26,7 +26,7 @@ extension MyTrailsController: UICollectionViewDelegateFlowLayout {
     
     fileprivate func setupCollection() {
         collectionView.backgroundColor = .white
-        collectionView.register(ListTrailCollectionCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView.register(cellType: ListTrailCollectionCell.self)
     }
     
     
@@ -39,7 +39,7 @@ extension MyTrailsController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ListTrailCollectionCell
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ListTrailCollectionCell.self)
         return cell
     }
     

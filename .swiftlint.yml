@@ -8,17 +8,11 @@ function_body_length:
 
 disabled_rules:
  - leading_whitespace
- - force_cast
- - force_try
- - identifier_name
- - opening_brace
  - trailing_whitespace
- - void_return
  - vertical_whitespace
  - private_over_fileprivate
  - comma
  - colon
- - switch_case_alignment
  - trailing_semicolon
  - class_delegate_protocol
 excluded:

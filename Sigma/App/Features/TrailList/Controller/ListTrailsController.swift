@@ -8,15 +8,6 @@
 
 import UIKit
 
-
-struct Post: Decodable {
-    let userId: Int?
-    let id: Int?
-    let title: String?
-    let body: String?
-}
-
-
 class ListTrailsController: BaseCollectionController {
 
     override func viewDidLoad() {
@@ -26,7 +17,7 @@ class ListTrailsController: BaseCollectionController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+    navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -38,8 +29,8 @@ class ListTrailsController: BaseCollectionController {
 extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     
     fileprivate func setupCollection() {
-        collectionView.register(ListTrailCollectionCell.self, forCellWithReuseIdentifier: "cellId")
-        collectionView.register(ListTrailCollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
+        collectionView.register(cellType: ListTrailCollectionCell.self)
+        collectionView.register(supplementaryViewType: ListTrailCollectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
         collectionView.backgroundColor = .white
     }
     
@@ -52,15 +43,13 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! ListTrailCollectionHeader
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: ListTrailCollectionHeader.self)
         headerView.delegate = self
-        
         return headerView
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ListTrailCollectionCell
-        
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ListTrailCollectionCell.self)
         return cell
     }
     

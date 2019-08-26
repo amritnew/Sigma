@@ -13,7 +13,7 @@ protocol ListTrailHeaderDelegate: ListTrailsController {
     func imageHeaderDidClick()
 }
 
-class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView{
+class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reusable { 
   
     let tagHeader = UILabel(text: "Swift", textColor: .orange,font: nil, numberOfLines: nil, lineBreakMode: nil)
     let publisherHeader = UILabel(text: "Published by: @Chris Lattner", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)

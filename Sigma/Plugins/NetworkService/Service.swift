@@ -14,9 +14,8 @@ enum HTTPMethod: String {
     case delete = "DELETE"
     case get = "GET"
 }
-
-struct Service<T: Decodable>{
-    func get(url: String, completion: @escaping (Result<T, Error>) -> ()) {
+struct Service<T: Decodable> {
+    func get(url: String, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: url) else {return print("Does not parse String to URL")}
         
         let session = URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -33,7 +32,7 @@ struct Service<T: Decodable>{
     }
     
     
-    func post(params: [String: String], url: String, completion: @escaping (Error?) -> ()) {
+    func post(params: [String: String], url: String, completion: @escaping (Error?) -> Void) {
         guard let url = URL(string: url) else {return print("Does not parse String to URL")}
         
         var urlRequest = URLRequest(url: url)
