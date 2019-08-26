@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		654230DEEC1A7ECC1D962AC0 /* Pods_Sigma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C098CBE109959BED4A69444 /* Pods_Sigma.framework */; };
+		790396CC230C3EBC00F06EBD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CB230C3EBC00F06EBD /* Post.swift */; };
+		790396CE230C3EC600F06EBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CD230C3EC600F06EBD /* User.swift */; };
+		790396D0230C3ECD00F06EBD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CF230C3ECD00F06EBD /* Topic.swift */; };
+		790396D2230C3EDB00F06EBD /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396D1230C3EDB00F06EBD /* Trail.swift */; };
+		790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396D4230C401E00F06EBD /* PostViewModel.swift */; };
+		790396D7230C403200F06EBD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396D6230C403200F06EBD /* UserViewModel.swift */; };
+		790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396D8230C404800F06EBD /* TopicViewModel.swift */; };
+		790396DB230C405200F06EBD /* TrailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DA230C405200F06EBD /* TrailViewModel.swift */; };
+		790396DD230CA7C300F06EBD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DC230CA7C300F06EBD /* Reusable.swift */; };
+		790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DE230CA7E300F06EBD /* Reusable+Extension.swift */; };
 		79246F25230346160024A271 /* TrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F24230346160024A271 /* TrailController.swift */; };
 		79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F262303E7940024A271 /* TopicCollectionViewCell.swift */; };
 		79246F292303EEF20024A271 /* TopicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F282303EEF20024A271 /* TopicController.swift */; };
@@ -24,6 +34,7 @@
 		793B05C222F25925005F3878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793B05C022F25925005F3878 /* LaunchScreen.storyboard */; };
 		793B05CD22F25925005F3878 /* SigmaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05CC22F25925005F3878 /* SigmaTests.swift */; };
 		793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05DB22F25B38005F3878 /* CustomTabBarController.swift */; };
+		79437B172310594F00B3E1B0 /* ConfigurableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79437B162310594F00B3E1B0 /* ConfigurableController.swift */; };
 		79921881230872CA00EA5054 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921880230872CA00EA5054 /* Service.swift */; };
 		79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921882230877A500EA5054 /* Decodable+Extension.swift */; };
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
@@ -43,6 +54,16 @@
 /* Begin PBXFileReference section */
 		0421130ED87227E76520C0B4 /* Pods-Sigma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.debug.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.debug.xcconfig"; sourceTree = "<group>"; };
 		50CA70667EC90522D96CC6BC /* Pods_SigmaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SigmaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		790396CB230C3EBC00F06EBD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		790396CD230C3EC600F06EBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		790396CF230C3ECD00F06EBD /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		790396D1230C3EDB00F06EBD /* Trail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
+		790396D4230C401E00F06EBD /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		790396D6230C403200F06EBD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		790396D8230C404800F06EBD /* TopicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewModel.swift; sourceTree = "<group>"; };
+		790396DA230C405200F06EBD /* TrailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailViewModel.swift; sourceTree = "<group>"; };
+		790396DC230CA7C300F06EBD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		790396DE230CA7E300F06EBD /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
 		79246F24230346160024A271 /* TrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailController.swift; sourceTree = "<group>"; };
 		79246F262303E7940024A271 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		79246F282303EEF20024A271 /* TopicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicController.swift; sourceTree = "<group>"; };
@@ -63,6 +84,7 @@
 		793B05CC22F25925005F3878 /* SigmaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaTests.swift; sourceTree = "<group>"; };
 		793B05CE22F25925005F3878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		793B05DB22F25B38005F3878 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		79437B162310594F00B3E1B0 /* ConfigurableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableController.swift; sourceTree = "<group>"; };
 		79921880230872CA00EA5054 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		79921882230877A500EA5054 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
 		7C098CBE109959BED4A69444 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,10 +123,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		790396C9230C3E0300F06EBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				790396D6230C403200F06EBD /* UserViewModel.swift */,
+				790396D4230C401E00F06EBD /* PostViewModel.swift */,
+				790396D8230C404800F06EBD /* TopicViewModel.swift */,
+				790396DA230C405200F06EBD /* TrailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		790396CA230C3E0900F06EBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				790396CD230C3EC600F06EBD /* User.swift */,
+				790396CB230C3EBC00F06EBD /* Post.swift */,
+				790396CF230C3ECD00F06EBD /* Topic.swift */,
+				790396D1230C3EDB00F06EBD /* Trail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		792D70EE2301DE4E005859AB /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				792D70EF2301DE61005859AB /* ConfigurableView.swift */,
+				790396DC230CA7C300F06EBD /* Reusable.swift */,
+				79437B162310594F00B3E1B0 /* ConfigurableController.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -132,13 +178,13 @@
 		793B05B622F25925005F3878 /* Sigma */ = {
 			isa = PBXGroup;
 			children = (
+				790396CA230C3E0900F06EBD /* Model */,
+				790396C9230C3E0300F06EBD /* ViewModel */,
 				7992187F230872AE00EA5054 /* Service */,
 				A45F788A230448E800EBAD28 /* Extensions */,
 				792D70EE2301DE4E005859AB /* Protocol */,
 				793B05DA22F2596E005F3878 /* View */,
-				793B05D922F25967005F3878 /* View Model */,
 				793B05D822F25963005F3878 /* Controller */,
-				793B05D722F2595E005F3878 /* Model */,
 				793B05B722F25925005F3878 /* AppDelegate.swift */,
 				793B05BE22F25925005F3878 /* Assets.xcassets */,
 				793B05C022F25925005F3878 /* LaunchScreen.storyboard */,
@@ -156,13 +202,6 @@
 			path = SigmaTests;
 			sourceTree = "<group>";
 		};
-		793B05D722F2595E005F3878 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		793B05D822F25963005F3878 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,13 +213,6 @@
 				79246F282303EEF20024A271 /* TopicController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		793B05D922F25967005F3878 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Model";
 			sourceTree = "<group>";
 		};
 		793B05DA22F2596E005F3878 /* View */ = {
@@ -208,6 +240,7 @@
 				A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */,
 				792D70F12301E21D005859AB /* UIView+Extension.swift */,
 				79921882230877A500EA5054 /* Decodable+Extension.swift */,
+				790396DE230CA7E300F06EBD /* Reusable+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,9 +443,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
+				790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */,
+				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				79246F25230346160024A271 /* TrailController.swift in Sources */,
+				790396DD230CA7C300F06EBD /* Reusable.swift in Sources */,
+				79437B172310594F00B3E1B0 /* ConfigurableController.swift in Sources */,
 				79921881230872CA00EA5054 /* Service.swift in Sources */,
+				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
+				790396D0230C3ECD00F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
+				790396CC230C3EBC00F06EBD /* Post.swift in Sources */,
+				790396D2230C3EDB00F06EBD /* Trail.swift in Sources */,
 				793B05BA22F25925005F3878 /* ListTrailsController.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
 				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
@@ -421,10 +462,13 @@
 				79246F292303EEF20024A271 /* TopicController.swift in Sources */,
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
+				790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */,
 				793B05B822F25925005F3878 /* AppDelegate.swift in Sources */,
+				790396CE230C3EC600F06EBD /* User.swift in Sources */,
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
 				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
+				790396DB230C405200F06EBD /* TrailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +624,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N96A4XNBA6;
+				DEVELOPMENT_TEAM = F6FYGZ29HL;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -600,7 +644,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N96A4XNBA6;
+				DEVELOPMENT_TEAM = F6FYGZ29HL;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (

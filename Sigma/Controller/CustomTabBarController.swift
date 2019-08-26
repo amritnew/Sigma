@@ -8,12 +8,12 @@
 
 import UIKit
 
-fileprivate protocol ConfigurableTabBar {
+private protocol ConfigurableTabBar {
     func setupTabBar()
     func createNavigation(viewController: UIViewController, title: String, imageNamed: String) -> UINavigationController
 }
 
-class CustomTabBarController: UITabBarController{
+class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
