@@ -10,9 +10,18 @@ import UIKit
 
 class ListTrailsController: BaseCollectionController {
 
+    var trailViewModel = TrailsViewModel()
+    let trails = [Trail(title: "Swift", description: "Basic Swift, Learning the new things about the awesome language.", author: "Vinicius", topics: [Topic(title: "Generics", posts: nil)]),Trail(title: "Java Script", description: "Basics JS", author: "Mario", topics: [Topic(title: "Generics", posts: nil)])]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
+        bindViewModel()
+        trailViewModel.trails = trails
+    }
+    
+    fileprivate func bindViewModel() {
+            trailViewModel.fetchTrail()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,48 +32,5 @@ class ListTrailsController: BaseCollectionController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
-    }
-}
-
-extension ListTrailsController: UICollectionViewDelegateFlowLayout {
-    
-    fileprivate func setupCollection() {
-        collectionView.register(cellType: ListTrailCollectionCell.self)
-        collectionView.register(supplementaryViewType: ListTrailCollectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
-        collectionView.backgroundColor = .white
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: view.frame.width, height: 500)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: ListTrailCollectionHeader.self)
-        headerView.delegate = self
-        return headerView
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ListTrailCollectionCell.self)
-        return cell
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(TrailController(), animated: true)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width, height: 75)
-    }
-}
-
-
-extension ListTrailsController: ListTrailHeaderDelegate {
-    func imageHeaderDidClick() {
-        print("Tap")
     }
 }

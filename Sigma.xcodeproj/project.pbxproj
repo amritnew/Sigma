@@ -15,7 +15,7 @@
 		790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396D4230C401E00F06EBD /* PostViewModel.swift */; };
 		790396D7230C403200F06EBD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396D6230C403200F06EBD /* UserViewModel.swift */; };
 		790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396D8230C404800F06EBD /* TopicViewModel.swift */; };
-		790396DB230C405200F06EBD /* TrailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DA230C405200F06EBD /* TrailViewModel.swift */; };
+		790396DB230C405200F06EBD /* TrailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DA230C405200F06EBD /* TrailsViewModel.swift */; };
 		790396DD230CA7C300F06EBD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DC230CA7C300F06EBD /* Reusable.swift */; };
 		790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DE230CA7E300F06EBD /* Reusable+Extension.swift */; };
 		79246F25230346160024A271 /* TrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F24230346160024A271 /* TrailController.swift */; };
@@ -29,11 +29,13 @@
 		792D70F62302F08C005859AB /* RoundableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F52302F08C005859AB /* RoundableImage.swift */; };
 		792D70F823031861005859AB /* MyTrailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F723031861005859AB /* MyTrailsController.swift */; };
 		793B05B822F25925005F3878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05B722F25925005F3878 /* AppDelegate.swift */; };
-		793B05BA22F25925005F3878 /* ListTrailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05B922F25925005F3878 /* ListTrailsController.swift */; };
 		793B05BF22F25925005F3878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793B05BE22F25925005F3878 /* Assets.xcassets */; };
 		793B05C222F25925005F3878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793B05C022F25925005F3878 /* LaunchScreen.storyboard */; };
 		793B05CD22F25925005F3878 /* SigmaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05CC22F25925005F3878 /* SigmaTests.swift */; };
 		793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05DB22F25B38005F3878 /* CustomTabBarController.swift */; };
+		793C71B723143ADD00283C38 /* TrailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C71B623143ADD00283C38 /* TrailService.swift */; };
+		793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C71B82314531800283C38 /* ListTrailsController+Extension.swift */; };
+		793C71BA231476BB00283C38 /* ListTrailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05B922F25925005F3878 /* ListTrailsController.swift */; };
 		79437B172310594F00B3E1B0 /* ConfigurableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79437B162310594F00B3E1B0 /* ConfigurableController.swift */; };
 		79921881230872CA00EA5054 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921880230872CA00EA5054 /* Service.swift */; };
 		79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921882230877A500EA5054 /* Decodable+Extension.swift */; };
@@ -61,7 +63,7 @@
 		790396D4230C401E00F06EBD /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		790396D6230C403200F06EBD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		790396D8230C404800F06EBD /* TopicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewModel.swift; sourceTree = "<group>"; };
-		790396DA230C405200F06EBD /* TrailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailViewModel.swift; sourceTree = "<group>"; };
+		790396DA230C405200F06EBD /* TrailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailsViewModel.swift; sourceTree = "<group>"; };
 		790396DC230CA7C300F06EBD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		790396DE230CA7E300F06EBD /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
 		79246F24230346160024A271 /* TrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,8 @@
 		793B05CC22F25925005F3878 /* SigmaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaTests.swift; sourceTree = "<group>"; };
 		793B05CE22F25925005F3878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		793B05DB22F25B38005F3878 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		793C71B623143ADD00283C38 /* TrailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailService.swift; sourceTree = "<group>"; };
+		793C71B82314531800283C38 /* ListTrailsController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTrailsController+Extension.swift"; sourceTree = "<group>"; };
 		79437B162310594F00B3E1B0 /* ConfigurableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableController.swift; sourceTree = "<group>"; };
 		79921880230872CA00EA5054 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		79921882230877A500EA5054 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				793B05B922F25925005F3878 /* ListTrailsController.swift */,
+				793C71B82314531800283C38 /* ListTrailsController+Extension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 		793C719E23140A0400283C38 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				790396DA230C405200F06EBD /* TrailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -288,7 +294,6 @@
 		793C71A223140A5900283C38 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				790396DA230C405200F06EBD /* TrailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				79921880230872CA00EA5054 /* Service.swift */,
+				793C71B623143ADD00283C38 /* TrailService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -635,19 +641,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
+				793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */,
 				790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				79246F25230346160024A271 /* TrailController.swift in Sources */,
 				790396DD230CA7C300F06EBD /* Reusable.swift in Sources */,
 				79437B172310594F00B3E1B0 /* ConfigurableController.swift in Sources */,
+				793C71BA231476BB00283C38 /* ListTrailsController.swift in Sources */,
 				79921881230872CA00EA5054 /* Service.swift in Sources */,
 				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
 				790396D0230C3ECD00F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
 				790396CC230C3EBC00F06EBD /* Post.swift in Sources */,
 				790396D2230C3EDB00F06EBD /* Trail.swift in Sources */,
-				793B05BA22F25925005F3878 /* ListTrailsController.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
+				793C71B723143ADD00283C38 /* TrailService.swift in Sources */,
 				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
@@ -660,7 +668,7 @@
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
 				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
-				790396DB230C405200F06EBD /* TrailViewModel.swift in Sources */,
+				790396DB230C405200F06EBD /* TrailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

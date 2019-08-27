@@ -13,7 +13,7 @@ class MyTrailsController: BaseCollectionController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
-    }
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
