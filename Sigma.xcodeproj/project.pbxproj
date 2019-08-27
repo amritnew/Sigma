@@ -37,6 +37,16 @@
 		79437B172310594F00B3E1B0 /* ConfigurableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79437B162310594F00B3E1B0 /* ConfigurableController.swift */; };
 		79921881230872CA00EA5054 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921880230872CA00EA5054 /* Service.swift */; };
 		79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921882230877A500EA5054 /* Decodable+Extension.swift */; };
+		92FBC5822314292900E596BC /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5812314292900E596BC /* TabController.swift */; };
+		92FBC5842314295B00E596BC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5832314295B00E596BC /* ProfileController.swift */; };
+		92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC585231429C300E596BC /* UIFont+Extension.swift */; };
+		92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC58723142A7D00E596BC /* HeaderProfileDelegate.swift */; };
+		92FBC58B23142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC58923142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift */; };
+		92FBC58C23142AE100E596BC /* AboutProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC58A23142AE100E596BC /* AboutProfileCollectionViewCell.swift */; };
+		92FBC58E23142AF900E596BC /* AboutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC58D23142AF900E596BC /* AboutCollectionViewCell.swift */; };
+		92FBC59023142B5400E596BC /* ProfileCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC58F23142B5400E596BC /* ProfileCollectionHeader.swift */; };
+		92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC59123142B9100E596BC /* TabControllerDelegate.swift */; };
+		92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC59523154CD500E596BC /* CircleImageView.swift */; };
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
 		BBB1398BAB3B9E1ACECA723F /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA70667EC90522D96CC6BC /* Pods_SigmaTests.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +98,16 @@
 		79921880230872CA00EA5054 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		79921882230877A500EA5054 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
 		7C098CBE109959BED4A69444 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FBC5812314292900E596BC /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		92FBC5832314295B00E596BC /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		92FBC585231429C300E596BC /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		92FBC58723142A7D00E596BC /* HeaderProfileDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderProfileDelegate.swift; sourceTree = "<group>"; };
+		92FBC58923142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferredLanguagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		92FBC58A23142AE100E596BC /* AboutProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		92FBC58D23142AF900E596BC /* AboutCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCollectionViewCell.swift; sourceTree = "<group>"; };
+		92FBC58F23142B5400E596BC /* ProfileCollectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionHeader.swift; sourceTree = "<group>"; };
+		92FBC59123142B9100E596BC /* TabControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControllerDelegate.swift; sourceTree = "<group>"; };
+		92FBC59523154CD500E596BC /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		BE14C4DE8BB3F43FB3E6048E /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		E3AB94EBF468224601EBC6B3 /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +160,8 @@
 				792D70EF2301DE61005859AB /* ConfigurableView.swift */,
 				790396DC230CA7C300F06EBD /* Reusable.swift */,
 				79437B162310594F00B3E1B0 /* ConfigurableController.swift */,
+				92FBC58723142A7D00E596BC /* HeaderProfileDelegate.swift */,
+				92FBC59123142B9100E596BC /* TabControllerDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -199,6 +221,7 @@
 		793B05DA22F2596E005F3878 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				92FBC59523154CD500E596BC /* CircleImageView.swift */,
 				792D70F52302F08C005859AB /* RoundableImage.swift */,
 			);
 			path = View;
@@ -392,6 +415,8 @@
 		793C71AF23140EE100283C38 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				92FBC5812314292900E596BC /* TabController.swift */,
+				92FBC5832314295B00E596BC /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -407,6 +432,10 @@
 		793C71B123140EE900283C38 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92FBC58F23142B5400E596BC /* ProfileCollectionHeader.swift */,
+				92FBC58A23142AE100E596BC /* AboutProfileCollectionViewCell.swift */,
+				92FBC58923142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift */,
+				92FBC58D23142AF900E596BC /* AboutCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -429,6 +458,7 @@
 		A45F788A230448E800EBAD28 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				92FBC585231429C300E596BC /* UIFont+Extension.swift */,
 				A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */,
 				792D70F12301E21D005859AB /* UIView+Extension.swift */,
 				79921882230877A500EA5054 /* Decodable+Extension.swift */,
@@ -636,25 +666,35 @@
 			files = (
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
 				790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */,
+				92FBC58B23142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
+				92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */,
+				92FBC59023142B5400E596BC /* ProfileCollectionHeader.swift in Sources */,
 				79246F25230346160024A271 /* TrailController.swift in Sources */,
 				790396DD230CA7C300F06EBD /* Reusable.swift in Sources */,
 				79437B172310594F00B3E1B0 /* ConfigurableController.swift in Sources */,
 				79921881230872CA00EA5054 /* Service.swift in Sources */,
+				92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */,
 				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
+				92FBC58C23142AE100E596BC /* AboutProfileCollectionViewCell.swift in Sources */,
 				790396D0230C3ECD00F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
 				790396CC230C3EBC00F06EBD /* Post.swift in Sources */,
 				790396D2230C3EDB00F06EBD /* Trail.swift in Sources */,
 				793B05BA22F25925005F3878 /* ListTrailsController.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
+				92FBC58E23142AF900E596BC /* AboutCollectionViewCell.swift in Sources */,
+				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
 				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
 				79246F292303EEF20024A271 /* TopicController.swift in Sources */,
+				92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */,
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
+				92FBC5842314295B00E596BC /* ProfileController.swift in Sources */,
 				790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */,
+				92FBC5822314292900E596BC /* TabController.swift in Sources */,
 				793B05B822F25925005F3878 /* AppDelegate.swift in Sources */,
 				790396CE230C3EC600F06EBD /* User.swift in Sources */,
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
@@ -816,7 +856,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6FYGZ29HL;
+				DEVELOPMENT_TEAM = NM36QJ4P82;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -836,7 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6FYGZ29HL;
+				DEVELOPMENT_TEAM = NM36QJ4P82;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
