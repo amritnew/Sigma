@@ -22,7 +22,7 @@ class ListTrailsController: BaseCollectionController {
     
     fileprivate func bindViewModel() {
             trailViewModel.fetchTrail()
-    }
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
