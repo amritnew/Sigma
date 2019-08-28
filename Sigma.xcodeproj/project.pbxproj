@@ -37,7 +37,7 @@
 		793C71BA231476BB00283C38 /* ListTrailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05B922F25925005F3878 /* ListTrailsController.swift */; };
 		79437B172310594F00B3E1B0 /* ConfigurableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79437B162310594F00B3E1B0 /* ConfigurableController.swift */; };
 		7980A0522315A37A00682D9A /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7980A0512315A37A00682D9A /* AppTests.swift */; };
-		7980A05A2315A4B300682D9A /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7980A0592315A4B300682D9A /* ServiceTests.swift */; };
+		7983E7BB2316AA1100377D28 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7980A0592315A4B300682D9A /* ServiceTests.swift */; };
 		79921881230872CA00EA5054 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921880230872CA00EA5054 /* Service.swift */; };
 		79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921882230877A500EA5054 /* Decodable+Extension.swift */; };
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
@@ -733,7 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7980A0522315A37A00682D9A /* AppTests.swift in Sources */,
-				7980A05A2315A4B300682D9A /* ServiceTests.swift in Sources */,
+				7983E7BB2316AA1100377D28 /* ServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

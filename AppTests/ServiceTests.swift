@@ -13,14 +13,16 @@ class ServiceTests: XCTestCase {
 
     struct Post: Decodable {let title: String?}
     
-    var trailViewModel: TrailsViewModel?
+    var trailViewModel = TrailsViewModel()
     
-    func stubViewModel() {
-        trailViewModel?.fetchTrail()
-        XCTAssertNotNil(trailViewModel?.trails)
+    func testStubViewModel() {
+        trailViewModel.trails = [Trail(title: "Mock", description: "This is mock", author: "Mockado", topics: [Topic(title: "Mock", posts: nil)])]
+        
+        //trailViewModel?.fetchTrail() where API ended test here
+        XCTAssertNotNil(trailViewModel.trails)
     }
     
-    func initStubs() {
+    func testService() {
         Service<[Post]>().get(url: "https://jsonplaceholder.typicode.com/posts") { (result) in
             switch result {
                 
@@ -32,10 +34,6 @@ class ServiceTests: XCTestCase {
             }
         }
     }
-    
-    override func setUp() {}
-    
-    override func tearDown() {}
     
     func testExample() {}
     
