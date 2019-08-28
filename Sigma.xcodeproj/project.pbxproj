@@ -20,7 +20,7 @@
 		790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DE230CA7E300F06EBD /* Reusable+Extension.swift */; };
 		79246F25230346160024A271 /* TrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F24230346160024A271 /* TrailController.swift */; };
 		79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F262303E7940024A271 /* TopicCollectionViewCell.swift */; };
-		79246F292303EEF20024A271 /* TopicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F282303EEF20024A271 /* TopicController.swift */; };
+		79246F292303EEF20024A271 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F282303EEF20024A271 /* PostController.swift */; };
 		792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EA2301D743005859AB /* BaseCollectionController.swift */; };
 		792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */; };
 		792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EF2301DE61005859AB /* ConfigurableView.swift */; };
@@ -32,6 +32,7 @@
 		793B05BF22F25925005F3878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793B05BE22F25925005F3878 /* Assets.xcassets */; };
 		793B05C222F25925005F3878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793B05C022F25925005F3878 /* LaunchScreen.storyboard */; };
 		793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05DB22F25B38005F3878 /* CustomTabBarController.swift */; };
+		793BD0132316C97200EBA04B /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793BD0122316C97200EBA04B /* PostView.swift */; };
 		793C71B723143ADD00283C38 /* TrailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C71B623143ADD00283C38 /* TrailService.swift */; };
 		793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C71B82314531800283C38 /* ListTrailsController+Extension.swift */; };
 		793C71BA231476BB00283C38 /* ListTrailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05B922F25925005F3878 /* ListTrailsController.swift */; };
@@ -86,7 +87,7 @@
 		790396DE230CA7E300F06EBD /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
 		79246F24230346160024A271 /* TrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailController.swift; sourceTree = "<group>"; };
 		79246F262303E7940024A271 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
-		79246F282303EEF20024A271 /* TopicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicController.swift; sourceTree = "<group>"; };
+		79246F282303EEF20024A271 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		792D70EA2301D743005859AB /* BaseCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionController.swift; sourceTree = "<group>"; };
 		792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrailCollectionHeader.swift; sourceTree = "<group>"; };
 		792D70EF2301DE61005859AB /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		793B05C322F25925005F3878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		793B05C822F25925005F3878 /* SigmaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SigmaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		793B05DB22F25B38005F3878 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		793BD0122316C97200EBA04B /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		793C71B623143ADD00283C38 /* TrailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailService.swift; sourceTree = "<group>"; };
 		793C71B82314531800283C38 /* ListTrailsController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTrailsController+Extension.swift"; sourceTree = "<group>"; };
 		79437B162310594F00B3E1B0 /* ConfigurableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableController.swift; sourceTree = "<group>"; };
@@ -213,7 +215,7 @@
 			children = (
 				793C7199231409B700283C38 /* App */,
 				790396CA230C3E0900F06EBD /* Entities */,
-				793C71AD23140E3D00283C38 /* GenericLayer */,
+				793C71AD23140E3D00283C38 /* ReusableLayer */,
 				793C71AB23140D4D00283C38 /* Plugins */,
 				793B05BE22F25925005F3878 /* Assets.xcassets */,
 				793B05C022F25925005F3878 /* LaunchScreen.storyboard */,
@@ -361,6 +363,7 @@
 		793C71A623140ABF00283C38 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79246F262303E7940024A271 /* TopicCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -368,7 +371,7 @@
 		793C71A723140AC400283C38 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				790396D4230C401E00F06EBD /* PostViewModel.swift */,
+				790396D8230C404800F06EBD /* TopicViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -376,7 +379,7 @@
 		793C71A823140B0900283C38 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				79246F282303EEF20024A271 /* TopicController.swift */,
+				79246F282303EEF20024A271 /* PostController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,7 +387,7 @@
 		793C71A923140B0D00283C38 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				79246F262303E7940024A271 /* TopicCollectionViewCell.swift */,
+				793BD0122316C97200EBA04B /* PostView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -392,7 +395,7 @@
 		793C71AA23140B1100283C38 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				790396D8230C404800F06EBD /* TopicViewModel.swift */,
+				790396D4230C401E00F06EBD /* PostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -406,14 +409,14 @@
 			path = Plugins;
 			sourceTree = "<group>";
 		};
-		793C71AD23140E3D00283C38 /* GenericLayer */ = {
+		793C71AD23140E3D00283C38 /* ReusableLayer */ = {
 			isa = PBXGroup;
 			children = (
 				793B05DA22F2596E005F3878 /* View */,
 				792D70EE2301DE4E005859AB /* Protocol */,
 				A45F788A230448E800EBAD28 /* Extensions */,
 			);
-			path = GenericLayer;
+			path = ReusableLayer;
 			sourceTree = "<group>";
 		};
 		793C71AE23140EDA00283C38 /* Profile */ = {
@@ -723,6 +726,7 @@
 				793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */,
 				790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */,
 				92FBC58B23142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift in Sources */,
+				793BD0132316C97200EBA04B /* PostView.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */,
 				92FBC59023142B5400E596BC /* ProfileCollectionHeader.swift in Sources */,
@@ -742,11 +746,10 @@
 				793C71B723143ADD00283C38 /* TrailService.swift in Sources */,
 				92FBC58E23142AF900E596BC /* AboutCollectionViewCell.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
-        
 				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
-				79246F292303EEF20024A271 /* TopicController.swift in Sources */,
+				79246F292303EEF20024A271 /* PostController.swift in Sources */,
 				92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */,
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
