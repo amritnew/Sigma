@@ -419,7 +419,7 @@
 		793C71AE23140EDA00283C38 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				793C71B123140EE900283C38 /* Model */,
+				793C71B123140EE900283C38 /* View */,
 				793C71B023140EE500283C38 /* ViewModel */,
 				793C71AF23140EE100283C38 /* Controller */,
 			);
@@ -443,7 +443,7 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		793C71B123140EE900283C38 /* Model */ = {
+		793C71B123140EE900283C38 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				92FBC58F23142B5400E596BC /* ProfileCollectionHeader.swift */,
@@ -451,7 +451,7 @@
 				92FBC58923142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift */,
 				92FBC58D23142AF900E596BC /* AboutCollectionViewCell.swift */,
 			);
-			path = Model;
+			path = View;
 			sourceTree = "<group>";
 		};
 		793C71B223140FC200283C38 /* Persistence */ = {
@@ -742,7 +742,6 @@
 				793C71B723143ADD00283C38 /* TrailService.swift in Sources */,
 				92FBC58E23142AF900E596BC /* AboutCollectionViewCell.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
-        
 				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
