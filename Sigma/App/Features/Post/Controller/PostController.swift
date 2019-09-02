@@ -12,7 +12,7 @@ class PostController: UIViewController, ConfigurableController {
     
     var usedView: UIView? = PostView()
     
-    var postViewModel = PostViewModel(post: Post(title: "Swift", markdownText: "# SWIFT BASICS"))
+    var postViewModel = PostViewModel(post: Post(title: "Swift", markdownText: "<style>background-color: yellow;</style>\n# SWIFT BASICS \n ## Froids \n Troll [Google](https://google.com.br)"))
     
     
     convenience init(trailViewModel: TrailsViewModel) {
