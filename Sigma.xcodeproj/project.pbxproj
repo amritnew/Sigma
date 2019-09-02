@@ -256,7 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				793C71AE23140EDA00283C38 /* Profile */,
-				793C71A423140AAB00283C38 /* Topic */,
+				793C71A423140AAB00283C38 /* Post */,
 				793C71A323140A8000283C38 /* Trail */,
 				793C719F23140A3B00283C38 /* My Trails */,
 				793C719B231409E700283C38 /* TrailList */,
@@ -342,14 +342,14 @@
 			path = Trail;
 			sourceTree = "<group>";
 		};
-		793C71A423140AAB00283C38 /* Topic */ = {
+		793C71A423140AAB00283C38 /* Post */ = {
 			isa = PBXGroup;
 			children = (
 				793C71AA23140B1100283C38 /* ViewModel */,
 				793C71A923140B0D00283C38 /* View */,
 				793C71A823140B0900283C38 /* Controller */,
 			);
-			path = Topic;
+			path = Post;
 			sourceTree = "<group>";
 		};
 		793C71A523140AB100283C38 /* Controller */ = {
@@ -930,7 +930,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
+				DEVELOPMENT_TEAM = F6FYGZ29HL;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -950,7 +950,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
+				DEVELOPMENT_TEAM = F6FYGZ29HL;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (

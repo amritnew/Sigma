@@ -12,6 +12,13 @@ class PostController: UIViewController, ConfigurableController {
     
     var usedView: UIView? = PostView()
     
+    var postViewModel = PostViewModel(post: Post(title: "Swift", markdownText: "# SWIFT BASICS"))
+    
+    
+    convenience init(trailViewModel: TrailsViewModel) {
+        self.init()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -19,6 +26,9 @@ class PostController: UIViewController, ConfigurableController {
     }
     
     fileprivate func bindViewModel() {
-        
+        if let markView = usedView as? PostView {
+            markView.postViewModel = postViewModel
+            self.navigationItem.title = postViewModel.title
+        }
     }
 }
