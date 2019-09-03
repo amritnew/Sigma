@@ -12,10 +12,16 @@ protocol NewTrailViewDelegate: class {
     func didImageTapped()
 }
 
-
 class NewTrailView: UIView, ConfigurableView {
     
-    let imageTrail = RoundableImage(frame: .zero)
+    lazy var imageTrail: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "gallery"), for: .normal)
+        button.addTarget(self, action: #selector(didImageTapped), for: .touchUpInside)
+        button.layer.cornerRadius = 8
+        button.layer.masksToBounds = true
+        return button
+    }()
     
     fileprivate let nameLabel = UILabel(text: "Write your name:", textColor: .white, font: UIFont(name: "Arial", size: 15), numberOfLines: 1, lineBreakMode: nil)
     
@@ -40,12 +46,13 @@ class NewTrailView: UIView, ConfigurableView {
         return textField
     }()
     
+    weak var delegate: NewTrailViewDelegate?
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
-        imageTrail.image = UIImage(named: "gallery")
         self.backgroundColor = UIColor(named: "Subackground")
     }
     
@@ -86,12 +93,11 @@ class NewTrailView: UIView, ConfigurableView {
             make.leading.equal(to: leadingAnchor, offsetBy: 10)
              make.trailing.equal(to: trailingAnchor, offsetBy: -10)
         }
-        
-        
+    }
+}
 
-        
-        
-    
-        
+extension NewTrailView {
+    @objc func didImageTapped() {
+        delegate?.didImageTapped()
     }
 }
