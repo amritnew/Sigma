@@ -1,5 +1,5 @@
 //
-//  NewBlogViewModel.swift
+//  NewPostViewModel.swift
 //  Sigma
 //
 //  Created by Mario Matheus on 03/09/19.
@@ -9,9 +9,11 @@
 import Foundation
 
 
-struct NewBlogViewModel {
+struct NewPostViewModel {
     
     var viewTitle: String
+    
+    var markdownText = "# Title\n\n### Overview\n"
     
     init(viewTitle title: String) {
         viewTitle = title
