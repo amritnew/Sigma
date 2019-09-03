@@ -15,7 +15,7 @@ extension UIAlertController {
         
         actionSheet.view.tintColor = UIColor(named: "Foreground")
         actionSheet.changeAlertBackgroundColor(color: UIColor(named: "Subackground") ?? .darkGray)
-        actionSheet.changeAlertCornerRadius(radius: 1)
+        actionSheet.changeAlertCornerRadius(radius: 12)
         
         return actionSheet
     }

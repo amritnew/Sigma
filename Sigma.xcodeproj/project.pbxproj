@@ -57,11 +57,12 @@
 		92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC59523154CD500E596BC /* CircleImageView.swift */; };
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
 		BBB1398BAB3B9E1ACECA723F /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA70667EC90522D96CC6BC /* Pods_SigmaTests.framework */; };
+		F22FBCBD231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */; };
 		F2913592231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */; };
-		F2913596231E900B00FA7CF5 /* NewBlogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913595231E900B00FA7CF5 /* NewBlogController.swift */; };
-		F2913599231E91F300FA7CF5 /* NewBlogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913598231E91F300FA7CF5 /* NewBlogView.swift */; };
-		F291359C231E928A00FA7CF5 /* NewBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F291359B231E928A00FA7CF5 /* NewBlogViewModel.swift */; };
+		F2913596231E900B00FA7CF5 /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913595231E900B00FA7CF5 /* NewPostController.swift */; };
+		F291359C231E928A00FA7CF5 /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F291359B231E928A00FA7CF5 /* NewPostViewModel.swift */; };
 		F291359E231EA47200FA7CF5 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F291359D231EA47200FA7CF5 /* UIAlertController+Extension.swift */; };
+		F29135A0231EDC9500FA7CF5 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F291359F231EDC9500FA7CF5 /* NewPostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,11 +141,12 @@
 		A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		BE14C4DE8BB3F43FB3E6048E /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		E3AB94EBF468224601EBC6B3 /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarkdownTextView+Extension.swift"; sourceTree = "<group>"; };
-		F2913595231E900B00FA7CF5 /* NewBlogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBlogController.swift; sourceTree = "<group>"; };
-		F2913598231E91F300FA7CF5 /* NewBlogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBlogView.swift; sourceTree = "<group>"; };
-		F291359B231E928A00FA7CF5 /* NewBlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBlogViewModel.swift; sourceTree = "<group>"; };
+		F2913595231E900B00FA7CF5 /* NewPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
+		F291359B231E928A00FA7CF5 /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
 		F291359D231EA47200FA7CF5 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIAlertController+Extension.swift"; path = "../View/UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		F291359F231EDC9500FA7CF5 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		F50DAEB68C746AB808BF2E93 /* Pods-SigmaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.release.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,8 +275,8 @@
 		793C719A231409CD00283C38 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F2913593231E8F3A00FA7CF5 /* NewPost */,
 				79BDCC2A231EDA640043844A /* NewTrail */,
-				F2913593231E8F3A00FA7CF5 /* NewBlog */,
 				793C71AE23140EDA00283C38 /* Profile */,
 				793C71A423140AAB00283C38 /* Post */,
 				793C71A323140A8000283C38 /* Trail */,
@@ -548,6 +550,7 @@
 				79921882230877A500EA5054 /* Decodable+Extension.swift */,
 				790396DE230CA7E300F06EBD /* Reusable+Extension.swift */,
 				F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */,
+				F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -563,20 +566,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F2913593231E8F3A00FA7CF5 /* NewBlog */ = {
+		F2913593231E8F3A00FA7CF5 /* NewPost */ = {
 			isa = PBXGroup;
 			children = (
 				F291359A231E927300FA7CF5 /* ViewModel */,
 				F2913597231E91E400FA7CF5 /* View */,
 				F2913594231E8F7300FA7CF5 /* Controller */,
 			);
-			path = NewBlog;
+			path = NewPost;
 			sourceTree = "<group>";
 		};
 		F2913594231E8F7300FA7CF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F2913595231E900B00FA7CF5 /* NewBlogController.swift */,
+				F2913595231E900B00FA7CF5 /* NewPostController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -584,7 +587,7 @@
 		F2913597231E91E400FA7CF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F2913598231E91F300FA7CF5 /* NewBlogView.swift */,
+				F291359F231EDC9500FA7CF5 /* NewPostView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,7 +595,7 @@
 		F291359A231E927300FA7CF5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F291359B231E928A00FA7CF5 /* NewBlogViewModel.swift */,
+				F291359B231E928A00FA7CF5 /* NewPostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -816,14 +819,14 @@
 				79BDCC35231EE1CA0043844A /* LayoutAnchor.swift in Sources */,
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
 				793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */,
-				F2913599231E91F300FA7CF5 /* NewBlogView.swift in Sources */,
 				790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */,
-				F291359C231E928A00FA7CF5 /* NewBlogViewModel.swift in Sources */,
+				F291359C231E928A00FA7CF5 /* NewPostViewModel.swift in Sources */,
 				92FBC58B23142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift in Sources */,
 				793BD0132316C97200EBA04B /* PostView.swift in Sources */,
-				F2913596231E900B00FA7CF5 /* NewBlogController.swift in Sources */,
+				F2913596231E900B00FA7CF5 /* NewPostController.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */,
+				F29135A0231EDC9500FA7CF5 /* NewPostView.swift in Sources */,
 				92FBC59023142B5400E596BC /* ProfileCollectionHeader.swift in Sources */,
 				79246F25230346160024A271 /* TrailController.swift in Sources */,
 				790396DD230CA7C300F06EBD /* Reusable.swift in Sources */,
@@ -837,6 +840,7 @@
 				790396D0230C3ECD00F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
 				790396CC230C3EBC00F06EBD /* Post.swift in Sources */,
+				F22FBCBD231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift in Sources */,
 				790396D2230C3EDB00F06EBD /* Trail.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
 				793C71B723143ADD00283C38 /* TrailService.swift in Sources */,
