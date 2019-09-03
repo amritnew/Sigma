@@ -31,4 +31,5 @@ class PostController: UIViewController, ConfigurableController {
             self.navigationItem.title = postViewModel.title
         }
     }
+
 }

@@ -54,6 +54,10 @@
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
 		BBB1398BAB3B9E1ACECA723F /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA70667EC90522D96CC6BC /* Pods_SigmaTests.framework */; };
 		F2913592231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */; };
+		F2913596231E900B00FA7CF5 /* NewBlogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913595231E900B00FA7CF5 /* NewBlogController.swift */; };
+		F2913599231E91F300FA7CF5 /* NewBlogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913598231E91F300FA7CF5 /* NewBlogView.swift */; };
+		F291359C231E928A00FA7CF5 /* NewBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F291359B231E928A00FA7CF5 /* NewBlogViewModel.swift */; };
+		F291359E231EA47200FA7CF5 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F291359D231EA47200FA7CF5 /* UIAlertController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +133,10 @@
 		BE14C4DE8BB3F43FB3E6048E /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		E3AB94EBF468224601EBC6B3 /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarkdownTextView+Extension.swift"; sourceTree = "<group>"; };
+		F2913595231E900B00FA7CF5 /* NewBlogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBlogController.swift; sourceTree = "<group>"; };
+		F2913598231E91F300FA7CF5 /* NewBlogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBlogView.swift; sourceTree = "<group>"; };
+		F291359B231E928A00FA7CF5 /* NewBlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBlogViewModel.swift; sourceTree = "<group>"; };
+		F291359D231EA47200FA7CF5 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIAlertController+Extension.swift"; path = "../View/UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		F50DAEB68C746AB808BF2E93 /* Pods-SigmaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.release.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +265,7 @@
 		793C719A231409CD00283C38 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F2913593231E8F3A00FA7CF5 /* NewBlog */,
 				793C71AE23140EDA00283C38 /* Profile */,
 				793C71A423140AAB00283C38 /* Post */,
 				793C71A323140A8000283C38 /* Trail */,
@@ -488,6 +497,7 @@
 		A45F788A230448E800EBAD28 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F291359D231EA47200FA7CF5 /* UIAlertController+Extension.swift */,
 				92FBC585231429C300E596BC /* UIFont+Extension.swift */,
 				A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */,
 				792D70F12301E21D005859AB /* UIView+Extension.swift */,
@@ -507,6 +517,40 @@
 				F50DAEB68C746AB808BF2E93 /* Pods-SigmaTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F2913593231E8F3A00FA7CF5 /* NewBlog */ = {
+			isa = PBXGroup;
+			children = (
+				F291359A231E927300FA7CF5 /* ViewModel */,
+				F2913597231E91E400FA7CF5 /* View */,
+				F2913594231E8F7300FA7CF5 /* Controller */,
+			);
+			path = NewBlog;
+			sourceTree = "<group>";
+		};
+		F2913594231E8F7300FA7CF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2913595231E900B00FA7CF5 /* NewBlogController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F2913597231E91E400FA7CF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2913598231E91F300FA7CF5 /* NewBlogView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F291359A231E927300FA7CF5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F291359B231E928A00FA7CF5 /* NewBlogViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -727,9 +771,12 @@
 			files = (
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
 				793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */,
+				F2913599231E91F300FA7CF5 /* NewBlogView.swift in Sources */,
 				790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */,
+				F291359C231E928A00FA7CF5 /* NewBlogViewModel.swift in Sources */,
 				92FBC58B23142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift in Sources */,
 				793BD0132316C97200EBA04B /* PostView.swift in Sources */,
+				F2913596231E900B00FA7CF5 /* NewBlogController.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */,
 				92FBC59023142B5400E596BC /* ProfileCollectionHeader.swift in Sources */,
@@ -750,6 +797,7 @@
 				793C71B723143ADD00283C38 /* TrailService.swift in Sources */,
 				92FBC58E23142AF900E596BC /* AboutCollectionViewCell.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
+				F291359E231EA47200FA7CF5 /* UIAlertController+Extension.swift in Sources */,
 				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
