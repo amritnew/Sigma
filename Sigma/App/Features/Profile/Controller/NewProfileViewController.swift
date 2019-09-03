@@ -10,10 +10,11 @@ import UIKit
 
 class NewProfileViewController: UIViewController {
 
-    let containerViewController = ContainerProfileViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+    lazy var containerViewController = ContainerProfileViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     var containerView: UIView = {
         let view = UIView()
+        view.backgroundColor = .brown
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -23,29 +24,17 @@ class NewProfileViewController: UIViewController {
         containerView = containerViewController.view
         view.addSubview(containerView)
         setupConstraints()
-        
-
-        // Do any additional setup after loading the view.
     }
     
     func setupConstraints() {
+        let margins = view.safeAreaLayoutGuide
+        
         NSLayoutConstraint.activate([
-            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            containerView.topAnchor.constraint(equalTo: view.topAnchor,constant: 50)
-            ])
+            containerView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
+            containerView.topAnchor.constraint(equalTo: margins.topAnchor)
+        ])
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
