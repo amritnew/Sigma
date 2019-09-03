@@ -43,7 +43,7 @@ extension TabController: UICollectionViewDelegateFlowLayout {
     }
         
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let option = OptionProfile(rawValue: indexPath.row) else {return}
+        guard let option = OptionsProfile(rawValue: indexPath.row) else {return}
         delegate?.tappedInOption(optionProfile: option)
     }
     

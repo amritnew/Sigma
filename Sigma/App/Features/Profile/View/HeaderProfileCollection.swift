@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileCollectionHeader: UICollectionReusableView, ConfigurableView {
+class HeaderProfileCollection: UICollectionReusableView, ConfigurableView {
     weak var delegate:HeaderProfileDelegate?
     
     let profileCoverPhoto:UIImageView = {
@@ -113,8 +113,8 @@ class ProfileCollectionHeader: UICollectionReusableView, ConfigurableView {
     }
 }
 
-extension ProfileCollectionHeader: TabControllerDelegate {
-    func tappedInOption(optionProfile: OptionProfile) {
+extension HeaderProfileCollection: TabControllerDelegate {
+    func tappedInOption(optionProfile: OptionsProfile) {
         delegate?.wasSelectedOption(option: optionProfile)
     }
 }

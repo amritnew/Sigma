@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileController: BaseCollectionController {
-    var selectedOption:OptionProfile = .about
+    var selectedOption:OptionsProfile = .about
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,17 @@ class ProfileController: BaseCollectionController {
 
 extension ProfileController: UICollectionViewDelegateFlowLayout {
     fileprivate func setupCollection() {
-        collectionView.backgroundColor = UIColor.white
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+//            layout.sectionHeadersPinToVisibleBounds = true
+            layout.scrollDirection = .horizontal
+        }
         
-        collectionView.register(AboutCollectionViewCell.self, forCellWithReuseIdentifier: OptionProfile.about.getStringDescription())
-        collectionView.register(PreferredLanguagesCollectionViewCell.self, forCellWithReuseIdentifier: OptionProfile.preferredLanguage.getStringDescription())
-        collectionView.register(ProfileCollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
+        collectionView.backgroundColor = UIColor.white
+        collectionView.isPagingEnabled = true
+        
+//        collectionView.register(AboutCollectionViewCell.self, forCellWithReuseIdentifier: OptionProfile.about.getStringDescription())
+//        collectionView.register(PreferredLanguagesCollectionViewCell.self, forCellWithReuseIdentifier: OptionProfile.preferredLanguage.getStringDescription())
+//        collectionView.register(ProfileCollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,14 +43,14 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as? ProfileCollectionHeader
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as? HeaderProfileCollection
         headerView?.delegate = self
         
         return headerView ?? UICollectionReusableView()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 300)
+        return CGSize(width: view.frame.width , height: 800)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,7 +63,7 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ProfileController:HeaderProfileDelegate {
-    func wasSelectedOption(option: OptionProfile) {
+    func wasSelectedOption(option: OptionsProfile) {
         selectedOption = option
         self.collectionView.reloadData()
     }

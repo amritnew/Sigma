@@ -9,26 +9,6 @@
 import Foundation
 
 protocol TabControllerDelegate: class {
-    func tappedInOption(optionProfile:OptionProfile)
+    func tappedInOption(optionProfile:OptionsProfile)
 }
 
-
-
-enum OptionProfile:Int {
-    case about = 0
-    case preferredLanguage = 1
-    case setting = 2
-}
-
-extension OptionProfile {
-    func getStringDescription() -> String {
-        switch self {
-        case .about:
-            return "about"
-        case .preferredLanguage:
-            return "language"
-        case .setting:
-            return "setting"
-        }
-    }
-}

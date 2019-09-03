@@ -9,5 +9,5 @@
 import Foundation
 
 protocol HeaderProfileDelegate: class {
-    func wasSelectedOption(option:OptionProfile)
+    func wasSelectedOption(option:OptionsProfile)
 }
