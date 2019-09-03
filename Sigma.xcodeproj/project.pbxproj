@@ -43,6 +43,8 @@
 		79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921882230877A500EA5054 /* Decodable+Extension.swift */; };
 		79BDCC2E231EDABD0043844A /* NewTrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC2D231EDABD0043844A /* NewTrailController.swift */; };
 		79BDCC30231EDB100043844A /* NewTrailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC2F231EDB100043844A /* NewTrailView.swift */; };
+		79BDCC33231EE1A30043844A /* CBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC32231EE1A30043844A /* CBuilder.swift */; };
+		79BDCC35231EE1CA0043844A /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC34231EE1CA0043844A /* LayoutAnchor.swift */; };
 		92FBC5822314292900E596BC /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5812314292900E596BC /* TabController.swift */; };
 		92FBC5842314295B00E596BC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5832314295B00E596BC /* ProfileController.swift */; };
 		92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC585231429C300E596BC /* UIFont+Extension.swift */; };
@@ -122,6 +124,8 @@
 		79921882230877A500EA5054 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
 		79BDCC2D231EDABD0043844A /* NewTrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrailController.swift; sourceTree = "<group>"; };
 		79BDCC2F231EDB100043844A /* NewTrailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrailView.swift; sourceTree = "<group>"; };
+		79BDCC32231EE1A30043844A /* CBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBuilder.swift; sourceTree = "<group>"; };
+		79BDCC34231EE1CA0043844A /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 		7C098CBE109959BED4A69444 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FBC5812314292900E596BC /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		92FBC5832314295B00E596BC /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -419,6 +423,7 @@
 		793C71AB23140D4D00283C38 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				79BDCC31231EE1820043844A /* CBuilder */,
 				793C71B223140FC200283C38 /* Persistence */,
 				7992187F230872AE00EA5054 /* NetworkService */,
 			);
@@ -522,6 +527,15 @@
 				79BDCC2F231EDB100043844A /* NewTrailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		79BDCC31231EE1820043844A /* CBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				79BDCC32231EE1A30043844A /* CBuilder.swift */,
+				79BDCC34231EE1CA0043844A /* LayoutAnchor.swift */,
+			);
+			path = CBuilder;
 			sourceTree = "<group>";
 		};
 		A45F788A230448E800EBAD28 /* Extensions */ = {
@@ -799,6 +813,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79BDCC35231EE1CA0043844A /* LayoutAnchor.swift in Sources */,
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
 				793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */,
 				F2913599231E91F300FA7CF5 /* NewBlogView.swift in Sources */,
@@ -834,6 +849,7 @@
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
 				79246F292303EEF20024A271 /* PostController.swift in Sources */,
+				79BDCC33231EE1A30043844A /* CBuilder.swift in Sources */,
 				92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */,
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
