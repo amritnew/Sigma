@@ -11,6 +11,7 @@ import Foundation
 struct PostViewModel {
     let title: String
     let markdownText: String
+    // var post: Post!
     
     init(post: Post) {
         self.title = post.title

@@ -4,7 +4,6 @@ PODS:
   - iOSSnapshotTestCase/Core (6.1.0)
   - iOSSnapshotTestCase/SwiftSupport (6.1.0):
     - iOSSnapshotTestCase/Core
-  - MarkdownView (1.6.0)
   - Nimble (8.0.2)
   - Nimble-Snapshots (8.0.0):
     - Nimble-Snapshots/Core (= 8.0.0)
@@ -12,27 +11,24 @@ PODS:
     - iOSSnapshotTestCase (~> 6.0)
     - Nimble (~> 8.0)
   - Quick (2.1.0)
+  - Markdowner (2.0.0)
 
 DEPENDENCIES:
-  - MarkdownView
   - Nimble
   - Nimble-Snapshots
   - Quick
+  - Markdowner
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - iOSSnapshotTestCase
-    - MarkdownView
-    - Nimble
-    - Nimble-Snapshots
+    - Markdowner
     - Quick
+    - Nimble-Snapshots
+    - Nimble
+    - iOSSnapshotTestCase
 
 SPEC CHECKSUMS:
-  iOSSnapshotTestCase: 30d540b0c8feb9d7f8ff97acc25a3804b48ee264
-  MarkdownView: 25c1c2d7ff9706624a575556296e188be3dd3f6b
-  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
-  Nimble-Snapshots: 8ec63f41ce6c7229a17be9a64edbc123b181f75b
-  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  Markdowner: 759465d2218d2b6afe1c128360cd753add3a8146
 
 PODFILE CHECKSUM: 4b4057b6cbdc4adeee801fa53404b6ffb3facaa1
 
