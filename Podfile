@@ -6,7 +6,8 @@ target 'Sigma' do
   use_frameworks!
 
   # Pods for Sigma
-   pod "MarkdownView"
+   # pod "MarkdownView"
+	pod 'Markdowner'
 
   target 'SigmaTests' do
     inherit! :search_paths

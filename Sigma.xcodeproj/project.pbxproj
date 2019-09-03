@@ -53,6 +53,7 @@
 		92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC59523154CD500E596BC /* CircleImageView.swift */; };
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
 		BBB1398BAB3B9E1ACECA723F /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA70667EC90522D96CC6BC /* Pods_SigmaTests.framework */; };
+		F2913592231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		BE14C4DE8BB3F43FB3E6048E /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		E3AB94EBF468224601EBC6B3 /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarkdownTextView+Extension.swift"; sourceTree = "<group>"; };
 		F50DAEB68C746AB808BF2E93 /* Pods-SigmaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.release.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -491,6 +493,7 @@
 				792D70F12301E21D005859AB /* UIView+Extension.swift */,
 				79921882230877A500EA5054 /* Decodable+Extension.swift */,
 				790396DE230CA7E300F06EBD /* Reusable+Extension.swift */,
+				F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				790396DD230CA7C300F06EBD /* Reusable.swift in Sources */,
 				79437B172310594F00B3E1B0 /* ConfigurableController.swift in Sources */,
 				793C71BA231476BB00283C38 /* ListTrailsController.swift in Sources */,
+				F2913592231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift in Sources */,
 				79921881230872CA00EA5054 /* Service.swift in Sources */,
 				92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */,
 				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
