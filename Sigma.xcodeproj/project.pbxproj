@@ -41,6 +41,8 @@
 		7983E7BB2316AA1100377D28 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7980A0592315A4B300682D9A /* ServiceTests.swift */; };
 		79921881230872CA00EA5054 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921880230872CA00EA5054 /* Service.swift */; };
 		79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921882230877A500EA5054 /* Decodable+Extension.swift */; };
+		79BDCC2E231EDABD0043844A /* NewTrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC2D231EDABD0043844A /* NewTrailController.swift */; };
+		79BDCC30231EDB100043844A /* NewTrailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC2F231EDB100043844A /* NewTrailView.swift */; };
 		92FBC5822314292900E596BC /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5812314292900E596BC /* TabController.swift */; };
 		92FBC5842314295B00E596BC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5832314295B00E596BC /* ProfileController.swift */; };
 		92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC585231429C300E596BC /* UIFont+Extension.swift */; };
@@ -118,6 +120,8 @@
 		7980A0592315A4B300682D9A /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		79921880230872CA00EA5054 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		79921882230877A500EA5054 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
+		79BDCC2D231EDABD0043844A /* NewTrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrailController.swift; sourceTree = "<group>"; };
+		79BDCC2F231EDB100043844A /* NewTrailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrailView.swift; sourceTree = "<group>"; };
 		7C098CBE109959BED4A69444 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FBC5812314292900E596BC /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		92FBC5832314295B00E596BC /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 		793C719A231409CD00283C38 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				79BDCC2A231EDA640043844A /* NewTrail */,
 				F2913593231E8F3A00FA7CF5 /* NewBlog */,
 				793C71AE23140EDA00283C38 /* Profile */,
 				793C71A423140AAB00283C38 /* Post */,
@@ -492,6 +497,31 @@
 				793C71B623143ADD00283C38 /* TrailService.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		79BDCC2A231EDA640043844A /* NewTrail */ = {
+			isa = PBXGroup;
+			children = (
+				79BDCC2C231EDA7E0043844A /* View */,
+				79BDCC2B231EDA720043844A /* Controller */,
+			);
+			path = NewTrail;
+			sourceTree = "<group>";
+		};
+		79BDCC2B231EDA720043844A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				79BDCC2D231EDABD0043844A /* NewTrailController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		79BDCC2C231EDA7E0043844A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79BDCC2F231EDB100043844A /* NewTrailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A45F788A230448E800EBAD28 /* Extensions */ = {
@@ -798,6 +828,8 @@
 				92FBC58E23142AF900E596BC /* AboutCollectionViewCell.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
 				F291359E231EA47200FA7CF5 /* UIAlertController+Extension.swift in Sources */,
+				79BDCC30231EDB100043844A /* NewTrailView.swift in Sources */,
+				79BDCC2E231EDABD0043844A /* NewTrailController.swift in Sources */,
 				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
