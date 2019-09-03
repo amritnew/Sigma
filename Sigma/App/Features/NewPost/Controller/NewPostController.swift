@@ -19,6 +19,8 @@ class NewPostController: UIViewController, ConfigurableController {
         setupNavigationBar()
         setupView()
         bindViewModel()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func setupNavigationBar() {
@@ -43,6 +45,21 @@ class NewPostController: UIViewController, ConfigurableController {
         if let view = usedView as? NewPostView {
             let postCtrl = PostController(post: view.getPostFromTextView())
             navigationController?.pushViewController(postCtrl, animated: true)
+        }
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            // dps verificar posicao do cursor
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
         }
     }
     
