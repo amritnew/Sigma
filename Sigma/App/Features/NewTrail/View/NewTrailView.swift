@@ -14,13 +14,16 @@ protocol NewTrailViewDelegate: class {
 
 class NewTrailView: UIView, ConfigurableView {
     
-    lazy var imageTrail: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "gallery"), for: .normal)
-        button.addTarget(self, action: #selector(didImageTapped), for: .touchUpInside)
-        button.layer.cornerRadius = 8
-        button.layer.masksToBounds = true
-        return button
+    lazy var imageTrail: UIImageView = {
+        let image = UIImageView(image: UIImage(named: "gallery-1"))
+        image.contentMode = UIView.ContentMode.scaleAspectFit
+        image.isUserInteractionEnabled = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didImageTapped))
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        image.addGestureRecognizer(tapGestureRecognizer)
+        image.layer.cornerRadius = 8
+        image.layer.masksToBounds = true
+        return image
     }()
     
     fileprivate let nameLabel = UILabel(text: "Write your name:", textColor: .white, font: UIFont(name: "Arial", size: 15), numberOfLines: 1, lineBreakMode: nil)

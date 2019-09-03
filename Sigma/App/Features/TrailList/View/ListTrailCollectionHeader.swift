@@ -33,6 +33,8 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reu
         image.image = UIImage(named: "swift")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageHeaderDidClick(_:)))
         image.addGestureRecognizer(tapGesture)
+        image.contentMode = UIView.ContentMode.scaleAspectFill
+        image.layer.masksToBounds = true
         return image
     }()
     

@@ -11,6 +11,10 @@ import UIKit
 class NewTrailController: UIViewController, ConfigurableController {
     var usedView: UIView? = NewTrailView()
     
+    let imagePickerController = UIImagePickerController()
+    var imageAlbum: UIImage?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -44,6 +48,7 @@ class NewTrailController: UIViewController, ConfigurableController {
 
 extension NewTrailController: NewTrailViewDelegate {
     func didImageTapped() {
+        presentImagePickerOptions()
     }
     
     @objc func didDismiss() {
