@@ -42,6 +42,7 @@ extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate
         let navigation = UINavigationController(rootViewController: viewController)
         navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "red") ?? .white]
         navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "red") ?? .white]
+        navigation.navigationBar.tintColor = .red
         viewController.view.backgroundColor =  UIColor(named: "Subackground")
         navigation.navigationBar.barTintColor = UIColor(named: "Subackground")
         navigation.navigationBar.prefersLargeTitles = true

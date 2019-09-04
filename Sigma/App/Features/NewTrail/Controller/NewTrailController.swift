@@ -50,6 +50,17 @@ extension NewTrailController: NewTrailViewDelegate {
         presentImagePickerOptions()
     }
     
+    @objc func savePost() {
+        if let customView = usedView as? NewTrailView {
+            let nameTrail = customView.nameTrail.text
+            let descriptionTrail = customView.descriptionTrail.text
+            
+            print("\(String(describing: nameTrail)) \(String(describing: descriptionTrail))")
+            // Here make trail
+            
+        }
+    }
+    
     @objc func didDismiss() {
         self.dismiss(animated: true, completion: nil)
     }
