@@ -27,8 +27,17 @@ class NewPostController: UIViewController, ConfigurableController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "Foreground") ?? .white]
         navigationController?.navigationBar.barTintColor = UIColor(named: "Background")
         navigationController?.navigationBar.tintColor = .init(red: 255/255, green: 69/255, blue: 58/255, alpha: 1)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBarButtonDidPressed))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Preview", style: .plain, target: self, action: #selector(previewBarButtonDidPressed))
+        setupBarButtons()
+    }
+    
+    fileprivate func setupBarButtons(previewing: Bool = false) {
+        if previewing {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeBarButtonDidPressed))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Post", style: .plain, target: self, action: #selector(postBarButtonDidPressed))
+        } else {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBarButtonDidPressed))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Preview", style: .plain, target: self, action: #selector(previewBarButtonDidPressed))
+        }
     }
     
     fileprivate func bindViewModel() {
@@ -42,25 +51,27 @@ class NewPostController: UIViewController, ConfigurableController {
     }
     
     @objc func previewBarButtonDidPressed() {
-        if let view = usedView as? NewPostView {
-            let postCtrl = PostController(post: view.getPostFromTextView())
-            navigationController?.pushViewController(postCtrl, animated: true)
-        }
+        setupBarButtons(previewing: true)
+        (usedView as? NewPostView)?.previewBarButtonDidPressed()
+    }
+    
+    @objc func closeBarButtonDidPressed() {
+        setupBarButtons()
+        (usedView as? NewPostView)?.closePreviewBarButtonDidPressed()
+    }
+    
+    @objc func postBarButtonDidPressed() {
+        (usedView as? NewPostView)?.postBarButtonDidPressed()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            // dps verificar posicao do cursor
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
+        if let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            (usedView as? NewPostView)?.keyboardWillShow(keyboardRect: keyboardRect)
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
+        (usedView as? NewPostView)?.dismissKeyboard()
     }
     
 }
