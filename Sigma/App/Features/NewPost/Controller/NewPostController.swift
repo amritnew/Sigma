@@ -74,7 +74,7 @@ class NewPostController: UIViewController, ConfigurableController {
     private func postToSave(title: String) {
         (usedView as? NewPostView)?.postBarButtonDidPressed(title: title) { result in
             let alert = UIAlertController(title: "Posted", message: nil, preferredStyle: .alert)
-            let ctrlToDismiss = result ? alert : self
+            let ctrlToDismiss = result ? self : alert
             alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
                 ctrlToDismiss.dismiss(animated: true, completion: nil)
             })
