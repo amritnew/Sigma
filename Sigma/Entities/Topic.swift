@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Topic: Decodable {
+struct Topic: Codable {
     let title: String
     let posts: [Post]?
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "topic_name"
+        case posts = "blog_posts"
+    }
 }

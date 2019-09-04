@@ -60,6 +60,7 @@
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
 		BBB1398BAB3B9E1ACECA723F /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CA70667EC90522D96CC6BC /* Pods_SigmaTests.framework */; };
 		F22FBCBD231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */; };
+		F22FBCC02320373E001B71A5 /* NewPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22FBCBF2320373E001B71A5 /* NewPostService.swift */; };
 		F2913592231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */; };
 		F2913596231E900B00FA7CF5 /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913595231E900B00FA7CF5 /* NewPostController.swift */; };
 		F291359C231E928A00FA7CF5 /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F291359B231E928A00FA7CF5 /* NewPostViewModel.swift */; };
@@ -146,6 +147,7 @@
 		BE14C4DE8BB3F43FB3E6048E /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		E3AB94EBF468224601EBC6B3 /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		F22FBCBF2320373E001B71A5 /* NewPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostService.swift; sourceTree = "<group>"; };
 		F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarkdownTextView+Extension.swift"; sourceTree = "<group>"; };
 		F2913595231E900B00FA7CF5 /* NewPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
 		F291359B231E928A00FA7CF5 /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
@@ -580,9 +582,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F22FBCBE231FE92A001B71A5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F22FBCBF2320373E001B71A5 /* NewPostService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		F2913593231E8F3A00FA7CF5 /* NewPost */ = {
 			isa = PBXGroup;
 			children = (
+				F22FBCBE231FE92A001B71A5 /* Service */,
 				F291359A231E927300FA7CF5 /* ViewModel */,
 				F2913597231E91E400FA7CF5 /* View */,
 				F2913594231E8F7300FA7CF5 /* Controller */,
@@ -874,6 +885,7 @@
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
 				92FBC5842314295B00E596BC /* ProfileController.swift in Sources */,
 				790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */,
+				F22FBCC02320373E001B71A5 /* NewPostService.swift in Sources */,
 				92FBC5822314292900E596BC /* TabController.swift in Sources */,
 				793B05B822F25925005F3878 /* AppDelegate.swift in Sources */,
 				792B51FB231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift in Sources */,
