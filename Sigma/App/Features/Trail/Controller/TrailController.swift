@@ -24,7 +24,7 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), landscapeImagePhone: nil, style: .done, target: self, action: #selector(popView))
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor(named: "Subackground")
         collectionView.register(cellType: TopicCollectionViewCell.self)
         collectionView.register(supplementaryViewType: ListTrailCollectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
     }

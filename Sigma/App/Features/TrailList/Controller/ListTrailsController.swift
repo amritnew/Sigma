@@ -11,7 +11,7 @@ import UIKit
 class ListTrailsController: BaseCollectionController {
 
     var trailViewModel = TrailsViewModel()
-    let trails = [Trail(title: "Swift", description: "Basic Swift, Learning the new things about the awesome language.", author: "Vinicius", topics: [Topic(title: "Generics", posts: nil)]),Trail(title: "Java Script", description: "Basics JS", author: "Mario", topics: [Topic(title: "Generics", posts: nil)])]// Mock wait for service
+    let trails = [Trail(title: "Swift", description: "Basic Swift, Learning the new things about the awesome language.", author: "Vinicius", topics: [Topic(title: "Generics", posts: nil)]),Trail(title: "TypeScript", description: "Basics JS", author: "Mario", topics: [Topic(title: "Generics", posts: nil)])]// Mock wait for service
     
     override func viewDidLoad() {
         super.viewDidLoad()

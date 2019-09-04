@@ -12,10 +12,19 @@ protocol NewTrailViewDelegate: class {
     func didImageTapped()
 }
 
-
 class NewTrailView: UIView, ConfigurableView {
     
-    let imageTrail = RoundableImage(frame: .zero)
+    lazy var imageTrail: UIImageView = {
+        let image = UIImageView(image: UIImage(named: "gallery-1"))
+        image.contentMode = UIView.ContentMode.scaleAspectFit
+        image.isUserInteractionEnabled = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didImageTapped))
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        image.addGestureRecognizer(tapGestureRecognizer)
+        image.layer.cornerRadius = 8
+        image.layer.masksToBounds = true
+        return image
+    }()
     
     fileprivate let nameLabel = UILabel(text: "Write your name:", textColor: .white, font: UIFont(name: "Arial", size: 15), numberOfLines: 1, lineBreakMode: nil)
     
@@ -40,12 +49,13 @@ class NewTrailView: UIView, ConfigurableView {
         return textField
     }()
     
+    weak var delegate: NewTrailViewDelegate?
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
-        imageTrail.image = UIImage(named: "gallery")
         self.backgroundColor = UIColor(named: "Subackground")
     }
     
@@ -86,12 +96,11 @@ class NewTrailView: UIView, ConfigurableView {
             make.leading.equal(to: leadingAnchor, offsetBy: 10)
              make.trailing.equal(to: trailingAnchor, offsetBy: -10)
         }
-        
-        
+    }
+}
 
-        
-        
-    
-        
+extension NewTrailView {
+    @objc func didImageTapped() {
+        delegate?.didImageTapped()
     }
 }

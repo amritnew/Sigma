@@ -26,13 +26,17 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reu
     
     let tagHeader = UILabel(text: "Swift", textColor: .orange,font: nil, numberOfLines: nil, lineBreakMode: nil)
     let publisherHeader = UILabel(text: "Published by: @Chris Lattner", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
-    let titleHeader = UILabel(text: "Basic Swift, Learning the new things about the awesome language", textColor: .black, font: UIFont.systemFont(ofSize: 22), numberOfLines: 2, lineBreakMode: .byWordWrapping)
+    let titleHeader = UILabel(text: "Basic Swift, Learning the new things about the awesome language", textColor: .white, font: UIFont.systemFont(ofSize: 22), numberOfLines: 2, lineBreakMode: .byWordWrapping)
     
-    let imageHeader: UIImageView = {
+    lazy var imageHeader: UIImageView = {
         let image = RoundableImage(frame: .zero)
         image.image = UIImage(named: "swift")
+        image.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageHeaderDidClick(_:)))
         image.addGestureRecognizer(tapGesture)
+        tapGesture.numberOfTapsRequired = 1
+        image.contentMode = UIView.ContentMode.scaleAspectFill
+        image.layer.masksToBounds = true
         return image
     }()
     
@@ -43,6 +47,7 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reu
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
+        self.backgroundColor = UIColor(named: "Subackground")
     }
     
     required init?(coder aDecoder: NSCoder) {
