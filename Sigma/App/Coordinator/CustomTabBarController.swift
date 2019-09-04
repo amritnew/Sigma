@@ -24,6 +24,11 @@ class CustomTabBarController: UITabBarController {
     func showControllerModal(_ viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
 
 extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate {

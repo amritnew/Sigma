@@ -61,7 +61,25 @@ class NewPostController: UIViewController, ConfigurableController {
     }
     
     @objc func postBarButtonDidPressed() {
-        (usedView as? NewPostView)?.postBarButtonDidPressed()
+        let alert = UIAlertController(title: "Type your post title", message: nil, preferredStyle: .alert)
+        var actionTextField = UITextField()
+        alert.addTextField(configurationHandler: { actionTextField = $0 })
+        alert.addActions(actions: [
+            UIAlertAction(title: "Post", style: .default) { _ in self.postToSave(title: actionTextField.text ?? "") },
+            UIAlertAction(title: "Cancel", style: .destructive) { _ in print("Cancel Pressed") }
+        ])
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func postToSave(title: String) {
+        (usedView as? NewPostView)?.postBarButtonDidPressed(title: title) { result in
+            let alert = UIAlertController(title: "Posted", message: nil, preferredStyle: .alert)
+            let ctrlToDismiss = result ? alert : self
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                ctrlToDismiss.dismiss(animated: true, completion: nil)
+            })
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

@@ -21,8 +21,12 @@ struct NewPostViewModel {
         viewTitle = title
     }
     
-    func saveBlogPost() {
-        
+    func saveBlogPost(title: String, completion: @escaping (Bool) -> Void) {
+        let service = NewPostService.main
+        service.create(post: Post(title: title, markdownText: markdownText)) { (post, _) in
+            guard post != nil else { return completion(false) }
+            completion(true)
+        }
     }
     
 }
