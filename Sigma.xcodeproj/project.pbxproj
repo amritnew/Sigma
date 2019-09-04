@@ -22,6 +22,7 @@
 		79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F262303E7940024A271 /* TopicCollectionViewCell.swift */; };
 		79246F292303EEF20024A271 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F282303EEF20024A271 /* PostController.swift */; };
 		792B51F9231F2E1F00ECED73 /* NewTrail+UIPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B51F8231F2E1F00ECED73 /* NewTrail+UIPickerDelegate.swift */; };
+		792B51FB231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B51FA231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift */; };
 		792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EA2301D743005859AB /* BaseCollectionController.swift */; };
 		792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */; };
 		792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EF2301DE61005859AB /* ConfigurableView.swift */; };
@@ -100,6 +101,7 @@
 		79246F262303E7940024A271 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		79246F282303EEF20024A271 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		792B51F8231F2E1F00ECED73 /* NewTrail+UIPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewTrail+UIPickerDelegate.swift"; sourceTree = "<group>"; };
+		792B51FA231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewTrail+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		792D70EA2301D743005859AB /* BaseCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionController.swift; sourceTree = "<group>"; };
 		792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrailCollectionHeader.swift; sourceTree = "<group>"; };
 		792D70EF2301DE61005859AB /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 			children = (
 				79BDCC2D231EDABD0043844A /* NewTrailController.swift */,
 				792B51F8231F2E1F00ECED73 /* NewTrail+UIPickerDelegate.swift */,
+				792B51FA231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */,
 				92FBC5822314292900E596BC /* TabController.swift in Sources */,
 				793B05B822F25925005F3878 /* AppDelegate.swift in Sources */,
+				792B51FB231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift in Sources */,
 				790396CE230C3EC600F06EBD /* User.swift in Sources */,
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,

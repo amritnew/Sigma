@@ -20,8 +20,7 @@ class NewTrailController: UIViewController, ConfigurableController {
         setupView()
         bindViewModel()
         setupNavigation()
-        navigationItem.title = "New Trail"
-        
+        setupObserver()
     }
     
     fileprivate func bindViewModel() {
@@ -30,8 +29,8 @@ class NewTrailController: UIViewController, ConfigurableController {
         }
     }
     
-    
     fileprivate func setupNavigation() {
+        navigationItem.title = "New Trail"
         navigationController?.navigationBar.barTintColor = UIColor(named: "Subackground")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Arial", size: 22)!]
       
