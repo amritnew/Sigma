@@ -16,7 +16,6 @@ extension NewTrailController: UITextFieldDelegate {
     
     func setupObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeNotification(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeNotification(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -33,16 +32,16 @@ extension NewTrailController: UITextFieldDelegate {
     
     @objc func keyboardWillChangeNotification(notification: Notification) {
         
-        switch notification.name.rawValue {
-        case "UIKeyboardWillShowNotification":
+        switch notification.name {
+        case UIResponder.keyboardWillShowNotification:
             didDimissViewAtTapped()
         default:
-            print("")
+            break
         }
         
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height - 100
+                self.view.frame.origin.y -= keyboardSize.height - 70
             }
         }
         
@@ -50,13 +49,10 @@ extension NewTrailController: UITextFieldDelegate {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
-        
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             if self.view.frame.origin.y != 0 {
                 self.view.frame.origin.y = 0
             }
-
         }, completion: nil)
-        
     }
 }
