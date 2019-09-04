@@ -34,7 +34,7 @@ class NewTrailController: UIViewController, ConfigurableController {
         navigationController?.navigationBar.barTintColor = UIColor(named: "Subackground")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Arial", size: 22)!]
       
-        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(savePost))
         
         let leftBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didDismiss))
         
@@ -57,7 +57,6 @@ extension NewTrailController: NewTrailViewDelegate {
             
             print("\(String(describing: nameTrail)) \(String(describing: descriptionTrail))")
             // Here make trail
-            
         }
     }
     

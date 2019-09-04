@@ -203,6 +203,13 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		792B51FC2320477200ECED73 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		792D70EE2301DE4E005859AB /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +522,7 @@
 		79BDCC2A231EDA640043844A /* NewTrail */ = {
 			isa = PBXGroup;
 			children = (
+				792B51FC2320477200ECED73 /* Service */,
 				79BDCC2C231EDA7E0043844A /* View */,
 				79BDCC2B231EDA720043844A /* Controller */,
 			);

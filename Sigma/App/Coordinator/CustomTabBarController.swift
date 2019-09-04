@@ -73,3 +73,9 @@ extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate
     }
     
 }
+
+extension UINavigationController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
