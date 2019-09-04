@@ -10,9 +10,23 @@ import UIKit
 
 class FeedPostController: BaseCollectionController {
     
+    var feedPostViewModel = FeedPostViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
+        bindViewModel()
+    }
+    
+    fileprivate func bindViewModel() {
+        feedPostViewModel.fetchPosts { (posts) in
+            self.feedPostViewModel.posts = posts
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+
+        }
+
     }
 }
 
@@ -23,7 +37,7 @@ extension FeedPostController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return feedPostViewModel.posts?.count ?? 0
     }
     
     

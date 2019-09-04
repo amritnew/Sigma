@@ -25,6 +25,8 @@
 		792B51FB231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B51FA231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift */; };
 		792B520023207B6800ECED73 /* FeedPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B51FF23207B6800ECED73 /* FeedPostController.swift */; };
 		792B520323207DBD00ECED73 /* FeedPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B520223207DBD00ECED73 /* FeedPostView.swift */; };
+		792B5206232081E300ECED73 /* FeedPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B5205232081E300ECED73 /* FeedPostViewModel.swift */; };
+		792B5208232081F100ECED73 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B5207232081F100ECED73 /* PostService.swift */; };
 		792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EA2301D743005859AB /* BaseCollectionController.swift */; };
 		792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */; };
 		792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EF2301DE61005859AB /* ConfigurableView.swift */; };
@@ -107,6 +109,8 @@
 		792B51FA231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewTrail+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		792B51FF23207B6800ECED73 /* FeedPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostController.swift; sourceTree = "<group>"; };
 		792B520223207DBD00ECED73 /* FeedPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostView.swift; sourceTree = "<group>"; };
+		792B5205232081E300ECED73 /* FeedPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostViewModel.swift; sourceTree = "<group>"; };
+		792B5207232081F100ECED73 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		792D70EA2301D743005859AB /* BaseCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionController.swift; sourceTree = "<group>"; };
 		792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrailCollectionHeader.swift; sourceTree = "<group>"; };
 		792D70EF2301DE61005859AB /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 		792B51FD23207B4B00ECED73 /* FeedPost */ = {
 			isa = PBXGroup;
 			children = (
+				792B5204232081BB00ECED73 /* Bussiness */,
 				792B520123207DAF00ECED73 /* View */,
 				792B51FE23207B5D00ECED73 /* Controller */,
 			);
@@ -237,6 +242,15 @@
 				792B520223207DBD00ECED73 /* FeedPostView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		792B5204232081BB00ECED73 /* Bussiness */ = {
+			isa = PBXGroup;
+			children = (
+				792B5205232081E300ECED73 /* FeedPostViewModel.swift */,
+				792B5207232081F100ECED73 /* PostService.swift */,
+			);
+			path = Bussiness;
 			sourceTree = "<group>";
 		};
 		792D70EE2301DE4E005859AB /* Protocol */ = {
@@ -879,6 +893,7 @@
 				F291359C231E928A00FA7CF5 /* NewPostViewModel.swift in Sources */,
 				92FBC58B23142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift in Sources */,
 				793BD0132316C97200EBA04B /* PostView.swift in Sources */,
+				792B5206232081E300ECED73 /* FeedPostViewModel.swift in Sources */,
 				F2913596231E900B00FA7CF5 /* NewPostController.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */,
@@ -922,6 +937,7 @@
 				793B05B822F25925005F3878 /* AppDelegate.swift in Sources */,
 				792B51FB231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift in Sources */,
 				790396CE230C3EC600F06EBD /* User.swift in Sources */,
+				792B5208232081F100ECED73 /* PostService.swift in Sources */,
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
 				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
