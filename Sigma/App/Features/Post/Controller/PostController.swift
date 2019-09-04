@@ -12,11 +12,12 @@ class PostController: UIViewController, ConfigurableController {
     
     var usedView: UIView? = PostView()
     
-    var postViewModel = PostViewModel(post: Post(title: "Swift", markdownText: "# SWIFT BASICS \n ## Froids \n Troll"))
+    var postViewModel = PostViewModel(post: Post(title: "Swift", markdownText: "# SWIFT BASICS\n## Froids\nTroll"))
     
     
-    convenience init(trailViewModel: TrailsViewModel) {
+    convenience init(post: Post) {
         self.init()
+        postViewModel = PostViewModel(post: post)
     }
     
     override func viewDidLoad() {
@@ -31,4 +32,5 @@ class PostController: UIViewController, ConfigurableController {
             self.navigationItem.title = postViewModel.title
         }
     }
+
 }

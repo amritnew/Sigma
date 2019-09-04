@@ -18,13 +18,14 @@ class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView, Reusable 
         return image
     }()
     
-    let topicName = UILabel(text: "How to declare Generics in Swift", textColor: .black, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let topicName = UILabel(text: "How to declare Generics in Swift", textColor: .white, font: nil, numberOfLines: nil, lineBreakMode: nil)
     let topicPublisher = UILabel(text: "Class 1", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
+        self.backgroundColor = UIColor(named: "Subackground")
     }
     
     required init?(coder aDecoder: NSCoder) {

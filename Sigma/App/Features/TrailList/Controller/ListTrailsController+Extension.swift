@@ -13,7 +13,7 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     func setupCollection() {
         collectionView.register(cellType: ListTrailCollectionCell.self)
         collectionView.register(supplementaryViewType: ListTrailCollectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor(named: "Subackground")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -26,6 +26,7 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: ListTrailCollectionHeader.self)
+        headerView.delegate = self
         headerView.trailsViewModel = self.trailViewModel
         return headerView
     }
@@ -43,5 +44,11 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 75)
+    }
+}
+
+extension ListTrailsController: ListTrailHeaderDelegate {
+    func imageHeaderDidClick() {
+        self.navigationController?.pushViewController(TrailController(), animated: true)
     }
 }

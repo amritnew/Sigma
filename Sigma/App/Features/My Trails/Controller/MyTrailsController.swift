@@ -25,7 +25,7 @@ class MyTrailsController: BaseCollectionController {
 extension MyTrailsController: UICollectionViewDelegateFlowLayout {
     
     fileprivate func setupCollection() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor(named: "Subackground")
         collectionView.register(cellType: ListTrailCollectionCell.self)
     }
     

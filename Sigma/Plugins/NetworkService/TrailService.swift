@@ -9,6 +9,7 @@
 import Foundation
 
 struct TrailService {
+
     func getTrails(completion: @escaping ([Trail]) -> Void) {
         Service<[Trail]>().get(url: "") { (result) in
             switch result {
@@ -19,4 +20,5 @@ struct TrailService {
             }
         }
     }
+
 }

@@ -28,7 +28,7 @@ struct Service<T: Decodable> {
                 DispatchQueue.main.async {completion(.failure(error))}
             }
         }
-            DispatchQueue.global(qos: .background).async {session.resume()}
+        DispatchQueue.global(qos: .background).async { session.resume() }
     }
     
     
