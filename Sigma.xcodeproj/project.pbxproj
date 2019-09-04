@@ -23,6 +23,8 @@
 		79246F292303EEF20024A271 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F282303EEF20024A271 /* PostController.swift */; };
 		792B51F9231F2E1F00ECED73 /* NewTrail+UIPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B51F8231F2E1F00ECED73 /* NewTrail+UIPickerDelegate.swift */; };
 		792B51FB231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B51FA231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift */; };
+		792B520023207B6800ECED73 /* FeedPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B51FF23207B6800ECED73 /* FeedPostController.swift */; };
+		792B520323207DBD00ECED73 /* FeedPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B520223207DBD00ECED73 /* FeedPostView.swift */; };
 		792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EA2301D743005859AB /* BaseCollectionController.swift */; };
 		792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */; };
 		792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70EF2301DE61005859AB /* ConfigurableView.swift */; };
@@ -103,6 +105,8 @@
 		79246F282303EEF20024A271 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		792B51F8231F2E1F00ECED73 /* NewTrail+UIPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewTrail+UIPickerDelegate.swift"; sourceTree = "<group>"; };
 		792B51FA231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewTrail+TextFieldDelegate.swift"; sourceTree = "<group>"; };
+		792B51FF23207B6800ECED73 /* FeedPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostController.swift; sourceTree = "<group>"; };
+		792B520223207DBD00ECED73 /* FeedPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostView.swift; sourceTree = "<group>"; };
 		792D70EA2301D743005859AB /* BaseCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionController.swift; sourceTree = "<group>"; };
 		792D70EC2301DDB6005859AB /* ListTrailCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrailCollectionHeader.swift; sourceTree = "<group>"; };
 		792D70EF2301DE61005859AB /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,31 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		792B51FD23207B4B00ECED73 /* FeedPost */ = {
+			isa = PBXGroup;
+			children = (
+				792B520123207DAF00ECED73 /* View */,
+				792B51FE23207B5D00ECED73 /* Controller */,
+			);
+			path = FeedPost;
+			sourceTree = "<group>";
+		};
+		792B51FE23207B5D00ECED73 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				792B51FF23207B6800ECED73 /* FeedPostController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		792B520123207DAF00ECED73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				792B520223207DBD00ECED73 /* FeedPostView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		792D70EE2301DE4E005859AB /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +317,7 @@
 		793C719A231409CD00283C38 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				792B51FD23207B4B00ECED73 /* FeedPost */,
 				F2913593231E8F3A00FA7CF5 /* NewPost */,
 				79BDCC2A231EDA640043844A /* NewTrail */,
 				793C71AE23140EDA00283C38 /* Profile */,
@@ -842,6 +872,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79BDCC35231EE1CA0043844A /* LayoutAnchor.swift in Sources */,
+				792B520323207DBD00ECED73 /* FeedPostView.swift in Sources */,
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
 				793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */,
 				790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */,
@@ -870,6 +901,7 @@
 				790396D2230C3EDB00F06EBD /* Trail.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
 				793C71B723143ADD00283C38 /* TrailService.swift in Sources */,
+				792B520023207B6800ECED73 /* FeedPostController.swift in Sources */,
 				92FBC58E23142AF900E596BC /* AboutCollectionViewCell.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
 				F291359E231EA47200FA7CF5 /* UIAlertController+Extension.swift in Sources */,
