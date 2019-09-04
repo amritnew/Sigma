@@ -51,6 +51,7 @@ class NewPostController: UIViewController, ConfigurableController {
     }
     
     @objc func previewBarButtonDidPressed() {
+        (usedView as? NewPostView)?.dismissKeyboard()
         setupBarButtons(previewing: true)
         (usedView as? NewPostView)?.previewBarButtonDidPressed()
     }
