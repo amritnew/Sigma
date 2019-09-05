@@ -41,6 +41,15 @@ extension FeedPostController: UICollectionViewDelegateFlowLayout {
         return feedPostViewModel.posts?.count ?? 0
     }
     
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let post = feedPostViewModel.posts?[indexPath.row] else {return}
+        
+        let postController = PostController(post: post)
+        self.navigationController?.pushViewController(postController, animated: true)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FeedPostView.self)
         self.feedPostViewModel.row = indexPath.row

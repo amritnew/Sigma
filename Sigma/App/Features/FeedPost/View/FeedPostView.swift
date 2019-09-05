@@ -14,7 +14,7 @@ class FeedPostView: UICollectionViewCell, ConfigurableView, Reusable {
         didSet {
             if let feedVm = feedPostViewModel {
                 titlePost.text = feedVm.posts?[feedVm.row].title
-                authorPost.text = feedVm.posts?[feedVm.row].provisionalAuthor
+                authorPost.text = "Published by: @\(feedVm.posts?[feedVm.row].provisionalAuthor ?? "")"
             }
         }
     }
