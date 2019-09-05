@@ -24,6 +24,7 @@ class PostController: UIViewController, ConfigurableController {
         super.viewDidLoad()
         setupView()
         bindViewModel()
+        navigationController?.navigationBar.tintColor = .init(red: 255/255, green: 69/255, blue: 58/255, alpha: 1)
     }
     
     fileprivate func bindViewModel() {

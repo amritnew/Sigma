@@ -10,24 +10,49 @@ import UIKit
 
 extension NewTrailController: UITextFieldDelegate {
  
+    func didDimissViewAtTapped() {
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+    }
+    
     func setupObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeNotification(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeNotification(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return false
     }
     
     func hideKeyboard() {
         if let customView = usedView as? NewTrailView {
             customView.descriptionTrail.resignFirstResponder()
+            customView.nameTrail.resignFirstResponder()
         }
     }
     
     @objc func keyboardWillChangeNotification(notification: Notification) {
-        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
-             self.view.frame.origin.y -= self.view.frame.height / 7
-        }, completion: nil)
-       
+        
+        switch notification.name {
+        case UIResponder.keyboardWillShowNotification:
+            didDimissViewAtTapped()
+        default:
+            break
+        }
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height - 70
+            }
+        }
+        
     }
     
-    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }, completion: nil)
+    }
 }

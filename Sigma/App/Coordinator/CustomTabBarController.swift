@@ -24,15 +24,21 @@ class CustomTabBarController: UITabBarController {
     func showControllerModal(_ viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
 
 extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate {
     fileprivate func setupTabBar() {
         self.viewControllers = [
             createNavigation(viewController: ListTrailsController(), title: "Home", imageNamed: "tab1"),
+              createNavigation(viewController: FeedPostController(), title: "Posts", imageNamed: "tab4"),
+              createNavigation(viewController: UIViewController(), title: "New", imageNamed: "tab3"),
             createNavigation(viewController: MyTrailsController(), title: "My Trail", imageNamed: "tab2"),
-            createNavigation(viewController: UIViewController(), title: "New", imageNamed: "tab3"),
-            createNavigation(viewController: ProfileController(), title: "Profile", imageNamed: "profile")
+                        createNavigation(viewController: ProfileController(), title: "Profile", imageNamed: "profile")
         ]
         tabBar.tintColor = .red
         tabBar.barTintColor = UIColor(named: "Subackground")
@@ -42,6 +48,7 @@ extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate
         let navigation = UINavigationController(rootViewController: viewController)
         navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "red") ?? .white]
         navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "red") ?? .white]
+        navigation.navigationBar.tintColor = .red
         viewController.view.backgroundColor =  UIColor(named: "Subackground")
         navigation.navigationBar.barTintColor = UIColor(named: "Subackground")
         navigation.navigationBar.prefersLargeTitles = true
@@ -66,4 +73,10 @@ extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate
         return false
     }
     
+}
+
+extension UINavigationController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

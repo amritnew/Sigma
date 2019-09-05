@@ -15,7 +15,7 @@ extension MarkdownTextView {
         self.init(frame: .zero)
         // self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.keyboardDismissMode = .onDrag
+        self.keyboardDismissMode = .none
         self.backgroundColor = .clear
         self.setStyleConfigurationWith(
             font: UIFont.systemFont(ofSize: size),
