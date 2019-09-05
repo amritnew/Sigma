@@ -10,6 +10,15 @@ import UIKit
 
 class FeedPostView: UICollectionViewCell, ConfigurableView, Reusable {
     
+    var feedPostViewModel: FeedPostViewModel? {
+        didSet {
+            if let feedVm = feedPostViewModel {
+                titlePost.text = feedVm.posts?[feedVm.row].title
+                authorPost.text = feedVm.posts?[feedVm.row].provisionalAuthor
+            }
+        }
+    }
+    
     let imagePost: RoundableImage = {
         let imageView = RoundableImage(frame: .zero)
         imageView.image = UIImage(named: "gallery")

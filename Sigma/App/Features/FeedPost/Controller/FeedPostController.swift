@@ -15,6 +15,9 @@ class FeedPostController: BaseCollectionController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         bindViewModel()
     }
     
@@ -24,9 +27,7 @@ class FeedPostController: BaseCollectionController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-
         }
-
     }
 }
 
@@ -40,19 +41,14 @@ extension FeedPostController: UICollectionViewDelegateFlowLayout {
         return feedPostViewModel.posts?.count ?? 0
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FeedPostView.self)
+        self.feedPostViewModel.row = indexPath.row
+        cell.feedPostViewModel = feedPostViewModel
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: self.view.frame.width, height: 75)
     }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 10, left: 0, bottom: 0, right: 0)
-    }
-    
 }
