@@ -42,6 +42,7 @@
 		79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921882230877A500EA5054 /* Decodable+Extension.swift */; };
 		921327B1231E8907005635F8 /* ContainerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921327B0231E8907005635F8 /* ContainerProfileViewController.swift */; };
 		921327B4231E8BEC005635F8 /* OptionsProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921327B3231E8BEC005635F8 /* OptionsProfile.swift */; };
+		922F9FFD231FFC5C00022AA2 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922F9FFC231FFC5C00022AA2 /* ProfileCollectionViewCell.swift */; };
 		92879ED6231E9B01008796FC /* MyTrailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92879ED5231E9B01008796FC /* MyTrailsViewController.swift */; };
 		92879ED8231E9BAD008796FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92879ED7231E9BAD008796FC /* SettingsViewController.swift */; };
 		92879EDA231EA547008796FC /* NewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92879ED9231EA547008796FC /* NewProfileViewController.swift */; };
@@ -119,6 +120,7 @@
 		7C098CBE109959BED4A69444 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		921327B0231E8907005635F8 /* ContainerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerProfileViewController.swift; sourceTree = "<group>"; };
 		921327B3231E8BEC005635F8 /* OptionsProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsProfile.swift; sourceTree = "<group>"; };
+		922F9FFC231FFC5C00022AA2 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		92879ED5231E9B01008796FC /* MyTrailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrailsViewController.swift; sourceTree = "<group>"; };
 		92879ED7231E9BAD008796FC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		92879ED9231EA547008796FC /* NewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileViewController.swift; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				92FBC58F23142B5400E596BC /* HeaderProfileCollection.swift */,
+				922F9FFC231FFC5C00022AA2 /* ProfileCollectionViewCell.swift */,
 				92FBC58923142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift */,
 				92FBC58D23142AF900E596BC /* AboutCollectionViewCell.swift */,
 			);
@@ -761,6 +764,7 @@
 				92FBC58C23142AE100E596BC /* AboutViewController.swift in Sources */,
 				790396D0230C3ECD00F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
+				922F9FFD231FFC5C00022AA2 /* ProfileCollectionViewCell.swift in Sources */,
 				790396CC230C3EBC00F06EBD /* Post.swift in Sources */,
 				790396D2230C3EDB00F06EBD /* Trail.swift in Sources */,
 				92879ED6231E9B01008796FC /* MyTrailsViewController.swift in Sources */,

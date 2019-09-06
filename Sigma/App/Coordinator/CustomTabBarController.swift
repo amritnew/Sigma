@@ -23,7 +23,7 @@ class CustomTabBarController: UITabBarController {
 extension CustomTabBarController: ConfigurableTabBar {
     fileprivate func setupTabBar() {
         self.viewControllers = [createNavigation(viewController: ListTrailsController(), title: "Home", imageNamed: "tab1"), createNavigation(viewController: MyTrailsController(), title: "My Trail", imageNamed: "tab2"),
-            createNavigation(viewController: NewProfileViewController(), title: "Profile", imageNamed: "profile")]
+            createNavigation(viewController: ProfileController(), title: "Profile", imageNamed: "profile")]
         tabBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         tabBar.layer.cornerRadius = 16
         tabBar.layer.masksToBounds = true

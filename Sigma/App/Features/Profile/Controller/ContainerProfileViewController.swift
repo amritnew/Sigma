@@ -16,15 +16,21 @@ class ContainerProfileViewController: UIPageViewController {
     
     var currentPage = 1
     
+    weak var delegateScrollView: CustomScrollDelegate?
+    
     lazy var optionProfilesViewControllers:[UIViewController] = {
         let about = newViewController(withIdentifier: .about) as? AboutViewController
+        about?.tableView.delegate = self
         let myTrails = newViewController(withIdentifier: .myTrails) as? MyTrailsViewController
+        myTrails?.tableView.delegate = self
         let settings = newViewController(withIdentifier: .settings) as? SettingsViewController
+        settings?.tableView.delegate = self
         return [about!, myTrails!, settings!]
     }()
     
-    
-
+    convenience init() {
+        self.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
@@ -58,7 +64,6 @@ class ContainerProfileViewController: UIPageViewController {
 
 extension ContainerProfileViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-//        var index:Int = 0
         guard let viewControllerIndex = optionProfilesViewControllers.firstIndex(of: viewController) else {return nil}
         
         let previousIndex = viewControllerIndex - 1
@@ -81,6 +86,14 @@ extension ContainerProfileViewController: UIPageViewControllerDataSource {
         
         return optionProfilesViewControllers[nextIndex]
     }
-    
-    
+}
+
+extension ContainerProfileViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegateScrollView?.scrollViewDidScroll(withContentOffset: scrollView.contentOffset)
+    }
+}
+
+protocol CustomScrollDelegate: class {
+    func scrollViewDidScroll(withContentOffset contentOffset: CGPoint)
 }

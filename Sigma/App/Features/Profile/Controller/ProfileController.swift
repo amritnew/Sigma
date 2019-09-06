@@ -23,15 +23,16 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     fileprivate func setupCollection() {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
 //            layout.sectionHeadersPinToVisibleBounds = true
-            layout.scrollDirection = .horizontal
+            layout.scrollDirection = .vertical
         }
         
         collectionView.backgroundColor = UIColor.white
         collectionView.isPagingEnabled = true
         
-//        collectionView.register(AboutCollectionViewCell.self, forCellWithReuseIdentifier: OptionProfile.about.getStringDescription())
+        collectionView.register(ProfileCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
+        
+        collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: OptionsProfile.about.getStringDescription())
 //        collectionView.register(PreferredLanguagesCollectionViewCell.self, forCellWithReuseIdentifier: OptionProfile.preferredLanguage.getStringDescription())
-//        collectionView.register(ProfileCollectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
