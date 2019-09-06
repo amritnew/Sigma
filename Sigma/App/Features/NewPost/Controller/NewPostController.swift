@@ -13,12 +13,14 @@ class NewPostController: UIViewController, ConfigurableController {
     
     var usedView: UIView? = NewPostView()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupView()
         bindViewModel()
+       
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }

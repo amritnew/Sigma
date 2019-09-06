@@ -15,6 +15,7 @@ class FeedPostController: BaseCollectionController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
+        bindViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
