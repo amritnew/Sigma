@@ -9,15 +9,7 @@
 import UIKit
 
 extension UIView {
-    
-    func addSubviews(_ views: [UIView]) {
-        views.forEach { (view) in
-            addSubview(view)
-        }
-    }
-    
-    
-    
+
     @discardableResult
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> AnchoredConstraints {
         translatesAutoresizingMaskIntoConstraints = false

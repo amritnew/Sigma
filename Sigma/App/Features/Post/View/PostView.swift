@@ -7,23 +7,38 @@
 //
 
 import UIKit
-import MarkdownView
+// import MarkdownView
+import Markdowner
 
 class PostView: UIView, ConfigurableView {
     
     var postViewModel: PostViewModel! {
         didSet {
-            markdownView.load(markdown: postViewModel.markdownText)
+            let markdownView = MarkdownTextView(fontSize: 16)
+            markdownView.text = postViewModel.markdownText
+            postTextView.attributedText = markdownView.attributedString()
         }
     }
     
-    let markdownView = MarkdownView()
+    lazy var postTextView: UITextView = {
+        let textView = UITextView()
+        textView.isEditable = false
+        textView.backgroundColor = UIColor(named: "Subackground")
+        
+        return textView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = UIColor(named: "Subackground")
         buildViewHierarchy()
         setupConstraints()
+        if #available(iOS 10.0, *) {
+            postTextView.adjustsFontForContentSizeCategory = true
+        }
+        DispatchQueue.main.async {
+            self.postTextView.setContentOffset(.zero, animated: false)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,10 +46,12 @@ class PostView: UIView, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-        addSubviews([markdownView])
+        addSubviews([
+            postTextView
+        ])
     }
     
     func setupConstraints() {
-        markdownView.fillSuperview()
+        postTextView.fillSuperview(padding: UIEdgeInsets(top: 100, left: 20, bottom: 0, right: 20))
     }
 }

@@ -12,17 +12,19 @@ class PostController: UIViewController, ConfigurableController {
     
     var usedView: UIView? = PostView()
     
-    var postViewModel = PostViewModel(post: Post(title: "Swift", markdownText: "# SWIFT BASICS"))
+    var postViewModel = PostViewModel(post: Post(title: "Swift", markdownText: "# SWIFT BASICS\n## Froids\nTroll"))
     
     
-    convenience init(trailViewModel: TrailsViewModel) {
+    convenience init(post: Post) {
         self.init()
+        postViewModel = PostViewModel(post: post)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         bindViewModel()
+        navigationController?.navigationBar.tintColor = .init(red: 255/255, green: 69/255, blue: 58/255, alpha: 1)
     }
     
     fileprivate func bindViewModel() {
@@ -31,4 +33,5 @@ class PostController: UIViewController, ConfigurableController {
             self.navigationItem.title = postViewModel.title
         }
     }
+
 }
