@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedPostView: UICollectionViewCell, ConfigurableView, Reusable {
+class FeedPostViewCell: UICollectionViewCell, ConfigurableView, Reusable {
     
     var feedPostViewModel: FeedPostViewModel? {
         didSet {
@@ -19,6 +19,7 @@ class FeedPostView: UICollectionViewCell, ConfigurableView, Reusable {
         }
     }
     
+    
     let imagePost: RoundableImage = {
         let imageView = RoundableImage(frame: .zero)
         imageView.image = UIImage(named: "gallery")
@@ -26,9 +27,11 @@ class FeedPostView: UICollectionViewCell, ConfigurableView, Reusable {
         return imageView
     }()
     
-    let titlePost = UILabel(text: "Swift", textColor: .white, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let titlePost = UILabel(text: "AAAAAAAAAAA", textColor: .black, font: .boldSystemFont(ofSize: 22), numberOfLines: 2, lineBreakMode: nil)
+
+    let authorPost = UILabel(text: "Vinicius", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
-    let authorPost = UILabel(text: "Published by: @Vinicius", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let progress = UILabel(text: "10/10", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

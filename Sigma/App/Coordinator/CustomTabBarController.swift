@@ -40,17 +40,17 @@ extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate
             createNavigation(viewController: MyTrailsController(), title: "My Trail", imageNamed: "tab2"),
                         createNavigation(viewController: ProfileController(), title: "Profile", imageNamed: "profile")
         ]
-        tabBar.tintColor = .red
-        tabBar.barTintColor = UIColor(named: "Subackground")
+        tabBar.tintColor = .actionColor
+        tabBar.barTintColor = .subBackground
     }
     
     fileprivate func createNavigation(viewController: UIViewController, title: String, imageNamed: String) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: viewController)
-        navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "red") ?? .white]
-        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "red") ?? .white]
-        navigation.navigationBar.tintColor = .red
-        viewController.view.backgroundColor =  UIColor(named: "Subackground")
-        navigation.navigationBar.barTintColor = UIColor(named: "Subackground")
+        navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "foreground") ?? .foreground]
+        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "foreground") ?? .foreground]
+        navigation.navigationBar.tintColor = .green
+        viewController.view.backgroundColor =  .subBackground
+        navigation.navigationBar.barTintColor = .background
         navigation.navigationBar.prefersLargeTitles = true
         viewController.navigationItem.title = title
         navigation.tabBarItem.title = title
