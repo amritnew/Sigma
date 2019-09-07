@@ -52,8 +52,6 @@ extension NewTrailController: NewTrailViewDelegate {
     
     @objc func saveTrail() {
         (usedView as? NewTrailView)?.rightBarButtonDidPress(completion: { (_) in})
-        
-        
     }
     
     @objc func didDismiss() {

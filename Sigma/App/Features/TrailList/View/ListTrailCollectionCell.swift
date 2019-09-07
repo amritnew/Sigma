@@ -10,13 +10,6 @@ import UIKit
 
 class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable {
     
-    var trailsViewModel: TrailsViewModel! {
-        didSet {
-            trailName.text = trailsViewModel.trails?[trailsViewModel.row].title
-            trailPublisher.text = "Published by: @\(trailsViewModel.trails?[trailsViewModel.row].author ?? "")"
-        }
-    } 
-    
     let trailImage: UIImageView = {
         let image = RoundableImage(frame: .zero)
         image.image = UIImage(named: "gallery")
@@ -58,4 +51,9 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable 
             ])
     }
     
+    
+    func setup(viewModel: TrailsCellViewModel) {
+        trailName.text = viewModel.trail?.title
+        trailPublisher.text = "Published by: @\(String(describing: viewModel.trail?.author ?? ""))"
+    }
 }

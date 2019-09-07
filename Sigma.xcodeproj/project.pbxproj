@@ -19,6 +19,10 @@
 		790396DD230CA7C300F06EBD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DC230CA7C300F06EBD /* Reusable.swift */; };
 		790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DE230CA7E300F06EBD /* Reusable+Extension.swift */; };
 		790974F92323E4B900EE49C5 /* NewTrailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790974F82323E4B900EE49C5 /* NewTrailViewModel.swift */; };
+		790974FB2323F88A00EE49C5 /* TrailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790974FA2323F88A00EE49C5 /* TrailTests.swift */; };
+		790974FD2324229F00EE49C5 /* TrailsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790974FC2324229F00EE49C5 /* TrailsCellViewModel.swift */; };
+		790974FF232432EE00EE49C5 /* ConfigurableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790974FE232432EE00EE49C5 /* ConfigurableViewModel.swift */; };
+		79097501232437C200EE49C5 /* TrailsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79097500232437C200EE49C5 /* TrailsHeaderViewModel.swift */; };
 		79246F25230346160024A271 /* TrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F24230346160024A271 /* TrailController.swift */; };
 		79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F262303E7940024A271 /* TopicCollectionViewCell.swift */; };
 		79246F292303EEF20024A271 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F282303EEF20024A271 /* PostController.swift */; };
@@ -104,6 +108,10 @@
 		790396DC230CA7C300F06EBD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		790396DE230CA7E300F06EBD /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
 		790974F82323E4B900EE49C5 /* NewTrailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrailViewModel.swift; sourceTree = "<group>"; };
+		790974FA2323F88A00EE49C5 /* TrailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailTests.swift; sourceTree = "<group>"; };
+		790974FC2324229F00EE49C5 /* TrailsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailsCellViewModel.swift; sourceTree = "<group>"; };
+		790974FE232432EE00EE49C5 /* ConfigurableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableViewModel.swift; sourceTree = "<group>"; };
+		79097500232437C200EE49C5 /* TrailsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailsHeaderViewModel.swift; sourceTree = "<group>"; };
 		79246F24230346160024A271 /* TrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailController.swift; sourceTree = "<group>"; };
 		79246F262303E7940024A271 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		79246F282303EEF20024A271 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
@@ -256,6 +264,7 @@
 				79437B162310594F00B3E1B0 /* ConfigurableController.swift */,
 				92FBC58723142A7D00E596BC /* HeaderProfileDelegate.swift */,
 				92FBC59123142B9100E596BC /* TabControllerDelegate.swift */,
+				790974FE232432EE00EE49C5 /* ConfigurableViewModel.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -370,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				790396DA230C405200F06EBD /* TrailsViewModel.swift */,
+				790974FC2324229F00EE49C5 /* TrailsCellViewModel.swift */,
+				79097500232437C200EE49C5 /* TrailsHeaderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -552,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				7980A0592315A4B300682D9A /* ServiceTests.swift */,
+				790974FA2323F88A00EE49C5 /* TrailTests.swift */,
 				7980A0512315A37A00682D9A /* AppTests.swift */,
 				7980A0532315A37A00682D9A /* Info.plist */,
 			);
@@ -911,6 +923,7 @@
 				92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */,
 				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
 				92FBC58C23142AE100E596BC /* AboutProfileCollectionViewCell.swift in Sources */,
+				79097501232437C200EE49C5 /* TrailsHeaderViewModel.swift in Sources */,
 				790396D0230C3ECD00F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
 				790396CC230C3EBC00F06EBD /* Post.swift in Sources */,
@@ -935,6 +948,7 @@
 				790974F92323E4B900EE49C5 /* NewTrailViewModel.swift in Sources */,
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
 				92FBC5842314295B00E596BC /* ProfileController.swift in Sources */,
+				790974FD2324229F00EE49C5 /* TrailsCellViewModel.swift in Sources */,
 				790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */,
 				F22FBCC02320373E001B71A5 /* NewPostService.swift in Sources */,
 				92FBC5822314292900E596BC /* TabController.swift in Sources */,
@@ -942,6 +956,7 @@
 				792B51FB231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift in Sources */,
 				790396CE230C3EC600F06EBD /* User.swift in Sources */,
 				792B5208232081F100ECED73 /* PostService.swift in Sources */,
+				790974FF232432EE00EE49C5 /* ConfigurableViewModel.swift in Sources */,
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
 				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
@@ -962,6 +977,7 @@
 			files = (
 				7980A0522315A37A00682D9A /* AppTests.swift in Sources */,
 				7983E7BB2316AA1100377D28 /* ServiceTests.swift in Sources */,
+				790974FB2323F88A00EE49C5 /* TrailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
