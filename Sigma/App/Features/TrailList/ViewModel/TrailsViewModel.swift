@@ -10,8 +10,6 @@ import Foundation
 
 class TrailsViewModel: ConfigurableViewModel {
     
-    public typealias UpdateClosure = () -> Void
-    
     private let service = TrailService()
     
     private var trails: [TrailsCellViewModel] = [] {
