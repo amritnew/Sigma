@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct NewTrailViewModel {
+    
+    func saveTrail(with title: String, with description: String, completion: @escaping (Bool) -> Void) {
+        TrailService().create(trail: Trail(title: title, description: description, author: "Provisional Author", topics: nil)) { (trail, _) in
+            guard trail != nil else {return completion(false)}
+            completion(true)
+        }
+    }
+}

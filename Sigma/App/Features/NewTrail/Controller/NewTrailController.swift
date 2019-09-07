@@ -54,9 +54,7 @@ extension NewTrailController: NewTrailViewDelegate {
         if let customView = usedView as? NewTrailView {
             let nameTrail = customView.nameTrail.text
             let descriptionTrail = customView.descriptionTrail.text
-            
             print("\(String(describing: nameTrail)) \(String(describing: descriptionTrail))")
-            // Here make trail
         }
     }
     
