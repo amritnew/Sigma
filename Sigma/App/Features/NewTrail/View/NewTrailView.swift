@@ -14,6 +14,8 @@ protocol NewTrailViewDelegate: class {
 
 class NewTrailView: UIView, ConfigurableView {
     
+    let newTrailViewModel = NewTrailViewModel()
+    
     lazy var imageTrail: UIImageView = {
         let image = UIImageView(image: UIImage(named: "gallery-1"))
         image.contentMode = UIView.ContentMode.scaleAspectFit
@@ -103,4 +105,11 @@ extension NewTrailView {
     @objc func didImageTapped() {
         delegate?.didImageTapped()
     }
+    
+    func rightBarButtonDidPress(completion: @escaping (Bool) -> Void) {
+        newTrailViewModel.saveTrail(title: nameTrail.text!, description: descriptionTrail.text!, completion: {
+            completion($0)
+        })
+    }
+    
 }

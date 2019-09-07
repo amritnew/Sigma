@@ -31,7 +31,7 @@ struct TrailService {
     }
     
     func getTrails(completion: @escaping ([Trail]) -> Void) {
-        Service<[Trail]>().get(url: "") { (result) in
+        Service<[Trail]>().get(url: "\(basePath)\(trailsPath)") { (result) in
             switch result {
             case .failure(let error):
                 print(error)
