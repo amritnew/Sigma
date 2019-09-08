@@ -10,17 +10,15 @@ import UIKit
 
 class BookMarksController: BaseCollectionController {
     
-    let myTrailsViewModel = MyTrailsViewModel()
-    
+    let bookMarkViewModel = BookMarkViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
-        bindViewModel()
         }
     
     fileprivate func bindViewModel() {
-        myTrailsViewModel.updateList = {
+        bookMarkViewModel.updateList = {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
@@ -29,6 +27,7 @@ class BookMarksController: BaseCollectionController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        bindViewModel()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isHidden = false
     }
@@ -47,12 +46,12 @@ extension BookMarksController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myTrailsViewModel.numberOfRows()
+        return bookMarkViewModel.numberOfRows()
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: BookmarksCell.self)
-        let cellVM = myTrailsViewModel.cellViewModel(forIndex: indexPath.row)
+        let cellVM = bookMarkViewModel.cellViewModel(forIndex: indexPath.row)
         cell.setup(viewModel: cellVM)
         return cell
     }

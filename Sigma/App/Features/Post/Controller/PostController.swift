@@ -24,8 +24,15 @@ class PostController: UIViewController, ConfigurableController {
         super.viewDidLoad()
         setupView()
         bindViewModel()
-        navigationController?.navigationBar.tintColor = .init(red: 255/255, green: 69/255, blue: 58/255, alpha: 1)
+        setupNavigation()
     }
+    
+    fileprivate func setupNavigation() {
+        navigationController?.navigationBar.tintColor = .init(red: 255/255, green: 69/255, blue: 58/255, alpha: 1)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "unliked"), style: .done, target: self, action: #selector(savePostInBookMark))
+        }
+        
     
     fileprivate func bindViewModel() {
         if let markView = usedView as? PostView {
@@ -33,5 +40,9 @@ class PostController: UIViewController, ConfigurableController {
             self.navigationItem.title = postViewModel.title
         }
     }
-
+    
+    
+    @objc fileprivate func savePostInBookMark() {
+        self.postViewModel.savePostAtBookmark()
+    }
 }

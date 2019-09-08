@@ -38,7 +38,7 @@ extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate
             createNavigation(viewController: ListTrailsController(), title: "Home", imageNamed: "tab1"),
               createNavigation(viewController: FeedPostController(), title: "Posts", imageNamed: "tab4"),
               createNavigation(viewController: UIViewController(), title: "New", imageNamed: "tab3"),
-            createNavigation(viewController: MyTrailsController(), title: "My Trail", imageNamed: "tab2"),
+            createNavigation(viewController: BookMarksController(), title: "Bookmarks", imageNamed: "tab2"),
                         createNavigation(viewController: ProfileController(), title: "Profile", imageNamed: "profile")
         ]
         tabBar.tintColor = .red
