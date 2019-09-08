@@ -9,7 +9,7 @@
 import Foundation
 
 struct PostService {
-    static func getPost(completion: @escaping ([Post]) -> Void) {
+    func getPost(completion: @escaping ([Post]) -> Void) {
         Service<[Post]>().get(url: "https://raftel.herokuapp.com/blogposts") { (result) in
             switch result {
             case .failure(let failure):

@@ -34,7 +34,7 @@ class NewTrailController: UIViewController, ConfigurableController {
         navigationController?.navigationBar.barTintColor = UIColor(named: "Subackground")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Arial", size: 22)!]
       
-        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(savePost))
+        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTrail))
         
         let leftBarButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didDismiss))
         
@@ -50,14 +50,8 @@ extension NewTrailController: NewTrailViewDelegate {
         presentImagePickerOptions()
     }
     
-    @objc func savePost() {
-        if let customView = usedView as? NewTrailView {
-            let nameTrail = customView.nameTrail.text
-            let descriptionTrail = customView.descriptionTrail.text
-            
-            print("\(String(describing: nameTrail)) \(String(describing: descriptionTrail))")
-            // Here make trail
-        }
+    @objc func saveTrail() {
+        (usedView as? NewTrailView)?.rightBarButtonDidPress(completion: { (_) in})
     }
     
     @objc func didDismiss() {

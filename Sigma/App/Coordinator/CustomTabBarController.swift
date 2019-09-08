@@ -28,6 +28,7 @@ class CustomTabBarController: UITabBarController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+
     
 }
 

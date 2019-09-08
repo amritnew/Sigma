@@ -23,8 +23,7 @@ class FeedPostController: BaseCollectionController {
     }
     
     fileprivate func bindViewModel() {
-        feedPostViewModel.fetchPosts { (posts) in
-            self.feedPostViewModel.posts = posts
+        feedPostViewModel.updateList = {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
@@ -39,22 +38,19 @@ extension FeedPostController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feedPostViewModel.posts?.count ?? 0
+        return feedPostViewModel.numberOfRows()
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        guard let post = feedPostViewModel.posts?[indexPath.row] else {return}
-        
-        let postController = PostController(post: post)
-        self.navigationController?.pushViewController(postController, animated: true)
+        let postController = PostController(post: feedPostViewModel.getPost(atRow: indexPath.row))
+        navigationController?.pushViewController(postController, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FeedPostView.self)
-        self.feedPostViewModel.row = indexPath.row
-        cell.feedPostViewModel = feedPostViewModel
+        let cellVM = feedPostViewModel.cellViewModel(forIndex: indexPath.row)
+        cell.setup(viewModel: cellVM)
         return cell
     }
     

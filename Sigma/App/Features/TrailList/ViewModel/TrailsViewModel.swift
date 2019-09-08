@@ -8,17 +8,41 @@
 
 import Foundation
 
-struct TrailsViewModel {
+class TrailsViewModel: ConfigurableViewModel {
     
-    var trails: [Trail]?
+    private let service = TrailService()
     
-    var row: Int = 0 // Initial value at row
-
-    mutating func fetchTrail() {
-        var this = self
-        TrailService().getTrails { (trails) in
-            this.trails = trails
-            print("Trails be set from API here: \(trails)")
+    private var trails: [TrailsCellViewModel] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.updateList?()
+            }
         }
+    }
+    
+    public var updateList: UpdateClosure?
+    
+    public func numberOfRows() -> Int {
+        let rows = self.trails.count
+        
+        if rows == 0 {
+            self.fetchData()
+        }
+        return self.trails.count
+    }
+    
+    private func fetchData() {
+        self.service.getTrails(completion: {
+            self.trails = $0.map({TrailsCellViewModel($0)})
+        })
+    }
+    
+    public func cellViewModel(forIndex index: Int) -> TrailsCellViewModel {
+        
+        if index < self.trails.count {
+            return self.trails[index]
+        }
+        
+        return TrailsCellViewModel(Trail(title: "", description: "", author: "", topics: nil))
     }
 }
