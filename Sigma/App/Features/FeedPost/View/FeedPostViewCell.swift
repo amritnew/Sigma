@@ -10,16 +10,6 @@ import UIKit
 
 class FeedPostViewCell: UICollectionViewCell, ConfigurableView, Reusable {
     
-    var feedPostViewModel: FeedPostViewModel? {
-        didSet {
-            if let feedVm = feedPostViewModel {
-                titlePost.text = feedVm.posts?[feedVm.row].title
-                authorPost.text = "Published by: @\(feedVm.posts?[feedVm.row].provisionalAuthor ?? "")"
-            }
-        }
-    }
-    
-    
     let imagePost: RoundableImage = {
         let imageView = RoundableImage(frame: .zero)
         imageView.image = UIImage(named: "gallery")
@@ -73,7 +63,10 @@ class FeedPostViewCell: UICollectionViewCell, ConfigurableView, Reusable {
             make.top.equal(to: authorPost.topAnchor)
             make.trailing.equal(to: titlePost.trailingAnchor)
         }
-        
-        
+    }
+    
+    func setup(viewModel: PostCellViewModel) {
+        titlePost.text = viewModel.post?.title
+        authorPost.text = "Published by: @\(viewModel.post?.provisionalAuthor ?? "")"
     }
 }

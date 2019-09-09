@@ -33,7 +33,6 @@ class FeedPostController: BaseCollectionController {
 
 extension FeedPostController: UICollectionViewDelegateFlowLayout {
     func setupCollection() {
-       
         collectionView.backgroundColor = .subBackground
         collectionView.register(cellType: FeedPostViewCell.self)
     }
@@ -50,9 +49,6 @@ extension FeedPostController: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: FeedPostViewCell.self)
-        cell.backgroundColor = .subBackground
-        self.feedPostViewModel.row = indexPath.row
-        cell.feedPostViewModel = self.feedPostViewModel
         let cellVM = feedPostViewModel.cellViewModel(forIndex: indexPath.row)
         cell.setup(viewModel: cellVM)
         return cell
