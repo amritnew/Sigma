@@ -1,14 +1,14 @@
 //
-//  ListTrailCollectionCell.swift
+//  BookmarksCell.swift
 //  Sigma
 //
-//  Created by Vinicius Mangueira on 12/08/19.
+//  Created by Vinicius Mangueira on 08/09/19.
 //  Copyright © 2019 Vinicius Mangueira. All rights reserved.
 //
 
 import UIKit
 
-class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable {
+class BookmarksCell: UICollectionViewCell, ConfigurableView, Reusable {
     
     let trailImage: UIImageView = {
         let image = RoundableImage(frame: .zero)
@@ -19,13 +19,13 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable 
     }()
     
     let trailName = UILabel(text: "Swift Basic", textColor: .white, font: nil, numberOfLines: nil, lineBreakMode: nil)
-    let trailPublisher = UILabel(text: "Published by: @Chris Lattner", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let trailPublisher = UILabel(text: "Published by: @Chris Lattner", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
-        self.backgroundColor = .subBackground
+        self.backgroundColor = UIColor(named: "Subackground")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,8 +52,8 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable 
     }
     
     
-    func setup(viewModel: TrailsCellViewModel) {
-        trailName.text = viewModel.trail?.title
-        trailPublisher.text = "Published by: @\(String(describing: viewModel.trail?.author ?? ""))"
+    func setup(viewModel: BookmarkCellViewModel) {
+        trailName.text = viewModel.favoritePost?.title
+        trailPublisher.text = "Published by: @ Shichibukais"
     }
 }

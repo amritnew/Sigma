@@ -13,9 +13,9 @@ struct Trail: Codable {
     var title: String
     var description: String? = ""
     var author: String
-    var topics: [Topic]
+    var topics: [Topic]?
     
-    init(title: String, description: String, author: String, topics: [Topic]) {
+    init(title: String, description: String, author: String, topics: [Topic]?) {
         self.title = title
         self.description = description
         self.author = author

@@ -16,10 +16,10 @@ class ServiceTests: XCTestCase {
     var trailViewModel = TrailsViewModel()
     
     func testStubViewModel() {
-        trailViewModel.trails = [Trail(title: "Mock", description: "This is mock", author: "Mockado", topics: [Topic(title: "Mock", posts: nil)])]
-        
-        //trailViewModel?.fetchTrail() where API ended test here
-        XCTAssertNotNil(trailViewModel.trails)
+//        trailViewModel.trails = [Trail(title: "Mock", description: "This is mock", author: "Mockado", topics: [Topic(title: "Mock", posts: nil)])]
+//        
+//        //trailViewModel?.fetchTrail() where API ended test here
+//        XCTAssertNotNil(trailViewModel.trails)
     }
     
     func testService() {

@@ -17,7 +17,7 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trailViewModel.trails?.count ?? 0
+        return trailViewModel.numberOfRows()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -27,14 +27,15 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: ListTrailCollectionHeader.self)
         headerView.delegate = self
-        headerView.trailsViewModel = self.trailViewModel
+        let trailsHeaderVM = trailViewModel.cellViewModel(forIndex: 1)
+        headerView.setup(viewModel: trailsHeaderVM)
         return headerView
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ListTrailCollectionCell.self)
-        self.trailViewModel.row = indexPath.row
-        cell.trailsViewModel = self.trailViewModel
+        let cellVM = self.trailViewModel.cellViewModel(forIndex: indexPath.row)
+        cell.setup(viewModel: cellVM)
         return cell
     }
     

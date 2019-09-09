@@ -17,6 +17,12 @@
 		790396DB230C405200F06EBD /* TrailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DA230C405200F06EBD /* TrailsViewModel.swift */; };
 		790396DD230CA7C300F06EBD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DC230CA7C300F06EBD /* Reusable.swift */; };
 		790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396DE230CA7E300F06EBD /* Reusable+Extension.swift */; };
+		790974F92323E4B900EE49C5 /* NewTrailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790974F82323E4B900EE49C5 /* NewTrailViewModel.swift */; };
+		790974FB2323F88A00EE49C5 /* TrailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790974FA2323F88A00EE49C5 /* TrailTests.swift */; };
+		790974FD2324229F00EE49C5 /* TrailsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790974FC2324229F00EE49C5 /* TrailsCellViewModel.swift */; };
+		790974FF232432EE00EE49C5 /* ConfigurableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790974FE232432EE00EE49C5 /* ConfigurableViewModel.swift */; };
+		79097501232437C200EE49C5 /* TrailsHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79097500232437C200EE49C5 /* TrailsHeaderViewModel.swift */; };
+		790975032324561B00EE49C5 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790975022324561B00EE49C5 /* PostCellViewModel.swift */; };
 		79246F25230346160024A271 /* TrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F24230346160024A271 /* TrailController.swift */; };
 		79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F262303E7940024A271 /* TopicCollectionViewCell.swift */; };
 		79246F292303EEF20024A271 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79246F282303EEF20024A271 /* PostController.swift */; };
@@ -32,7 +38,7 @@
 		792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F12301E21D005859AB /* UIView+Extension.swift */; };
 		792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F32301FA70005859AB /* ListTrailCollectionCell.swift */; };
 		792D70F62302F08C005859AB /* RoundableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F52302F08C005859AB /* RoundableImage.swift */; };
-		792D70F823031861005859AB /* MyTrailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F723031861005859AB /* MyTrailsController.swift */; };
+		792D70F823031861005859AB /* BookMarksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792D70F723031861005859AB /* BookMarksController.swift */; };
 		793B05B822F25925005F3878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05B722F25925005F3878 /* AppDelegate.swift */; };
 		793B05BF22F25925005F3878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793B05BE22F25925005F3878 /* Assets.xcassets */; };
 		793B05C222F25925005F3878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793B05C022F25925005F3878 /* LaunchScreen.storyboard */; };
@@ -42,15 +48,24 @@
 		793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C71B82314531800283C38 /* ListTrailsController+Extension.swift */; };
 		793C71BA231476BB00283C38 /* ListTrailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793B05B922F25925005F3878 /* ListTrailsController.swift */; };
 		79437B172310594F00B3E1B0 /* ConfigurableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79437B162310594F00B3E1B0 /* ConfigurableController.swift */; };
-		794A4DE623217C8500994F0B /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794A4DE523217C8500994F0B /* Routes.swift */; };
 		7980A0522315A37A00682D9A /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7980A0512315A37A00682D9A /* AppTests.swift */; };
 		7983E7BB2316AA1100377D28 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7980A0592315A4B300682D9A /* ServiceTests.swift */; };
 		79921881230872CA00EA5054 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921880230872CA00EA5054 /* Service.swift */; };
 		79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79921882230877A500EA5054 /* Decodable+Extension.swift */; };
+		79B8EEFC232547EA00F23C14 /* ConfigurableDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8EEFB232547E900F23C14 /* ConfigurableDao.swift */; };
+		79B8EEFE232547FB00F23C14 /* CoreDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8EEFD232547FB00F23C14 /* CoreDao.swift */; };
+		79B8EF002325480D00F23C14 /* CoreStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8EEFF2325480D00F23C14 /* CoreStack.swift */; };
+		79B8EF022325482900F23C14 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8EF012325482900F23C14 /* NSManagedObject+Extension.swift */; };
 		79BDCC2E231EDABD0043844A /* NewTrailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC2D231EDABD0043844A /* NewTrailController.swift */; };
 		79BDCC30231EDB100043844A /* NewTrailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC2F231EDB100043844A /* NewTrailView.swift */; };
 		79BDCC33231EE1A30043844A /* CBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC32231EE1A30043844A /* CBuilder.swift */; };
 		79BDCC35231EE1CA0043844A /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC34231EE1CA0043844A /* LayoutAnchor.swift */; };
+		79EB670B23254ABD003188A7 /* SigmaContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79EB670923254ABD003188A7 /* SigmaContainer.xcdatamodeld */; };
+		79EB670F23254B84003188A7 /* FavoritePost+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB670E23254B84003188A7 /* FavoritePost+Class.swift */; };
+		79EB671123254B9A003188A7 /* FavoritePost+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB671023254B9A003188A7 /* FavoritePost+Properties.swift */; };
+		79EB6715232561FC003188A7 /* BookmarkCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB6714232561FC003188A7 /* BookmarkCellViewModel.swift */; };
+		79EB6717232563BD003188A7 /* BookmarksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB6716232563BD003188A7 /* BookmarksCell.swift */; };
+		79EB671923256531003188A7 /* BookMarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB671823256531003188A7 /* BookMarkViewModel.swift */; };
 		7EF15C3615EC9E6AA21BD4A5 /* Pods_Sigma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F1751F8AE25A70DAA71738 /* Pods_Sigma.framework */; };
 		8F02E0591FB3CD83B4669F6E /* Pods_Sigma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FF8E59082EBA05CE9C5268 /* Pods_Sigma.framework */; };
 		92FBC5822314292900E596BC /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5812314292900E596BC /* TabController.swift */; };
@@ -107,6 +122,12 @@
 		790396DA230C405200F06EBD /* TrailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailsViewModel.swift; sourceTree = "<group>"; };
 		790396DC230CA7C300F06EBD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		790396DE230CA7E300F06EBD /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
+		790974F82323E4B900EE49C5 /* NewTrailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrailViewModel.swift; sourceTree = "<group>"; };
+		790974FA2323F88A00EE49C5 /* TrailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailTests.swift; sourceTree = "<group>"; };
+		790974FC2324229F00EE49C5 /* TrailsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailsCellViewModel.swift; sourceTree = "<group>"; };
+		790974FE232432EE00EE49C5 /* ConfigurableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableViewModel.swift; sourceTree = "<group>"; };
+		79097500232437C200EE49C5 /* TrailsHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailsHeaderViewModel.swift; sourceTree = "<group>"; };
+		790975022324561B00EE49C5 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
 		79246F24230346160024A271 /* TrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailController.swift; sourceTree = "<group>"; };
 		79246F262303E7940024A271 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		79246F282303EEF20024A271 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
@@ -122,7 +143,7 @@
 		792D70F12301E21D005859AB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		792D70F32301FA70005859AB /* ListTrailCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrailCollectionCell.swift; sourceTree = "<group>"; };
 		792D70F52302F08C005859AB /* RoundableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundableImage.swift; sourceTree = "<group>"; };
-		792D70F723031861005859AB /* MyTrailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrailsController.swift; sourceTree = "<group>"; };
+		792D70F723031861005859AB /* BookMarksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarksController.swift; sourceTree = "<group>"; };
 		793B05B422F25925005F3878 /* Sigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		793B05B722F25925005F3878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		793B05B922F25925005F3878 /* ListTrailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrailsController.swift; sourceTree = "<group>"; };
@@ -135,17 +156,27 @@
 		793C71B623143ADD00283C38 /* TrailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailService.swift; sourceTree = "<group>"; };
 		793C71B82314531800283C38 /* ListTrailsController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListTrailsController+Extension.swift"; sourceTree = "<group>"; };
 		79437B162310594F00B3E1B0 /* ConfigurableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableController.swift; sourceTree = "<group>"; };
-		794A4DE523217C8500994F0B /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		7980A04F2315A37A00682D9A /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7980A0512315A37A00682D9A /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		7980A0532315A37A00682D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7980A0592315A4B300682D9A /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		79921880230872CA00EA5054 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		79921882230877A500EA5054 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
+		79B8EEFB232547E900F23C14 /* ConfigurableDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableDao.swift; sourceTree = "<group>"; };
+		79B8EEFD232547FB00F23C14 /* CoreDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDao.swift; sourceTree = "<group>"; };
+		79B8EEFF2325480D00F23C14 /* CoreStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreStack.swift; sourceTree = "<group>"; };
+		79B8EF012325482900F23C14 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		79BDCC2D231EDABD0043844A /* NewTrailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrailController.swift; sourceTree = "<group>"; };
 		79BDCC2F231EDB100043844A /* NewTrailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrailView.swift; sourceTree = "<group>"; };
 		79BDCC32231EE1A30043844A /* CBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBuilder.swift; sourceTree = "<group>"; };
 		79BDCC34231EE1CA0043844A /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
+		79EB670A23254ABD003188A7 /* SigmaContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SigmaContainer.xcdatamodel; sourceTree = "<group>"; };
+		79EB670E23254B84003188A7 /* FavoritePost+Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePost+Class.swift"; sourceTree = "<group>"; };
+		79EB671023254B9A003188A7 /* FavoritePost+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePost+Properties.swift"; sourceTree = "<group>"; };
+		79EB6714232561FC003188A7 /* BookmarkCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellViewModel.swift; sourceTree = SOURCE_ROOT; };
+		79EB6716232563BD003188A7 /* BookmarksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCell.swift; sourceTree = SOURCE_ROOT; };
+		79EB671823256531003188A7 /* BookMarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkViewModel.swift; sourceTree = SOURCE_ROOT; };
+		7C098CBE109959BED4A69444 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FBC5812314292900E596BC /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		92FBC5832314295B00E596BC /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		92FBC585231429C300E596BC /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -241,6 +272,7 @@
 		792B5204232081BB00ECED73 /* Bussiness */ = {
 			isa = PBXGroup;
 			children = (
+				790975022324561B00EE49C5 /* PostCellViewModel.swift */,
 				792B5205232081E300ECED73 /* FeedPostViewModel.swift */,
 				792B5207232081F100ECED73 /* PostService.swift */,
 			);
@@ -255,6 +287,7 @@
 				79437B162310594F00B3E1B0 /* ConfigurableController.swift */,
 				92FBC58723142A7D00E596BC /* HeaderProfileDelegate.swift */,
 				92FBC59123142B9100E596BC /* TabControllerDelegate.swift */,
+				790974FE232432EE00EE49C5 /* ConfigurableViewModel.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -370,6 +403,8 @@
 			isa = PBXGroup;
 			children = (
 				790396DA230C405200F06EBD /* TrailsViewModel.swift */,
+				790974FC2324229F00EE49C5 /* TrailsCellViewModel.swift */,
+				79097500232437C200EE49C5 /* TrailsHeaderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -387,7 +422,7 @@
 		793C71A023140A4600283C38 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				792D70F723031861005859AB /* MyTrailsController.swift */,
+				792D70F723031861005859AB /* BookMarksController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -395,6 +430,7 @@
 		793C71A123140A4C00283C38 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79EB6716232563BD003188A7 /* BookmarksCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -402,6 +438,8 @@
 		793C71A223140A5900283C38 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				79EB6714232561FC003188A7 /* BookmarkCellViewModel.swift */,
+				79EB671823256531003188A7 /* BookMarkViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -535,6 +573,8 @@
 		793C71B223140FC200283C38 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				79EB670823254A64003188A7 /* DataModel */,
+				79B8EEFA232547D100F23C14 /* CoreDao */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -543,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				793C71B623143ADD00283C38 /* TrailService.swift */,
+				790974F82323E4B900EE49C5 /* NewTrailViewModel.swift */,
 			);
 			path = Bussiness;
 			sourceTree = "<group>";
@@ -551,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				7980A0592315A4B300682D9A /* ServiceTests.swift */,
+				790974FA2323F88A00EE49C5 /* TrailTests.swift */,
 				7980A0512315A37A00682D9A /* AppTests.swift */,
 				7980A0532315A37A00682D9A /* Info.plist */,
 			);
@@ -561,9 +603,19 @@
 			isa = PBXGroup;
 			children = (
 				79921880230872CA00EA5054 /* Service.swift */,
-				794A4DE523217C8500994F0B /* Routes.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		79B8EEFA232547D100F23C14 /* CoreDao */ = {
+			isa = PBXGroup;
+			children = (
+				79B8EEFB232547E900F23C14 /* ConfigurableDao.swift */,
+				79B8EEFD232547FB00F23C14 /* CoreDao.swift */,
+				79B8EEFF2325480D00F23C14 /* CoreStack.swift */,
+				79B8EF012325482900F23C14 /* NSManagedObject+Extension.swift */,
+			);
+			path = CoreDao;
 			sourceTree = "<group>";
 		};
 		79BDCC2A231EDA640043844A /* NewTrail */ = {
@@ -601,6 +653,16 @@
 				79BDCC34231EE1CA0043844A /* LayoutAnchor.swift */,
 			);
 			path = CBuilder;
+			sourceTree = "<group>";
+		};
+		79EB670823254A64003188A7 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				79EB670923254ABD003188A7 /* SigmaContainer.xcdatamodeld */,
+				79EB670E23254B84003188A7 /* FavoritePost+Class.swift */,
+				79EB671023254B9A003188A7 /* FavoritePost+Properties.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		A45F788A230448E800EBAD28 /* Extensions */ = {
@@ -925,16 +987,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B8EEFC232547EA00F23C14 /* ConfigurableDao.swift in Sources */,
+				790975032324561B00EE49C5 /* PostCellViewModel.swift in Sources */,
 				79BDCC35231EE1CA0043844A /* LayoutAnchor.swift in Sources */,
+				792B520323207DBD00ECED73 /* FeedPostView.swift in Sources */,
 				794A4DE623217C8500994F0B /* Routes.swift in Sources */,
 				792B520323207DBD00ECED73 /* FeedPostViewCell.swift in Sources */,
 				792D70EB2301D743005859AB /* BaseCollectionController.swift in Sources */,
+				79B8EEFE232547FB00F23C14 /* CoreDao.swift in Sources */,
 				793C71B92314531800283C38 /* ListTrailsController+Extension.swift in Sources */,
 				790396D9230C404800F06EBD /* TopicViewModel.swift in Sources */,
 				F291359C231E928A00FA7CF5 /* NewPostViewModel.swift in Sources */,
 				92FBC58B23142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift in Sources */,
 				793BD0132316C97200EBA04B /* PostView.swift in Sources */,
 				792B5206232081E300ECED73 /* FeedPostViewModel.swift in Sources */,
+				79EB671923256531003188A7 /* BookMarkViewModel.swift in Sources */,
 				F2913596231E900B00FA7CF5 /* NewPostController.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */,
@@ -949,6 +1016,8 @@
 				92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */,
 				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
 				92FBC58C23142AE100E596BC /* AboutProfileCollectionViewCell.swift in Sources */,
+				79097501232437C200EE49C5 /* TrailsHeaderViewModel.swift in Sources */,
+				79B8EF022325482900F23C14 /* NSManagedObject+Extension.swift in Sources */,
 				790396D0230C3ECD00F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
 				790396CC230C3EBC00F06EBD /* Post.swift in Sources */,
@@ -961,18 +1030,25 @@
 				792B520023207B6800ECED73 /* FeedPostController.swift in Sources */,
 				92FBC58E23142AF900E596BC /* AboutCollectionViewCell.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
+				79EB671123254B9A003188A7 /* FavoritePost+Properties.swift in Sources */,
 				F291359E231EA47200FA7CF5 /* UIAlertController+Extension.swift in Sources */,
 				79BDCC30231EDB100043844A /* NewTrailView.swift in Sources */,
 				79BDCC2E231EDABD0043844A /* NewTrailController.swift in Sources */,
-				792D70F823031861005859AB /* MyTrailsController.swift in Sources */,
+				792D70F823031861005859AB /* BookMarksController.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TopicCollectionViewCell.swift in Sources */,
 				79246F292303EEF20024A271 /* PostController.swift in Sources */,
 				79BDCC33231EE1A30043844A /* CBuilder.swift in Sources */,
 				92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */,
+				79B8EF002325480D00F23C14 /* CoreStack.swift in Sources */,
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
+				790974F92323E4B900EE49C5 /* NewTrailViewModel.swift in Sources */,
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
 				92FBC5842314295B00E596BC /* ProfileController.swift in Sources */,
+				79EB6717232563BD003188A7 /* BookmarksCell.swift in Sources */,
+				790974FD2324229F00EE49C5 /* TrailsCellViewModel.swift in Sources */,
+				79EB670F23254B84003188A7 /* FavoritePost+Class.swift in Sources */,
+				79EB670B23254ABD003188A7 /* SigmaContainer.xcdatamodeld in Sources */,
 				790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */,
 				F22FBCC02320373E001B71A5 /* NewPostService.swift in Sources */,
 				92FBC5822314292900E596BC /* TabController.swift in Sources */,
@@ -980,6 +1056,8 @@
 				792B51FB231F3A3900ECED73 /* NewTrail+TextFieldDelegate.swift in Sources */,
 				790396CE230C3EC600F06EBD /* User.swift in Sources */,
 				792B5208232081F100ECED73 /* PostService.swift in Sources */,
+				79EB6715232561FC003188A7 /* BookmarkCellViewModel.swift in Sources */,
+				790974FF232432EE00EE49C5 /* ConfigurableViewModel.swift in Sources */,
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
 				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
@@ -1000,6 +1078,7 @@
 			files = (
 				7980A0522315A37A00682D9A /* AppTests.swift in Sources */,
 				7983E7BB2316AA1100377D28 /* ServiceTests.swift in Sources */,
+				790974FB2323F88A00EE49C5 /* TrailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1160,7 +1239,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vinicius.sigma;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sigma.allforall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1182,7 +1261,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vinicius.sigma;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sigma.allforall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1314,6 +1393,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		79EB670923254ABD003188A7 /* SigmaContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				79EB670A23254ABD003188A7 /* SigmaContainer.xcdatamodel */,
+			);
+			currentVersion = 79EB670A23254ABD003188A7 /* SigmaContainer.xcdatamodel */;
+			path = SigmaContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 793B05AC22F25925005F3878 /* Project object */;
 }
