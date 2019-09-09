@@ -24,14 +24,15 @@ class FeedPostViewCell: UICollectionViewCell, ConfigurableView, Reusable {
         let imageView = RoundableImage(frame: .zero)
         imageView.image = UIImage(named: "gallery")
         imageView.widthAnchor.constraint(equalToConstant: 65).isActive = true
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
         return imageView
     }()
     
-    let titlePost = UILabel(text: "AAAAAAAAAAA", textColor: .black, font: .boldSystemFont(ofSize: 22), numberOfLines: 2, lineBreakMode: nil)
+    let titlePost = UILabel(text: "Teste de Label gigante só para ver se quebra linha.", textColor: .black, font: .boldSystemFont(ofSize: 20), numberOfLines: 0, lineBreakMode: nil)
 
-    let authorPost = UILabel(text: "Vinicius", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let authorPost = UILabel(text: "Bergamora Matheus", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
-    let progress = UILabel(text: "10/10", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let progress = UILabel(text: "10 / 10", textColor: .subText, font: .systemFont(ofSize: 15), numberOfLines: nil, lineBreakMode: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,24 +46,32 @@ class FeedPostViewCell: UICollectionViewCell, ConfigurableView, Reusable {
     
     
     func buildViewHierarchy() {
-        addSubviews([imagePost, titlePost, authorPost])
+        addSubviews([imagePost, titlePost, authorPost, progress])
     }
     
     func setupConstraints() {
+        imagePost.cBuild(make: .centerYInSuperView)
+        
         imagePost.cBuilder { (make) in
-            make.top.equal(to: topAnchor, offsetBy: 5)
             make.leading.equal(to: leadingAnchor, offsetBy: 10)
-            make.bottom.equal(to: bottomAnchor, offsetBy: -5)
+            
         }
         
         titlePost.cBuilder { (make) in
-            make.top.equal(to: imagePost.topAnchor, offsetBy: 5)
+            make.top.equal(to: topAnchor, offsetBy: 5)
             make.leading.equal(to: imagePost.trailingAnchor, offsetBy: 10)
+            make.trailing.equal(to: trailingAnchor, offsetBy: -10)
         }
         
         authorPost.cBuilder { (make) in
             make.top.equal(to: titlePost.bottomAnchor, offsetBy: 5)
             make.leading.equal(to: titlePost.leadingAnchor)
+            make.bottom.equal(to: bottomAnchor, offsetBy: -5)
+        }
+        
+        progress.cBuilder { (make) in
+            make.top.equal(to: authorPost.topAnchor)
+            make.trailing.equal(to: titlePost.trailingAnchor)
         }
         
         
