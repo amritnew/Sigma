@@ -28,7 +28,7 @@ class FeedPostViewCell: UICollectionViewCell, ConfigurableView, Reusable {
         return imageView
     }()
     
-    let titlePost = UILabel(text: "Teste de Label gigante só para ver se quebra linha.", textColor: .black, font: .boldSystemFont(ofSize: 20), numberOfLines: 0, lineBreakMode: nil)
+    let titlePost = UILabel(text: "Teste de Label gigante só para ver se quebra linha.", textColor: .foreground, font: .boldSystemFont(ofSize: 20), numberOfLines: 0, lineBreakMode: nil)
 
     let authorPost = UILabel(text: "Bergamora Matheus", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
     

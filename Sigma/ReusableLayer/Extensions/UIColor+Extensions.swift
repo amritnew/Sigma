@@ -14,5 +14,5 @@ extension UIColor {
     static let subBackground = UIColor(named:"SubBackground") ?? #colorLiteral(red: 0.1411764706, green: 0.1647058824, blue: 0.2196078431, alpha: 1)
     static let foreground = UIColor(named:"Foreground") ?? #colorLiteral(red: 0.99598068, green: 0.9961469769, blue: 0.9959587455, alpha: 1)
     static let actionColor = UIColor(named:"Accent") ?? #colorLiteral(red: 0.8431372549, green: 0.2431372549, blue: 0.2941176471, alpha: 1)
-    static let subText = #colorLiteral(red: 0.4274509804, green: 0.4470588235, blue: 0.4705882353, alpha: 1)
+    static let subText = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
 }
