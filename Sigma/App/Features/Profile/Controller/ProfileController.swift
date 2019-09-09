@@ -22,17 +22,14 @@ class ProfileController: BaseCollectionController {
 extension ProfileController: UICollectionViewDelegateFlowLayout {
     fileprivate func setupCollection() {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-//            layout.sectionHeadersPinToVisibleBounds = true
             layout.scrollDirection = .vertical
         }
         
         collectionView.backgroundColor = UIColor.white
         collectionView.isPagingEnabled = true
         
-        collectionView.register(ProfileCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
-        
-        collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: OptionsProfile.about.getStringDescription())
-//        collectionView.register(PreferredLanguagesCollectionViewCell.self, forCellWithReuseIdentifier: OptionProfile.preferredLanguage.getStringDescription())
+        collectionView.register(HeaderProfileCollection.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
+        collectionView.register(ContainerCollectionViewCell.self, forCellWithReuseIdentifier: "container")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -56,9 +53,9 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: selectedOption.getStringDescription(), for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "container", for: indexPath) as? ContainerCollectionViewCell
         
-        return cell
+        return cell ?? UICollectionViewCell()
     }
     
 }
