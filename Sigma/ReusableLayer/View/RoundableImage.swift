@@ -35,7 +35,7 @@ extension UIAlertController {
     
     static func createActionSheet(title: String, message: String) -> UIAlertController {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-        actionSheet.view.backgroundColor = UIColor(named: "Subackground")
+        actionSheet.view.backgroundColor = .subBackground
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in
             actionSheet.dismiss(animated: true, completion: nil)
         }))

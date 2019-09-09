@@ -23,14 +23,14 @@ class PostView: UIView, ConfigurableView {
     lazy var postTextView: UITextView = {
         let textView = UITextView()
         textView.isEditable = false
-        textView.backgroundColor = UIColor(named: "Subackground")
+        textView.backgroundColor = .subBackground
         
         return textView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(named: "Subackground")
+        self.backgroundColor = .subBackground
         buildViewHierarchy()
         setupConstraints()
         if #available(iOS 10.0, *) {

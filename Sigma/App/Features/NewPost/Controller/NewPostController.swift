@@ -26,9 +26,9 @@ class NewPostController: UIViewController, ConfigurableController {
     }
     
     func setupNavigationBar() {
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "Foreground") ?? .white]
-        navigationController?.navigationBar.barTintColor = UIColor(named: "Background")
-        navigationController?.navigationBar.tintColor = .init(red: 255/255, green: 69/255, blue: 58/255, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "Foreground") ?? .foreground]
+        navigationController?.navigationBar.barTintColor = .background
+        navigationController?.navigationBar.tintColor = .actionColor
         setupBarButtons()
     }
     
