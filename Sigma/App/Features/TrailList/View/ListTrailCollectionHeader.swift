@@ -16,7 +16,7 @@ protocol ListTrailHeaderDelegate: ListTrailsController {
 class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reusable {
     
     let tagHeader = UILabel(text: "Swift", textColor: .orange,font: nil, numberOfLines: nil, lineBreakMode: nil)
-    let publisherHeader = UILabel(text: "Published by: @Chris Lattner", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let publisherHeader = UILabel(text: "Published by: @Chris Lattner", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
     let titleHeader = UILabel(text: "Basic Swift, Learning the new things about the awesome language", textColor: .white, font: UIFont.systemFont(ofSize: 22), numberOfLines: 2, lineBreakMode: .byWordWrapping)
     
     lazy var imageHeader: UIImageView = {
@@ -38,7 +38,7 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reu
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
-        self.backgroundColor = UIColor(named: "Subackground")
+        self.backgroundColor = .subBackground
     }
     
     required init?(coder aDecoder: NSCoder) {

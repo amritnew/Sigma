@@ -17,4 +17,12 @@ struct PostViewModel {
         self.title = post.title
         self.markdownText = post.markdownText
     }
+    
+    func savePostAtBookmark() {
+        let coreDao = CoreDao<FavoritePost>(with: "SigmaContainer")
+        let favoritePost = coreDao.new()
+        favoritePost.markdownText = self.markdownText
+        favoritePost.title = self.title
+        coreDao.insert(object: favoritePost)
+    }
 }

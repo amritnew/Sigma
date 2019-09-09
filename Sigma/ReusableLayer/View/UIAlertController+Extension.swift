@@ -13,8 +13,8 @@ extension UIAlertController {
     static func buildActionSheet(title: String, message: String?) -> UIAlertController {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        actionSheet.view.tintColor = UIColor(named: "Foreground")
-        actionSheet.changeAlertBackgroundColor(color: UIColor(named: "Subackground") ?? .darkGray)
+        actionSheet.view.tintColor = .foreground
+        actionSheet.changeAlertBackgroundColor(color: .subBackground)
         actionSheet.changeAlertCornerRadius(radius: 12)
         
         return actionSheet

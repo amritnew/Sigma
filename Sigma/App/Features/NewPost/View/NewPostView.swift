@@ -32,7 +32,7 @@ class NewPostView: UIView, ConfigurableView {
         markdownTextView.delegate = self
         markdownTextView.text = viewModel.markdownText
         markdownTextView.tintColor = .red
-        backgroundColor = UIColor(named: "Background")
+        backgroundColor = .background
         buildViewHierarchy()
         setupConstraints()
         setDoneOnKeyboard()

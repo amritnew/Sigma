@@ -20,11 +20,11 @@ class TrailController: BaseCollectionController {
 extension TrailController: UICollectionViewDelegateFlowLayout {
     
     fileprivate func setupCollection() {
-        navigationController?.navigationBar.tintColor = .init(red: 255/255, green: 69/255, blue: 58/255, alpha: 1)
+        navigationController?.navigationBar.tintColor = .actionColor
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), landscapeImagePhone: nil, style: .done, target: self, action: #selector(popView))
-        collectionView.backgroundColor = UIColor(named: "Subackground")
+        collectionView.backgroundColor = .subBackground
         collectionView.register(cellType: TopicCollectionViewCell.self)
         collectionView.register(supplementaryViewType: ListTrailCollectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
     }
