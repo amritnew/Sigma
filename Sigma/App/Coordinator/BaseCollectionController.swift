@@ -11,7 +11,7 @@ import UIKit
 class BaseCollectionController: UICollectionViewController {
     
     init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        super.init(collectionViewLayout: StretchHeaderFlowLayout())
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -47,6 +47,7 @@
 		92879ED6231E9B01008796FC /* MyTrailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92879ED5231E9B01008796FC /* MyTrailsViewController.swift */; };
 		92879ED8231E9BAD008796FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92879ED7231E9BAD008796FC /* SettingsViewController.swift */; };
 		92879EDA231EA547008796FC /* NewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92879ED9231EA547008796FC /* NewProfileViewController.swift */; };
+		92E8C82B23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8C82A23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift */; };
 		92FBC5822314292900E596BC /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5812314292900E596BC /* TabController.swift */; };
 		92FBC5842314295B00E596BC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5832314295B00E596BC /* ProfileController.swift */; };
 		92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC585231429C300E596BC /* UIFont+Extension.swift */; };
@@ -126,6 +127,7 @@
 		92879ED5231E9B01008796FC /* MyTrailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrailsViewController.swift; sourceTree = "<group>"; };
 		92879ED7231E9BAD008796FC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		92879ED9231EA547008796FC /* NewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileViewController.swift; sourceTree = "<group>"; };
+		92E8C82A23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchHeaderFlowLayout.swift; sourceTree = "<group>"; };
 		92FBC5812314292900E596BC /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		92FBC5832314295B00E596BC /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		92FBC585231429C300E596BC /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				921327B3231E8BEC005635F8 /* OptionsProfile.swift */,
+				92E8C82A23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				92FBC58B23142AE100E596BC /* PreferredLanguagesCollectionViewCell.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */,
+				92E8C82B23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift in Sources */,
 				92FBC59023142B5400E596BC /* HeaderProfileCollection.swift in Sources */,
 				921327B4231E8BEC005635F8 /* OptionsProfile.swift in Sources */,
 				79246F25230346160024A271 /* TrailController.swift in Sources */,
