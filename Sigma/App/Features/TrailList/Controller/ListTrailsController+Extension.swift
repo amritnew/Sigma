@@ -40,7 +40,7 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(TrailController(), animated: true)
+        navigationController?.pushViewController(TrailController(trail: trailViewModel.getTrail(forIndex: indexPath.row)), animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

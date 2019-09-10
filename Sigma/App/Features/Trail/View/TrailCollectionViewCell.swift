@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView, Reusable {
+class TrailCollectionViewCell: UICollectionViewCell, ConfigurableView, Reusable {
   
     let topicImage: UIImageView = {
         let image = RoundableImage(frame: .zero)

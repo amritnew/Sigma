@@ -23,11 +23,7 @@ class TrailsViewModel: ConfigurableViewModel {
     public var updateList: UpdateClosure?
     
     public func numberOfRows() -> Int {
-        let rows = self.trails.count
-        
-        if rows == 0 {
-            self.fetchData()
-        }
+        self.fetchData()
         return self.trails.count
     }
     
@@ -45,4 +41,11 @@ class TrailsViewModel: ConfigurableViewModel {
         
         return TrailsCellViewModel(Trail(title: "", description: "", author: "", topics: nil))
     }
+    
+    public func getTrail(forIndex index: Int) -> Trail {
+        let trailVM = self.cellViewModel(forIndex: index)
+        return trailVM.trail ?? Trail(title: "", description: "", author: "", topics: nil)
+    }
+    
+    
 }

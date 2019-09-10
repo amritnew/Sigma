@@ -11,6 +11,14 @@ import UIKit
 
 class TrailController: BaseCollectionController {
     
+    var trailViewModel = TrailViewModel(trail: Trail(title: "", description: "", author: "", topics: nil))
+    
+    convenience init(trail: Trail) {
+        self.init()
+        trailViewModel = TrailViewModel(trail: trail)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
@@ -23,10 +31,9 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
         navigationController?.navigationBar.tintColor = .actionColor
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), landscapeImagePhone: nil, style: .done, target: self, action: #selector(popView))
         collectionView.backgroundColor = .subBackground
-        collectionView.register(cellType: TopicCollectionViewCell.self)
-        collectionView.register(supplementaryViewType: ListTrailCollectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
+        collectionView.register(cellType: TrailCollectionViewCell.self)
+        collectionView.register(supplementaryViewType: TrailHeaderView.self, ofKind: UICollectionView.elementKindSectionHeader)
     }
     
     @objc fileprivate func popView() {
@@ -35,7 +42,8 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: ListTrailCollectionHeader.self)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: TrailHeaderView.self)
+        header.setup(viewModel: trailViewModel)
         return header
     }
     
@@ -45,11 +53,11 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return trailViewModel.numberOfRows()
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TopicCollectionViewCell.self)
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TrailCollectionViewCell.self)
         return cell
     }
     
