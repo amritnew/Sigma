@@ -17,6 +17,7 @@ class TabController: BaseCollectionController {
     init(itensTab:[String]) {
         super.init()
         self.itensTab = itensTab
+        self.collectionView.backgroundColor = .blue
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -62,23 +63,11 @@ extension TabController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let text = itensTab[indexPath.row] as NSString
-           
-        return text.size(withAttributes: nil)
-//        guard let cell = collectionView.cellForItem(at: indexPath) as? TabCollectionCell else {
-//            return CGSize.zero
-//        }
-//        
-//        let label = cell.labelCell
-//        guard let font = label.font else {
-//            return CGSize.zero
-//        }
-//        
-//        let height = label.font.lineHeight
-//        
-//        let width = itensTab[indexPath.row].widthWithConstrainedHeight(height, font: font)
-//        
-//        return CGSize(width: width, height: height)
+        return CGSize(width: 16, height: collectionView.frame.height)
+        
+//        let text = itensTab[indexPath.row] as NSString
+//
+//        return text.size(withAttributes: nil)
     }
 }
 
@@ -101,6 +90,8 @@ class TabCollectionCell: UICollectionViewCell {
     }
     
     func setupContraints() {
-        labelCell.anchorWithConstantsToTop(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 4, leftConstant: 4, bottomConstant: 4, rightConstant: -4)
+        
+        NSLayoutConstraint.activate(labelCell.anchor(nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 8, rightConstant: 8, widthConstant: 0, heightConstant: 0))
+        
     }
 }

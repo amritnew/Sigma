@@ -23,17 +23,19 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     fileprivate func setupCollection() {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
+            layout.minimumLineSpacing = 0
+            layout.minimumInteritemSpacing = 0
+            
         }
-        
         collectionView.backgroundColor = UIColor.white
-        collectionView.isPagingEnabled = true
         
         collectionView.register(HeaderProfileCollection.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
+        collectionView.register(MenuBarCollectionViewCell.self, forCellWithReuseIdentifier: "menuBar")
         collectionView.register(ContainerCollectionViewCell.self, forCellWithReuseIdentifier: "container")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -48,10 +50,19 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width , height: view.frame.height)
+        if indexPath.row == 0 {
+            return CGSize(width: view.frame.width, height: 64)
+        }
+        
+        return CGSize(width: view.frame.width , height: view.frame.height - 96)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.row == 0 {
+             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuBar", for: indexPath) as? MenuBarCollectionViewCell
+            return cell ?? UICollectionViewCell()
+        }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "container", for: indexPath) as? ContainerCollectionViewCell
         

@@ -39,8 +39,9 @@ class ContainerCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCollection() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(ContainerRowCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
     }
+    
 }
 
 extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
@@ -49,10 +50,7 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let colors:[UIColor] = [.blue,.gray,.yellow]
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = colors[indexPath.item]
         return cell
     }
 
@@ -60,3 +58,27 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
         return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
     }
 }
+
+class ContainerRowCollectionViewCell: UICollectionViewCell {
+    let collection:UICollectionView = {
+        let listTrailsController = ListTrailsController()
+        let collection = listTrailsController.collectionView
+        return collection!
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(collection)
+        setupConstraints()
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupConstraints() {
+        collection.fillSuperview()
+    }
+}
+

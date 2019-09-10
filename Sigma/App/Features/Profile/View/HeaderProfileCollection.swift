@@ -57,11 +57,8 @@ class HeaderProfileCollection: UICollectionReusableView, ConfigurableView {
         return collection
     }()
     
-    let tabView = TabController(itensTab: ["About","PreferredLanguage"])
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        tabView.delegate = self
         
         buildViewHierarchy()
         setupConstraints()
@@ -74,16 +71,14 @@ class HeaderProfileCollection: UICollectionReusableView, ConfigurableView {
 
     
     func buildViewHierarchy() {
-        tabView.view.translatesAutoresizingMaskIntoConstraints = false
-        addSubviews([profileCoverPhoto,profilePhoto,profileEditLabel,profileNameLabel, tabView.view])
+        addSubviews([profileCoverPhoto,profilePhoto,profileEditLabel,profileNameLabel])
         
     }
    
     func setupConstraints() {
         
         let constraint = profileCoverPhoto.heightAnchor.constraint(lessThanOrEqualToConstant: 100)
-        
-        constraint.priority = UILayoutPriority(250)
+        constraint.priority = UILayoutPriority.defaultHigh
         
         NSLayoutConstraint.activate([
             profileCoverPhoto.topAnchor.constraint(equalTo: self.topAnchor),
@@ -98,18 +93,13 @@ class HeaderProfileCollection: UICollectionReusableView, ConfigurableView {
             
             profileEditLabel.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor,constant: 8),
             profileEditLabel.centerXAnchor.constraint(equalTo: profileCoverPhoto.centerXAnchor),
+            profileEditLabel.heightAnchor.constraint(equalToConstant: 12),
             
             profileNameLabel.topAnchor.constraint(equalTo: profileEditLabel.bottomAnchor, constant: 4),
             profileNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            tabView.view.topAnchor.constraint(equalTo: profileNameLabel.bottomAnchor),
-            tabView.view.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            tabView.view.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            tabView.view.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            tabView.view.heightAnchor.constraint(equalToConstant: 32)
+            profileNameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -8),
+            profileNameLabel.heightAnchor.constraint(equalToConstant: 20)
             ])
-        
-        
     }
 }
 
