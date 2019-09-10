@@ -17,3 +17,4 @@ disabled_rules:
  - class_delegate_protocol
 excluded:
  - Pods
+ - Sigma/Plugins

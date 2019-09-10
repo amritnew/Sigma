@@ -11,22 +11,26 @@ import UIKit
 class ListTrailsController: BaseCollectionController {
 
     var trailViewModel = TrailsViewModel()
-    let trails = [Trail(title: "Swift", description: "Basic Swift, Learning the new things about the awesome language.", author: "Vinicius", topics: [Topic(title: "Generics", posts: nil)]),Trail(title: "Java Script", description: "Basics JS", author: "Mario", topics: [Topic(title: "Generics", posts: nil)])]// Mock wait for service
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
         bindViewModel()
-        trailViewModel.trails = trails
     }
     
     fileprivate func bindViewModel() {
-            trailViewModel.fetchTrail()
+        self.trailViewModel.updateList = {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
+        bindViewModel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

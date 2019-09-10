@@ -8,12 +8,24 @@
 
 import UIKit
 
-class MyTrailsController: BaseCollectionController {
+class BookMarksController: BaseCollectionController {
+    
+    let myTrailsViewModel = MyTrailsViewModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
+        bindViewModel()
         }
+    
+    fileprivate func bindViewModel() {
+        myTrailsViewModel.updateList = {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,11 +34,12 @@ class MyTrailsController: BaseCollectionController {
     }
     
 }
-extension MyTrailsController: UICollectionViewDelegateFlowLayout {
+extension BookMarksController: UICollectionViewDelegateFlowLayout {
     
     fileprivate func setupCollection() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .subBackground
         collectionView.register(cellType: ListTrailCollectionCell.self)
+        collectionView.register(cellType: BookmarksCell.self)
     }
     
     
@@ -35,11 +48,13 @@ extension MyTrailsController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return myTrailsViewModel.numberOfRows()
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ListTrailCollectionCell.self)
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: BookmarksCell.self)
+        let cellVM = myTrailsViewModel.cellViewModel(forIndex: indexPath.row)
+        cell.setup(viewModel: cellVM)
         return cell
     }
     

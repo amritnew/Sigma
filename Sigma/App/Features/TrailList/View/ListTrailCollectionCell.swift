@@ -10,13 +10,6 @@ import UIKit
 
 class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable {
     
-    var trailsViewModel: TrailsViewModel! {
-        didSet {
-            trailName.text = trailsViewModel.trails?[trailsViewModel.row].title
-            trailPublisher.text = "Published by: @\(trailsViewModel.trails?[trailsViewModel.row].author ?? "")"
-        }
-    } 
-    
     let trailImage: UIImageView = {
         let image = RoundableImage(frame: .zero)
         image.image = UIImage(named: "gallery")
@@ -25,13 +18,14 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable 
         return image
     }()
     
-    let trailName = UILabel(text: "Swift Basic", textColor: .black, font: nil, numberOfLines: nil, lineBreakMode: nil)
-    let trailPublisher = UILabel(text: "Published by: @Chris Lattner", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let trailName = UILabel(text: "Swift Basic", textColor: .white, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let trailPublisher = UILabel(text: "Published by: @Chris Lattner", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
+        self.backgroundColor = .subBackground
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,4 +51,9 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable 
             ])
     }
     
+    
+    func setup(viewModel: TrailsCellViewModel) {
+        trailName.text = viewModel.trail?.title
+        trailPublisher.text = "Published by: @\(String(describing: viewModel.trail?.author ?? ""))"
+    }
 }

@@ -13,26 +13,21 @@ protocol ListTrailHeaderDelegate: ListTrailsController {
     func imageHeaderDidClick()
 }
 
-class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reusable { 
-  
-    var trailsViewModel: TrailsViewModel! {
-        didSet {
-            tagHeader.text = trailsViewModel.trails?[0].title
-            publisherHeader.text = "Published By: @\(trailsViewModel.trails?[0].author ?? "")" 
-            titleHeader.text = trailsViewModel.trails?[0].description
-        }
-    }
-    
+class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reusable {
     
     let tagHeader = UILabel(text: "Swift", textColor: .orange,font: nil, numberOfLines: nil, lineBreakMode: nil)
-    let publisherHeader = UILabel(text: "Published by: @Chris Lattner", textColor: .lightGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
-    let titleHeader = UILabel(text: "Basic Swift, Learning the new things about the awesome language", textColor: .black, font: UIFont.systemFont(ofSize: 22), numberOfLines: 2, lineBreakMode: .byWordWrapping)
+    let publisherHeader = UILabel(text: "Published by: @Chris Lattner", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let titleHeader = UILabel(text: "Basic Swift, Learning the new things about the awesome language", textColor: .white, font: UIFont.systemFont(ofSize: 22), numberOfLines: 2, lineBreakMode: .byWordWrapping)
     
-    let imageHeader: UIImageView = {
+    lazy var imageHeader: UIImageView = {
         let image = RoundableImage(frame: .zero)
         image.image = UIImage(named: "swift")
+        image.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageHeaderDidClick(_:)))
         image.addGestureRecognizer(tapGesture)
+        tapGesture.numberOfTapsRequired = 1
+        image.contentMode = UIView.ContentMode.scaleAspectFill
+        image.layer.masksToBounds = true
         return image
     }()
     
@@ -43,6 +38,7 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reu
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
+        self.backgroundColor = .subBackground
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -78,4 +74,11 @@ extension ListTrailCollectionHeader {
     @objc func imageHeaderDidClick(_ gesture: UITapGestureRecognizer) {
         delegate?.imageHeaderDidClick()
     }
+    
+    func setup(viewModel: TrailsCellViewModel) {
+        titleHeader.text = "Basic Swift, Learning the new things about the awesome language"
+          publisherHeader.text = "Published By: @\(viewModel.trail?.author ?? "")"
+          //  tagHeader.text = viewModel.trail?.title
+    }
+    
 }
