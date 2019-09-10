@@ -23,4 +23,8 @@ struct TrailViewModel {
         return topics?.count ?? 0
     }
     
+    func createPostAtTrail() {
+        
+    }
+    
 }
