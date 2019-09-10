@@ -16,6 +16,11 @@ class ListTrailsController: BaseCollectionController {
         super.viewDidLoad()
         setupCollection()
         bindViewModel()
+        
+     
+        
+        
+        
     }
     
     fileprivate func bindViewModel() {

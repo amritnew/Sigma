@@ -18,7 +18,6 @@ class TrailController: BaseCollectionController {
         trailViewModel = TrailViewModel(trail: trail)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
@@ -30,10 +29,10 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     fileprivate func setupCollection() {
         navigationController?.navigationBar.tintColor = .actionColor
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.shadowImage = UIImage()
         collectionView.backgroundColor = .subBackground
         collectionView.register(cellType: TrailCollectionViewCell.self)
         collectionView.register(supplementaryViewType: TrailHeaderView.self, ofKind: UICollectionView.elementKindSectionHeader)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
     }
     
     @objc fileprivate func popView() {
