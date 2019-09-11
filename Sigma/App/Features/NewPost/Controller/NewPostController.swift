@@ -8,19 +8,27 @@
 
 import UIKit
 
+enum ComeFrom {
+    case postToTrail
+    case newToTrail
+}
 
 class NewPostController: UIViewController, ConfigurableController {
     
     var usedView: UIView? = NewPostView()
+    
+    var comeFrom: ComeFrom?
+    
+    convenience init(comeFrom: ComeFrom) {
+        self.init()
+        self.comeFrom = comeFrom
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupView()
         bindViewModel()
-       
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -64,14 +72,27 @@ class NewPostController: UIViewController, ConfigurableController {
     }
     
     @objc func postBarButtonDidPressed() {
+        switch comeFrom! {
+        case .newToTrail:
+            didCreatePost()
+        case .postToTrail:
+            didCreatePostAtTrail()
+        }
+    }
+    
+    func didCreatePost() {
         let alert = UIAlertController(title: "Type your post title", message: nil, preferredStyle: .alert)
         var actionTextField = UITextField()
         alert.addTextField(configurationHandler: { actionTextField = $0 })
         alert.addActions(actions: [
             UIAlertAction(title: "Post", style: .default) { _ in self.postToSave(title: actionTextField.text ?? "") },
             UIAlertAction(title: "Cancel", style: .destructive) { _ in print("Cancel Pressed") }
-        ])
+            ])
         present(alert, animated: true, completion: nil)
+    }
+    
+    func didCreatePostAtTrail() {
+        print("Associated post")
     }
     
     private func postToSave(title: String) {

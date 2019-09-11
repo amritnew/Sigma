@@ -20,10 +20,17 @@ struct TrailViewModel {
     }
     
     func numberOfRows() -> Int {
+        if topics?.count == 0 {
+            return 0
+        }
         return topics?[0].posts?.count ?? 0
     }
     
-    func cellViewModel(forIndex indext: Int) -> PostCellViewModel {
-        return PostCellViewModel(Post(title: "Swift", markdownText: "## Basic"))
+    func cellViewModel(forIndex index: Int) -> PostCellViewModel {
+        if topics?.count == 0 {
+            return PostCellViewModel(Post(title: "Swift", markdownText: "## Basic"))
+        }
+        guard let post = topics?[0].posts?[index] else {return PostCellViewModel(Post(title: "Swift", markdownText: "## Basic")) }
+        return PostCellViewModel(post)
     }
 }

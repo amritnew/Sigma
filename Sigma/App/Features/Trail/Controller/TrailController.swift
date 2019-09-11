@@ -36,14 +36,12 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     }
     
     @objc func createPostAtTrail() {
-        navigationController?.present(UINavigationController(rootViewController: NewPostController()), animated: true, completion: nil)
+        navigationController?.present(UINavigationController(rootViewController: NewPostController(comeFrom: .postToTrail)), animated: true, completion: nil)
     }
-    
     
     @objc fileprivate func popView() {
         self.navigationController?.popViewController(animated: true)
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: TrailHeaderView.self)
