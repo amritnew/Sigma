@@ -33,4 +33,12 @@ struct TrailViewModel {
         guard let post = topics?[0].posts?[index] else {return PostCellViewModel(Post(title: "Swift", markdownText: "## Basic")) }
         return PostCellViewModel(post)
     }
+    
+    func getPost(forIndex index: Int) -> Post {
+        if topics?.count == 0 {
+            return Post(title: "Swift", markdownText: "## Basic")
+        }
+        guard let post = topics?[0].posts?[index] else {return Post(title: "Swift", markdownText: "## Basic") }
+        return post
+    }
 }

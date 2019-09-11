@@ -72,15 +72,6 @@ class NewPostController: UIViewController, ConfigurableController {
     }
     
     @objc func postBarButtonDidPressed() {
-        switch comeFrom! {
-        case .newToTrail:
-            didCreatePost()
-        case .postToTrail:
-            didCreatePostAtTrail()
-        }
-    }
-    
-    func didCreatePost() {
         let alert = UIAlertController(title: "Type your post title", message: nil, preferredStyle: .alert)
         var actionTextField = UITextField()
         alert.addTextField(configurationHandler: { actionTextField = $0 })
@@ -91,12 +82,9 @@ class NewPostController: UIViewController, ConfigurableController {
         present(alert, animated: true, completion: nil)
     }
     
-    func didCreatePostAtTrail() {
-        print("Associated post")
-    }
     
     private func postToSave(title: String) {
-        (usedView as? NewPostView)?.postBarButtonDidPressed(title: title) { result in
+        (usedView as? NewPostView)?.postBarButtonDidPressed(title: title, comeFrom: comeFrom!) { result in
             let alert = UIAlertController(title: "Posted", message: nil, preferredStyle: .alert)
             let ctrlToDismiss = result ? self : alert
             alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
