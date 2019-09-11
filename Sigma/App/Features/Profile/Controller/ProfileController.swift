@@ -8,8 +8,16 @@
 
 import UIKit
 
-class ProfileController: BaseCollectionController {
+class ProfileController: UICollectionViewController {
     var selectedOption:OptionsProfile = .about
+    
+    init() {
+        super.init(collectionViewLayout: StretchHeaderFlowLayout())
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +73,6 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "container", for: indexPath) as? ContainerCollectionViewCell
-        
         return cell ?? UICollectionViewCell()
     }
     

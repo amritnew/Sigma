@@ -58,27 +58,3 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
         return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
     }
 }
-
-class ContainerRowCollectionViewCell: UICollectionViewCell {
-    let collection:UICollectionView = {
-        let listTrailsController = ListTrailsController()
-        let collection = listTrailsController.collectionView
-        return collection!
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubview(collection)
-        setupConstraints()
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupConstraints() {
-        collection.fillSuperview()
-    }
-}
-
