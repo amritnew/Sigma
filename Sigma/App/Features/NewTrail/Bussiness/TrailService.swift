@@ -40,29 +40,6 @@ struct TrailService {
             }
         }
     }
-    
-    func edit(completion: @escaping (Trail?, TrailServiceError?) -> Void) {
-        let params = [
-            "title" : "Node JS",
-            "author" : "Felipe Deschamps"
-        ]
-        
-        Service<Trail>().put(params: params, url: "https://raftel.herokuapp.com/trails/1") { (result) in
-            switch result {
-            case .failure:
-                completion(nil, TrailServiceError.trailNotCreated)
-            case .success(_):
-                break
-            }
-        }
-        
-        
-        
-        
-    }
-    
-    
-    
 }
 
 

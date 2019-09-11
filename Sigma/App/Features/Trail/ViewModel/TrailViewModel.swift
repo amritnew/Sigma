@@ -20,11 +20,10 @@ struct TrailViewModel {
     }
     
     func numberOfRows() -> Int {
-        return topics?.count ?? 0
+        return topics?[0].posts?.count ?? 0
     }
     
-    func createPostAtTrail() {
-        
+    func cellViewModel(forIndex indext: Int) -> PostCellViewModel {
+        return PostCellViewModel(Post(title: "Swift", markdownText: "## Basic"))
     }
-    
 }

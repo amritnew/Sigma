@@ -36,13 +36,7 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     }
     
     @objc func createPostAtTrail() {
-        
-        TrailService().edit() { (_, _) in
-            
-        }
-        
-        
-     
+        navigationController?.present(UINavigationController(rootViewController: NewPostController()), animated: true, completion: nil)
     }
     
     
@@ -68,6 +62,8 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TrailCollectionViewCell.self)
+        let cellVm = trailViewModel.cellViewModel(forIndex: indexPath.row)
+        cell.setup(viewModel: cellVm)
         return cell
     }
     
