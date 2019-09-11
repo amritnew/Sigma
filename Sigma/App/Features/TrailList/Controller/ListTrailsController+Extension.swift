@@ -46,6 +46,10 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 75)
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollDelegate?.scrollDidScroll(withOffset: scrollView.contentOffset)
+    }
 }
 
 extension ListTrailsController: ListTrailHeaderDelegate {

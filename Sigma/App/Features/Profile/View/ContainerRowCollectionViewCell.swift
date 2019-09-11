@@ -9,11 +9,14 @@
 import UIKit
 
 class ContainerRowCollectionViewCell: UICollectionViewCell {
-    let collection:UICollectionView = {
+    lazy var collection:UICollectionView = {
         let listTrailsController = ListTrailsController()
         let collection = listTrailsController.collectionView
+        listTrailsController.scrollDelegate = self
         return collection!
     }()
+    
+    weak var customScroll: CustomScrollDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,5 +31,11 @@ class ContainerRowCollectionViewCell: UICollectionViewCell {
     
     func setupConstraints() {
         collection.fillSuperview()
+    }
+}
+
+extension ContainerRowCollectionViewCell: CustomScrollDelegate {
+    func scrollDidScroll(withOffset offset: CGPoint) {
+        customScroll?.scrollDidScroll(withOffset: offset)
     }
 }
