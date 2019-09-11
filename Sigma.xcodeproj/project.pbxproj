@@ -72,6 +72,7 @@
 		923DD45323267CC5006DAE75 /* ContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923DD45223267CC5006DAE75 /* ContainerCollectionViewCell.swift */; };
 		9243B7232327D9E7004333D0 /* MenuBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9243B7222327D9E7004333D0 /* MenuBarCollectionViewCell.swift */; };
 		929A167723291124005BF5E8 /* ContainerRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A167623291124005BF5E8 /* ContainerRowCollectionViewCell.swift */; };
+		92BAC2DE2329209E00A50B59 /* CustomScrollDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAC2DD2329209E00A50B59 /* CustomScrollDelegate.swift */; };
 		92E8C82B23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8C82A23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift */; };
 		92FBC5822314292900E596BC /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5812314292900E596BC /* TabController.swift */; };
 		92FBC5842314295B00E596BC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5832314295B00E596BC /* ProfileController.swift */; };
@@ -182,6 +183,7 @@
 		923DD45223267CC5006DAE75 /* ContainerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCollectionViewCell.swift; sourceTree = "<group>"; };
 		9243B7222327D9E7004333D0 /* MenuBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		929A167623291124005BF5E8 /* ContainerRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRowCollectionViewCell.swift; sourceTree = "<group>"; };
+		92BAC2DD2329209E00A50B59 /* CustomScrollDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollDelegate.swift; sourceTree = "<group>"; };
 		92E8C82A23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchHeaderFlowLayout.swift; sourceTree = "<group>"; };
 		92FBC5812314292900E596BC /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		92FBC5832314295B00E596BC /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 			children = (
 				921327B3231E8BEC005635F8 /* OptionsProfile.swift */,
 				92E8C82A23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift */,
+				92BAC2DD2329209E00A50B59 /* CustomScrollDelegate.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -1066,6 +1069,7 @@
 				79EB670F23254B84003188A7 /* FavoritePost+Class.swift in Sources */,
 				79EB670B23254ABD003188A7 /* SigmaContainer.xcdatamodeld in Sources */,
 				790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */,
+				92BAC2DE2329209E00A50B59 /* CustomScrollDelegate.swift in Sources */,
 				F22FBCC02320373E001B71A5 /* NewPostService.swift in Sources */,
 				92FBC5822314292900E596BC /* TabController.swift in Sources */,
 				793B05B822F25925005F3878 /* AppDelegate.swift in Sources */,
