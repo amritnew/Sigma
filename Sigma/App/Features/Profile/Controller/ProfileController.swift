@@ -73,6 +73,7 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "container", for: indexPath) as? ContainerCollectionViewCell
+        cell?.scrollDelegate = self
         return cell ?? UICollectionViewCell()
     }
     
@@ -82,5 +83,22 @@ extension ProfileController:HeaderProfileDelegate {
     func wasSelectedOption(option: OptionsProfile) {
         selectedOption = option
         self.collectionView.reloadData()
+    }
+}
+
+extension ProfileController: CustomScrollDelegate {
+    func scrollDidScroll(withOffset offset: CGPoint) {
+        
+        scrollToBottom()
+    }
+    
+    private func scrollToBottom() {
+        
+        guard let countSectionIndex = collectionView?.numberOfSections else { return }
+        let lastSectionIndex = countSectionIndex - 1
+        let lastItemIndex = collectionView.numberOfItems(inSection: lastSectionIndex) - 1
+        let indexPath = IndexPath(item: lastItemIndex, section: lastSectionIndex)
+        
+        collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
     }
 }

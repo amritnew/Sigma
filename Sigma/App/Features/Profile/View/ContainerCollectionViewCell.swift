@@ -20,6 +20,8 @@ class ContainerCollectionViewCell: UICollectionViewCell {
         return collection
     }()
     
+    weak var scrollDelegate: CustomScrollDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(collectionView)
@@ -35,7 +37,7 @@ class ContainerCollectionViewCell: UICollectionViewCell {
     }
     
     func setupContraints() {
-        collectionView.fillSuperview(padding: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+        collectionView.fillSuperview()
     }
     
     func setupCollection() {
@@ -50,11 +52,20 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ContainerRowCollectionViewCell else { return UICollectionViewCell() }
+        cell.scrollDelegate = self
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
     }
+}
+
+extension ContainerCollectionViewCell: CustomScrollDelegate {
+    func scrollDidScroll(withOffset offset: CGPoint) {
+        scrollDelegate?.scrollDidScroll(withOffset: offset)
+    }
+    
+    
 }

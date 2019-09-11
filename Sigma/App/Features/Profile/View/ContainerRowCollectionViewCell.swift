@@ -16,7 +16,7 @@ class ContainerRowCollectionViewCell: UICollectionViewCell {
         return collection!
     }()
     
-    weak var customScroll: CustomScrollDelegate?
+    weak var scrollDelegate: CustomScrollDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +36,6 @@ class ContainerRowCollectionViewCell: UICollectionViewCell {
 
 extension ContainerRowCollectionViewCell: CustomScrollDelegate {
     func scrollDidScroll(withOffset offset: CGPoint) {
-        customScroll?.scrollDidScroll(withOffset: offset)
+        scrollDelegate?.scrollDidScroll(withOffset: offset)
     }
 }
