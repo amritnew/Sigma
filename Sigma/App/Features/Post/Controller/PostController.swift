@@ -14,7 +14,6 @@ class PostController: UIViewController, ConfigurableController {
     
     var postViewModel = PostViewModel(post: Post(title: "Swift", markdownText: "# SWIFT BASICS\n## Froids\nTroll"))
     
-    
     convenience init(post: Post) {
         self.init()
         postViewModel = PostViewModel(post: post)

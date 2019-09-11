@@ -13,7 +13,6 @@ struct Post: Codable {
     var title: String
     var markdownText: String
     var provisionalAuthor: String?
-    var isFavorited: Bool?
     
     init(title: String, markdownText: String) {
         self.title = title

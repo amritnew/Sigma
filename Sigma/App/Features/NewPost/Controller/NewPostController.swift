@@ -8,19 +8,27 @@
 
 import UIKit
 
+enum ComeFrom {
+    case postToTrail
+    case newToTrail
+}
 
 class NewPostController: UIViewController, ConfigurableController {
     
     var usedView: UIView? = NewPostView()
+    
+    var comeFrom: ComeFrom?
+    
+    convenience init(comeFrom: ComeFrom) {
+        self.init()
+        self.comeFrom = comeFrom
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupView()
         bindViewModel()
-       
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -70,12 +78,13 @@ class NewPostController: UIViewController, ConfigurableController {
         alert.addActions(actions: [
             UIAlertAction(title: "Post", style: .default) { _ in self.postToSave(title: actionTextField.text ?? "") },
             UIAlertAction(title: "Cancel", style: .destructive) { _ in print("Cancel Pressed") }
-        ])
+            ])
         present(alert, animated: true, completion: nil)
     }
     
+    
     private func postToSave(title: String) {
-        (usedView as? NewPostView)?.postBarButtonDidPressed(title: title) { result in
+        (usedView as? NewPostView)?.postBarButtonDidPressed(title: title, comeFrom: comeFrom!) { result in
             let alert = UIAlertController(title: "Posted", message: nil, preferredStyle: .alert)
             let ctrlToDismiss = result ? self : alert
             alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in

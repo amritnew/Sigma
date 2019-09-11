@@ -11,6 +11,13 @@ import UIKit
 
 class TrailController: BaseCollectionController {
     
+    var trailViewModel = TrailViewModel(trail: Trail(title: "", description: "", author: "", topics: nil))
+    
+    convenience init(trail: Trail) {
+        self.init()
+        trailViewModel = TrailViewModel(trail: trail)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
@@ -22,20 +29,23 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     fileprivate func setupCollection() {
         navigationController?.navigationBar.tintColor = .actionColor
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), landscapeImagePhone: nil, style: .done, target: self, action: #selector(popView))
         collectionView.backgroundColor = .subBackground
-        collectionView.register(cellType: TopicCollectionViewCell.self)
-        collectionView.register(supplementaryViewType: ListTrailCollectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
+        collectionView.register(cellType: TrailCollectionViewCell.self)
+        collectionView.register(supplementaryViewType: TrailHeaderView.self, ofKind: UICollectionView.elementKindSectionHeader)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPostAtTrail))
+    }
+    
+    @objc func createPostAtTrail() {
+        navigationController?.present(UINavigationController(rootViewController: NewPostController(comeFrom: .postToTrail)), animated: true, completion: nil)
     }
     
     @objc fileprivate func popView() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: ListTrailCollectionHeader.self)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath, viewType: TrailHeaderView.self)
+        header.setup(viewModel: trailViewModel)
         return header
     }
     
@@ -45,16 +55,18 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return trailViewModel.numberOfRows()
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TopicCollectionViewCell.self)
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TrailCollectionViewCell.self)
+        let cellVm = trailViewModel.cellViewModel(forIndex: indexPath.row)
+        cell.setup(viewModel: cellVm)
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(PostController(), animated: true)
+        navigationController?.pushViewController(PostController(post: trailViewModel.getPost(forIndex: indexPath.row)), animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
