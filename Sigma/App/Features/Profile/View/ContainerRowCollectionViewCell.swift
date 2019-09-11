@@ -6,7 +6,7 @@
 //  Copyright © 2019 Vinicius Mangueira. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ContainerRowCollectionViewCell: UICollectionViewCell {
     let collection:UICollectionView = {
