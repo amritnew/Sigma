@@ -53,7 +53,6 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
         return .init(width: view.frame.width, height: 500)
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trailViewModel.numberOfRows()
     }

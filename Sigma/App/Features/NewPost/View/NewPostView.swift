@@ -63,17 +63,10 @@ class NewPostView: UIView, ConfigurableView {
                 trail.trailId = trailViewModel!.trailId
                 
                 self.viewModel.associateBlogPost(to: trail, withPost: post!, title: "Introduction", completion: { (_) in
-                    print("Fodeu")
+                    // Something happening when associate post at trail
                 })
-                
-                
-                
-            
-             
                 completion(response)
             }
-            
-            
         }
     }
     
