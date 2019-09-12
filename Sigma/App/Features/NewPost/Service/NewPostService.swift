@@ -37,7 +37,8 @@ class NewPostService {
     func associate(post: Post, at trail: Trail, completion: @escaping (Trail?, NewPostServiceError?) -> Void) {
         guard let trailId = trail.trailId else { return completion(nil, NewPostServiceError.trailWithoutId) }
         let params = [
-            "blog_post_id" : 27,
+            
+            "blog_post_id" : post.postId,
             "topic_name" : "Introduction"
             ] as [String : Any]
         

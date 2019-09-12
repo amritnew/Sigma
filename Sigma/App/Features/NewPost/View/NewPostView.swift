@@ -55,17 +55,23 @@ class NewPostView: UIView, ConfigurableView {
     func postBarButtonDidPressed(title: String, comeFrom: ComeFrom, trailViewModel: TrailViewModel? , completion: @escaping (Bool) -> Void) {
         switch comeFrom {
         case .newToTrail:
-            viewModel.saveBlogPost(title: title, completion: { completion($0) })
+            viewModel.saveBlogPost(title: title) { (_, _) in
+            }
         case .postToTrail:
-            viewModel.saveBlogPost(title: title, completion: {
+            viewModel.saveBlogPost(title: title) { (response, post) in
                 var trail = Trail(title: trailViewModel!.title, description: "Description", author: trailViewModel!.author, topics: trailViewModel!.topics)
                 trail.trailId = trailViewModel!.trailId
                 
-                self.viewModel.associateBlogPost(to: trail, title: "Introduction", completion: { (_) in
+                self.viewModel.associateBlogPost(to: trail, withPost: post!, title: "Introduction", completion: { (_) in
                     print("Fodeu")
                 })
-                completion($0)
-            })
+                
+                
+                
+            
+             
+                completion(response)
+            }
             
             
         }
