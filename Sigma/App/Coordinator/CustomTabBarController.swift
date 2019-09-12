@@ -28,8 +28,6 @@ class CustomTabBarController: UITabBarController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
-    
 }
 
 extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate {
@@ -67,7 +65,7 @@ extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate
         let actionSheet = UIAlertController.buildActionSheet(title: "Time to create", message: "You can create a new trail or a new blog post to share")
         actionSheet.addActions(actions: [
             UIAlertAction(title: "Make a Trail", style: .default) { [weak self] _ in self?.showControllerModal(UINavigationController(rootViewController: NewTrailController())) },
-            UIAlertAction(title: "Write a Post", style: .default) { [weak self] _ in self?.showControllerModal(UINavigationController(rootViewController: NewPostController())) },            
+            UIAlertAction(title: "Write a Post", style: .default) { [weak self] _ in self?.showControllerModal(UINavigationController(rootViewController: NewPostController(comeFrom: .newToTrail))) },
             UIAlertAction(title: "Cancel", style: .destructive) { _ in print("Cancel Pressed") }
         ])
         

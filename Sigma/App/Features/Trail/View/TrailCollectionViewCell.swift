@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView, Reusable {
+class TrailCollectionViewCell: UICollectionViewCell, ConfigurableView, Reusable {
   
     let topicImage: UIImageView = {
         let image = RoundableImage(frame: .zero)
@@ -38,7 +38,6 @@ class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView, Reusable 
     }
     
     func setupConstraints() {
-        
         NSLayoutConstraint.activate( [
             topicImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             topicImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
@@ -51,6 +50,10 @@ class TopicCollectionViewCell: UICollectionViewCell, ConfigurableView, Reusable 
             topicPublisher.topAnchor.constraint(equalTo: topicName.bottomAnchor, constant: 5),
             topicPublisher.leadingAnchor.constraint(equalTo: topicName.leadingAnchor)
             ])
-        
+    }
+    
+    func setup(viewModel: PostCellViewModel) {
+        topicName.text = viewModel.post?.title
+        topicPublisher.text = "Something like description"
     }
 }

@@ -52,8 +52,13 @@ class NewPostView: UIView, ConfigurableView {
         markdownTextView.fillSuperview(padding: UIEdgeInsets(top: 100, left: 20, bottom: 0, right: 20))
     }
     
-    func postBarButtonDidPressed(title: String, completion: @escaping (Bool) -> Void) {
-        viewModel.saveBlogPost(title: title, completion: { completion($0) })
+    func postBarButtonDidPressed(title: String, comeFrom: ComeFrom, completion: @escaping (Bool) -> Void) {
+        switch comeFrom {
+        case .newToTrail:
+            viewModel.saveBlogPost(title: title, completion: { completion($0) })
+        case .postToTrail:
+            print("Boa")
+        }
     }
     
     func previewBarButtonDidPressed() {
