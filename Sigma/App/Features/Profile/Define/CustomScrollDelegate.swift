@@ -9,5 +9,5 @@
 import UIKit
 
 protocol CustomScrollDelegate: class {
-    func scrollDidScroll(withOffset offset:CGPoint)
+    func scrollDidScroll(withOffset scrollView:UIScrollView)
 }

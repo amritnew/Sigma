@@ -86,6 +86,9 @@ class TabCollectionCell: UICollectionViewCell {
     
     func setupContraints() {
         labelCell.centerYInSuperview()
-        
+        labelCell.cBuilder { (make) in
+            make.leading.equal(to: self.leadingAnchor, offsetBy: 8)
+            make.trailing.equal(to: self.trailingAnchor, offsetBy: -8)
+        }
     }
 }

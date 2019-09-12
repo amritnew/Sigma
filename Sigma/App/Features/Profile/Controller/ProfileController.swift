@@ -88,8 +88,8 @@ extension ProfileController:HeaderProfileDelegate {
 
 extension ProfileController: CustomScrollDelegate {
     func scrollDidScroll(withOffset offset: CGPoint) {
-        
-        scrollToBottom()
+        collectionView.setContentOffset(offset, animated: false)
+//        scrollToBottom()
     }
     
     private func scrollToBottom() {
