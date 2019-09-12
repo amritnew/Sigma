@@ -17,7 +17,7 @@ class TabController: BaseCollectionController {
     init(itensTab:[String]) {
         super.init()
         self.itensTab = itensTab
-        self.collectionView.backgroundColor = .blue
+        self.collectionView.backgroundColor = .subBackground
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,18 +56,12 @@ extension TabController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as? TabCollectionCell
         cell?.labelCell.text = itensTab[indexPath.row]
-        cell?.backgroundColor = UIColor.white
-        
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 16, height: collectionView.frame.height)
-        
-//        let text = itensTab[indexPath.row] as NSString
-//
-//        return text.size(withAttributes: nil)
     }
 }
 
@@ -83,6 +77,7 @@ class TabCollectionCell: UICollectionViewCell {
         super.init(frame: frame)
         addSubview(labelCell)
         setupContraints()
+        self.backgroundColor = .actionColor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -90,8 +85,7 @@ class TabCollectionCell: UICollectionViewCell {
     }
     
     func setupContraints() {
-        
-        NSLayoutConstraint.activate(labelCell.anchor(nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 8, rightConstant: 8, widthConstant: 0, heightConstant: 0))
+        labelCell.centerYInSuperview()
         
     }
 }

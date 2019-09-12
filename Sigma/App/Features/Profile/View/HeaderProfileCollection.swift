@@ -30,7 +30,7 @@ class HeaderProfileCollection: UICollectionReusableView, ConfigurableView {
     let profileEditLabel: UILabel = {
         let label = UILabel()
         label.text = "Edit Profile"
-        label.textColor = UIColor.lightGray
+        label.textColor = UIColor.subText
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(font: .mediumSystem, size: 12)
        
@@ -40,25 +40,15 @@ class HeaderProfileCollection: UICollectionReusableView, ConfigurableView {
     let profileNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Nome Lindo"
-        label.textColor = UIColor.black
+        label.textColor = UIColor.foreground
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(font: .boldSystem, size: 20)
         return label
     }()
     
-    let collectionSelection:UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
-        collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.backgroundColor = UIColor.blue
-        return collection
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.subBackground
         
         buildViewHierarchy()
         setupConstraints()

@@ -29,7 +29,7 @@ class MenuBarCollectionViewCell: UICollectionViewCell {
                 viewMenuBar.leadingAnchor.constraint(equalTo: leadingAnchor),
                 viewMenuBar.trailingAnchor.constraint(equalTo: trailingAnchor),
                 viewMenuBar.bottomAnchor.constraint(equalTo: bottomAnchor),
-                viewMenuBar.topAnchor.constraint(equalTo: topAnchor,constant: 8)
+                viewMenuBar.topAnchor.constraint(equalTo: topAnchor)
                 ])
         }
         
