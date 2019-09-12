@@ -32,9 +32,8 @@ struct NewPostViewModel {
     func associateBlogPost(to trail: Trail, title: String, completion: @escaping (Bool) -> Void) {
         let service = NewPostService.main
         
-        service.associate(post: Post(title: title, markdownText: markdownText), at: Trail(title: "", description: "", author: "", topics: nil)) { (trail, _) in
-            print(trail ?? "")
+        service.associate(post: Post(title: title, markdownText: markdownText), at: trail) { (_, _) in
+            print("Chamou o que sabe")
         }
-        
     }
 }

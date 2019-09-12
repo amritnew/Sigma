@@ -36,7 +36,7 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     }
     
     @objc func createPostAtTrail() {
-        navigationController?.present(UINavigationController(rootViewController: NewPostController(comeFrom: .postToTrail)), animated: true, completion: nil)
+        navigationController?.present(UINavigationController(rootViewController: NewPostController(comeFrom: .postToTrail, trailViewModel: trailViewModel)), animated: true, completion: nil)
     }
     
     @objc fileprivate func popView() {

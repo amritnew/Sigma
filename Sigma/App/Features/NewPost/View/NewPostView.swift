@@ -52,12 +52,22 @@ class NewPostView: UIView, ConfigurableView {
         markdownTextView.fillSuperview(padding: UIEdgeInsets(top: 100, left: 20, bottom: 0, right: 20))
     }
     
-    func postBarButtonDidPressed(title: String, comeFrom: ComeFrom, completion: @escaping (Bool) -> Void) {
+    func postBarButtonDidPressed(title: String, comeFrom: ComeFrom, trailViewModel: TrailViewModel? , completion: @escaping (Bool) -> Void) {
         switch comeFrom {
         case .newToTrail:
             viewModel.saveBlogPost(title: title, completion: { completion($0) })
         case .postToTrail:
-            print("Boa")
+            viewModel.saveBlogPost(title: title, completion: {
+                var trail = Trail(title: trailViewModel!.title, description: "Description", author: trailViewModel!.author, topics: trailViewModel!.topics)
+                trail.trailId = trailViewModel!.trailId
+                
+                self.viewModel.associateBlogPost(to: trail, title: "Introduction", completion: { (_) in
+                    print("Fodeu")
+                })
+                completion($0)
+            })
+            
+            
         }
     }
     
