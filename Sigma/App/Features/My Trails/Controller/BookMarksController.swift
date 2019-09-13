@@ -42,7 +42,7 @@ extension BookMarksController: UICollectionViewDelegateFlowLayout {
     
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(TrailController(), animated: true)
+        navigationController?.pushViewController(PostController(post: bookMarkViewModel.performPostAtFavorite(forIndex: indexPath.row)), animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

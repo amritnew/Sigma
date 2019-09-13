@@ -43,4 +43,11 @@ class BookMarkViewModel: ConfigurableViewModel {
         
         return BookmarkCellViewModel(FavoritePost())
     }
+    
+    public func performPostAtFavorite(forIndex index: Int) -> Post {
+        let postCellVM = cellViewModel(forIndex: index)
+        let post = Post(title: postCellVM.favoritePost?.title ?? "Empty", markdownText: postCellVM.favoritePost?.markdownText ?? "Empty")
+        return post
+    }
+    
 }

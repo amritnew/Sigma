@@ -33,7 +33,7 @@ struct NewPostViewModel {
     func associateBlogPost(to trail: Trail, withPost post: Post, title: String, completion: @escaping (Bool) -> Void) {
         let service = NewPostService.main
         service.associate(post: post, at: trail) { (_, _) in
-            print("Chamou o que sabe")
+            
         }
     }
 }

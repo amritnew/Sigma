@@ -61,7 +61,6 @@ class NewPostView: UIView, ConfigurableView {
             viewModel.saveBlogPost(title: title) { (response, post) in
                 var trail = Trail(title: trailViewModel!.title, description: "Description", author: trailViewModel!.author, topics: trailViewModel!.topics)
                 trail.trailId = trailViewModel!.trailId
-                
                 self.viewModel.associateBlogPost(to: trail, withPost: post!, title: "Introduction", completion: { (_) in
                     // Something happening when associate post at trail
                 })
