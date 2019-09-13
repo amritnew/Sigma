@@ -18,10 +18,13 @@ class NewPostController: UIViewController, ConfigurableController {
     var usedView: UIView? = NewPostView()
     
     var comeFrom: ComeFrom?
+
+    var trailViewModel = TrailViewModel(trail: Trail(title: "", description: "", author: "", topics: nil))
     
-    convenience init(comeFrom: ComeFrom) {
+    convenience init(comeFrom: ComeFrom, trailViewModel: TrailViewModel?) {
         self.init()
         self.comeFrom = comeFrom
+        self.trailViewModel = trailViewModel ?? TrailViewModel(trail: Trail(title: "", description: "", author: "", topics: nil))
     }
     
     override func viewDidLoad() {
@@ -84,7 +87,7 @@ class NewPostController: UIViewController, ConfigurableController {
     
     
     private func postToSave(title: String) {
-        (usedView as? NewPostView)?.postBarButtonDidPressed(title: title, comeFrom: comeFrom!) { result in
+        (usedView as? NewPostView)?.postBarButtonDidPressed(title: title, comeFrom: comeFrom!, trailViewModel: trailViewModel) { result in
             let alert = UIAlertController(title: "Posted", message: nil, preferredStyle: .alert)
             let ctrlToDismiss = result ? self : alert
             alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in

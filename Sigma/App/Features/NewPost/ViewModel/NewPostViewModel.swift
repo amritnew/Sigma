@@ -21,20 +21,19 @@ struct NewPostViewModel {
         viewTitle = title
     }
     
-    func saveBlogPost(title: String, completion: @escaping (Bool) -> Void) {
+    
+    func saveBlogPost(title: String, completion: @escaping (Bool, Post?) -> Void) {
         let service = NewPostService.main
         service.create(post: Post(title: title, markdownText: markdownText)) { (post, _) in
-            guard post != nil else { return completion(false) }
-            completion(true)
+            guard post != nil else { return completion(false, nil) }
+            completion(true, post)
         }
     }
     
-    func associateBlogPost(to trail: Trail, title: String, completion: @escaping (Bool) -> Void) {
+    func associateBlogPost(to trail: Trail, withPost post: Post, title: String, completion: @escaping (Bool) -> Void) {
         let service = NewPostService.main
-        
-        service.associate(post: Post(title: title, markdownText: markdownText), at: Trail(title: "", description: "", author: "", topics: nil)) { (trail, _) in
-            print(trail ?? "")
+        service.associate(post: post, at: trail) { (_, _) in
+            
         }
-        
     }
 }

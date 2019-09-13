@@ -13,6 +13,6 @@ extension UIColor {
     static let background = UIColor(named: "Background") ?? #colorLiteral(red: 0.06274509804, green: 0.07450980392, blue: 0.1019607843, alpha: 1)
     static let subBackground = UIColor(named:"SubBackground") ?? #colorLiteral(red: 0.05882352941, green: 0.07843137255, blue: 0.1254901961, alpha: 1)
     static let foreground = UIColor(named:"Foreground") ?? #colorLiteral(red: 0.99598068, green: 0.9961469769, blue: 0.9959587455, alpha: 1)
-    static let actionColor = #colorLiteral(red: 0.9137254902, green: 0.2274509804, blue: 0.2274509804, alpha: 1)
+    static let actionColor = #colorLiteral(red: 0.7701123953, green: 0.1351309419, blue: 0.2727455795, alpha: 1)
     static let subText = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
 }

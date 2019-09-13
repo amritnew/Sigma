@@ -36,7 +36,7 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     }
     
     @objc func createPostAtTrail() {
-        navigationController?.present(UINavigationController(rootViewController: NewPostController(comeFrom: .postToTrail)), animated: true, completion: nil)
+        navigationController?.present(UINavigationController(rootViewController: NewPostController(comeFrom: .postToTrail, trailViewModel: trailViewModel)), animated: true, completion: nil)
     }
     
     @objc fileprivate func popView() {
@@ -52,7 +52,6 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return .init(width: view.frame.width, height: 500)
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trailViewModel.numberOfRows()
