@@ -55,6 +55,7 @@ class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reu
             tagHeader.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             tagHeader.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
             
+            
             titleHeader.leadingAnchor.constraint(equalTo: tagHeader.leadingAnchor),
             titleHeader.topAnchor.constraint(equalTo: tagHeader.bottomAnchor, constant: 10),
             titleHeader.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
@@ -76,9 +77,8 @@ extension ListTrailCollectionHeader {
     }
     
     func setup(viewModel: TrailsCellViewModel) {
+        tagHeader.text = "Swift"
         titleHeader.text = "Basic Swift, Learning the new things about the awesome language"
           publisherHeader.text = "Published By: @\(viewModel.trail?.author ?? "")"
-          //  tagHeader.text = viewModel.trail?.title
     }
-    
 }
