@@ -12,6 +12,8 @@ class ListTrailsController: BaseCollectionController {
 
     var trailViewModel = TrailsViewModel()
     
+    weak var scrollDelegate:CustomScrollDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()

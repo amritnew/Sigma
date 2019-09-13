@@ -17,6 +17,7 @@ class TabController: BaseCollectionController {
     init(itensTab:[String]) {
         super.init()
         self.itensTab = itensTab
+        self.collectionView.backgroundColor = .subBackground
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,7 +44,7 @@ extension TabController: UICollectionViewDelegateFlowLayout {
     }
         
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let option = OptionProfile(rawValue: indexPath.row) else {return}
+        guard let option = OptionsProfile(rawValue: indexPath.row) else {return}
         delegate?.tappedInOption(optionProfile: option)
     }
     
@@ -55,30 +56,12 @@ extension TabController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as? TabCollectionCell
         cell?.labelCell.text = itensTab[indexPath.row]
-        cell?.backgroundColor = UIColor.white
-        
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let text = itensTab[indexPath.row] as NSString
-           
-        return text.size(withAttributes: nil)
-//        guard let cell = collectionView.cellForItem(at: indexPath) as? TabCollectionCell else {
-//            return CGSize.zero
-//        }
-//        
-//        let label = cell.labelCell
-//        guard let font = label.font else {
-//            return CGSize.zero
-//        }
-//        
-//        let height = label.font.lineHeight
-//        
-//        let width = itensTab[indexPath.row].widthWithConstrainedHeight(height, font: font)
-//        
-//        return CGSize(width: width, height: height)
+        return CGSize(width: 16, height: collectionView.frame.height)
     }
 }
 
@@ -94,6 +77,7 @@ class TabCollectionCell: UICollectionViewCell {
         super.init(frame: frame)
         addSubview(labelCell)
         setupContraints()
+        self.backgroundColor = .actionColor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -101,6 +85,10 @@ class TabCollectionCell: UICollectionViewCell {
     }
     
     func setupContraints() {
-        labelCell.anchorWithConstantsToTop(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 4, leftConstant: 4, bottomConstant: 4, rightConstant: -4)
+        labelCell.centerYInSuperview()
+        labelCell.cBuilder { (make) in
+            make.leading.equal(to: self.leadingAnchor, offsetBy: 8)
+            make.trailing.equal(to: self.trailingAnchor, offsetBy: -8)
+        }
     }
 }

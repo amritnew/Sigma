@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileCollectionHeader: UICollectionReusableView, ConfigurableView {
+class HeaderProfileCollection: UICollectionReusableView, ConfigurableView {
     weak var delegate:HeaderProfileDelegate?
     
     let profileCoverPhoto:UIImageView = {
@@ -30,7 +30,7 @@ class ProfileCollectionHeader: UICollectionReusableView, ConfigurableView {
     let profileEditLabel: UILabel = {
         let label = UILabel()
         label.text = "Edit Profile"
-        label.textColor = UIColor.lightGray
+        label.textColor = UIColor.subText
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(font: .mediumSystem, size: 12)
        
@@ -40,28 +40,15 @@ class ProfileCollectionHeader: UICollectionReusableView, ConfigurableView {
     let profileNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Nome Lindo"
-        label.textColor = UIColor.black
+        label.textColor = UIColor.foreground
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(font: .boldSystem, size: 20)
         return label
     }()
     
-    let collectionSelection:UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
-        collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.backgroundColor = UIColor.blue
-        return collection
-    }()
-    
-    let tabView = TabController(itensTab: ["About","PreferredLanguage"])
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        tabView.delegate = self
+        self.backgroundColor = UIColor.subBackground
         
         buildViewHierarchy()
         setupConstraints()
@@ -74,16 +61,14 @@ class ProfileCollectionHeader: UICollectionReusableView, ConfigurableView {
 
     
     func buildViewHierarchy() {
-        tabView.view.translatesAutoresizingMaskIntoConstraints = false
-        addSubviews([profileCoverPhoto,profilePhoto,profileEditLabel,profileNameLabel, tabView.view])
+        addSubviews([profileCoverPhoto,profilePhoto,profileEditLabel,profileNameLabel])
         
     }
    
     func setupConstraints() {
         
         let constraint = profileCoverPhoto.heightAnchor.constraint(lessThanOrEqualToConstant: 100)
-        
-        constraint.priority = UILayoutPriority(250)
+        constraint.priority = UILayoutPriority.defaultHigh
         
         NSLayoutConstraint.activate([
             profileCoverPhoto.topAnchor.constraint(equalTo: self.topAnchor),
@@ -98,23 +83,18 @@ class ProfileCollectionHeader: UICollectionReusableView, ConfigurableView {
             
             profileEditLabel.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor,constant: 8),
             profileEditLabel.centerXAnchor.constraint(equalTo: profileCoverPhoto.centerXAnchor),
+            profileEditLabel.heightAnchor.constraint(equalToConstant: 12),
             
             profileNameLabel.topAnchor.constraint(equalTo: profileEditLabel.bottomAnchor, constant: 4),
             profileNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            tabView.view.topAnchor.constraint(equalTo: profileNameLabel.bottomAnchor),
-            tabView.view.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            tabView.view.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            tabView.view.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            tabView.view.heightAnchor.constraint(equalToConstant: 32)
+            profileNameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -8),
+            profileNameLabel.heightAnchor.constraint(equalToConstant: 20)
             ])
-        
-        
     }
 }
 
-extension ProfileCollectionHeader: TabControllerDelegate {
-    func tappedInOption(optionProfile: OptionProfile) {
+extension HeaderProfileCollection: TabControllerDelegate {
+    func tappedInOption(optionProfile: OptionsProfile) {
         delegate?.wasSelectedOption(option: optionProfile)
     }
 }
