@@ -49,5 +49,4 @@ class BookMarkViewModel: ConfigurableViewModel {
         let post = Post(title: postCellVM.favoritePost?.title ?? "Empty", markdownText: postCellVM.favoritePost?.markdownText ?? "Empty")
         return post
     }
-    
 }

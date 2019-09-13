@@ -18,15 +18,13 @@ class NewPostController: UIViewController, ConfigurableController {
     var usedView: UIView? = NewPostView()
     
     var comeFrom: ComeFrom?
-    
-    
+
     var trailViewModel = TrailViewModel(trail: Trail(title: "", description: "", author: "", topics: nil))
-    
     
     convenience init(comeFrom: ComeFrom, trailViewModel: TrailViewModel?) {
         self.init()
         self.comeFrom = comeFrom
-        self.trailViewModel = trailViewModel!
+        self.trailViewModel = trailViewModel ?? TrailViewModel(trail: Trail(title: "", description: "", author: "", topics: nil))
     }
     
     override func viewDidLoad() {
