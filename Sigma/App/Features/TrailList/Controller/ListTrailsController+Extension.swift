@@ -48,7 +48,7 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollDelegate?.scrollDidScroll(withOffset: scrollView.contentOffset)
+        scrollDelegate?.scrollViewDidScroll?(scrollView)
     }
 }
 

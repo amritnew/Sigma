@@ -10,6 +10,22 @@
 import UIKit
 
 class StretchHeaderFlowLayout: UICollectionViewFlowLayout {
+    override init() {
+        super.init()
+        if #available(iOS 11.0, *) {
+            let top = UIApplication.shared.keyWindow?.safeAreaInsets.top
+            self.sectionInset.top = -top!
+            
+        } else {
+            // Fallback on earlier versions
+            self.sectionInset.top = -UIApplication.shared.statusBarFrame.height
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let layoutAttributes = super.layoutAttributesForElements(in: rect)
 
@@ -18,7 +34,6 @@ class StretchHeaderFlowLayout: UICollectionViewFlowLayout {
                 guard let collectionView = collectionView else {return}
 
                 let contentOffsetY = collectionView.contentOffset.y
-                print(contentOffsetY)
                 if contentOffsetY > 0 {
                     return
                 }

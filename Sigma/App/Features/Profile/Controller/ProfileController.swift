@@ -11,8 +11,12 @@ import UIKit
 class ProfileController: UICollectionViewController {
     var selectedOption:OptionsProfile = .about
     
+    lazy var heightHeader = self.view.frame.height / 2.5
+    
     init() {
         super.init(collectionViewLayout: StretchHeaderFlowLayout())
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,6 +27,11 @@ class ProfileController: UICollectionViewController {
         super.viewDidLoad()
         setupCollection()
         self.view.backgroundColor = UIColor.yellow
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
 }
@@ -87,9 +96,10 @@ extension ProfileController:HeaderProfileDelegate {
 }
 
 extension ProfileController: CustomScrollDelegate {
-    func scrollDidScroll(withOffset offset: CGPoint) {
-        collectionView.setContentOffset(offset, animated: false)
-//        scrollToBottom()
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offSetYCollection = collectionView.contentOffset.y
+        
+        print(offSetYCollection)
     }
     
     private func scrollToBottom() {

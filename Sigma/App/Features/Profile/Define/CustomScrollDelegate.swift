@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol CustomScrollDelegate: class {
-    func scrollDidScroll(withOffset scrollView:UIScrollView)
+protocol CustomScrollDelegate: UIScrollViewDelegate {
+    
 }

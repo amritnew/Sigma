@@ -63,8 +63,8 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
 }
 
 extension ContainerCollectionViewCell: CustomScrollDelegate {
-    func scrollDidScroll(withOffset offset: CGPoint) {
-        scrollDelegate?.scrollDidScroll(withOffset: offset)
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollDelegate?.scrollViewDidScroll?(scrollView)
     }
     
     
