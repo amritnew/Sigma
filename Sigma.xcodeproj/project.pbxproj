@@ -374,7 +374,7 @@
 				793C71AE23140EDA00283C38 /* Profile */,
 				793C71A423140AAB00283C38 /* Post */,
 				793C71A323140A8000283C38 /* Trail */,
-				793C719F23140A3B00283C38 /* My Trails */,
+				793C719F23140A3B00283C38 /* Bookmark */,
 				793C719B231409E700283C38 /* TrailList */,
 			);
 			path = Features;
@@ -418,14 +418,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		793C719F23140A3B00283C38 /* My Trails */ = {
+		793C719F23140A3B00283C38 /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
 				793C71A223140A5900283C38 /* ViewModel */,
 				793C71A123140A4C00283C38 /* View */,
 				793C71A023140A4600283C38 /* Controller */,
 			);
-			path = "My Trails";
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 		793C71A023140A4600283C38 /* Controller */ = {
