@@ -1053,7 +1053,6 @@
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
 				793C71B723143ADD00283C38 /* TrailService.swift in Sources */,
 				792B520023207B6800ECED73 /* FeedPostController.swift in Sources */,
-				92FBC58E23142AF900E596BC /* AboutCollectionViewCell.swift in Sources */,
 				79BBED242327D180002F632C /* TopicsViewModel.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
 				792D70F823031861005859AB /* BookMarksController.swift in Sources */,
@@ -1261,7 +1260,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
+				DEVELOPMENT_TEAM = N96A4XNBA6;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1283,7 +1282,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
+				DEVELOPMENT_TEAM = N96A4XNBA6;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
