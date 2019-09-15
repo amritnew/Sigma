@@ -11,10 +11,16 @@ import UIKit
 class BookMarksController: BaseCollectionController {
     
     let bookMarkViewModel = BookMarkViewModel()
+    let menuBar: MenuTabBarView = {
+        let menu = MenuTabBarView()
+        menu.translatesAutoresizingMaskIntoConstraints = false
+        return menu
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollection()
+        setupMenuBar()
         }
     
     fileprivate func bindViewModel() {
@@ -30,6 +36,16 @@ class BookMarksController: BaseCollectionController {
         bindViewModel()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isHidden = false
+    }
+    
+    fileprivate func setupMenuBar() {
+        view.addSubview(menuBar)
+        NSLayoutConstraint.activate([
+            menuBar.leadingAnchor.constraint(equalTo: self.collectionView.leadingAnchor),
+            menuBar.trailingAnchor.constraint(equalTo: self.collectionView.trailingAnchor),
+            menuBar.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
+            menuBar.heightAnchor.constraint(equalToConstant: 20)
+            ])
     }
     
 }
