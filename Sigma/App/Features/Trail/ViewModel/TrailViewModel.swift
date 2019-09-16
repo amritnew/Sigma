@@ -12,11 +12,13 @@ struct TrailViewModel {
     let title: String
     let author: String
     let topics: [Topic]?
+    let trailId: Int64?
     
     init(trail: Trail) {
         self.title = trail.title
         self.author = trail.author
         self.topics = trail.topics
+        self.trailId = trail.trailId
     }
     
     func numberOfRows() -> Int {

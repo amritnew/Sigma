@@ -34,14 +34,14 @@ class NewPostService {
         }
     }
     
-    
     func associate(post: Post, at trail: Trail, completion: @escaping (Trail?, NewPostServiceError?) -> Void) {
         guard let trailId = trail.trailId else { return completion(nil, NewPostServiceError.trailWithoutId) }
         let params = [
-            "blog_post_id" : "1",
-            "topic_name" : "Any topic"
-        ]
-        Service<Trail>().post(params: params, url: "\(basePath)\(trailsPath)\(trailId)") { result in
+            "blog_post_id" : post.postId ?? 0,
+            "topic_name" : "Introduction"
+            ] as [String : Any]
+        
+        Service<Trail>().post(params: params, url: "\(basePath)\(trailsPath)/\(trailId)") { result in
             switch result {
             case .failure:
                 return completion(nil, NewPostServiceError.postNotAssociated)
