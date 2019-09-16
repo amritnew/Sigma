@@ -38,6 +38,7 @@ class BookMarksController: BaseCollectionController {
         bindViewModel()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.hidesBarsOnSwipe = true
         navigationController?.navigationBar.isHidden = false
     }
     

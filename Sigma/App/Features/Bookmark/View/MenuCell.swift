@@ -12,15 +12,16 @@ class MenuCell: UICollectionViewCell, Reusable {
     
     let titleCell: UILabel = {
         let label = UILabel()
+        label.lineBreakMode = .byWordWrapping
         label.textColor = .subText
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = UIFont(font: Font.boldSystem, size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     override var isSelected: Bool {
         didSet {
-            titleCell.textColor = isSelected ? .foreground : .subText
+            titleCell.textColor = isSelected ? .actionColor : .subText
         }
     }
     
@@ -44,9 +45,9 @@ class MenuCell: UICollectionViewCell, Reusable {
     
     func setupTitleText(_ indexPath: Int) {
         if indexPath == 0 {
-            titleCell.text = "Trails"
+            titleCell.text = "TRAILS"
         } else {
-            titleCell.text = "Posts"
+            titleCell.text = "POSTS"
         }
         
         
