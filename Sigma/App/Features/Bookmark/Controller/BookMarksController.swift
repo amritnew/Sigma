@@ -53,9 +53,16 @@ class BookMarksController: BaseCollectionController {
             ])
     }
     
-//    func scrollToMenuIndex(index: Int) {
-//        return 0
-//    }
+    func scrollToMenuIndex(_ index: Int) {
+        let indexPath = IndexPath(item: index, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .init(), animated: true)
+    }
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = scrollView.contentOffset.x / view.frame.width
+        let indexPath = IndexPath(item: Int(index), section: 0)
+        menuBar.menuCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init())
+    }
     
 }
 extension BookMarksController: UICollectionViewDelegateFlowLayout {
@@ -70,9 +77,9 @@ extension BookMarksController: UICollectionViewDelegateFlowLayout {
     }
     
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(PostController(post: bookMarkViewModel.performPostAtFavorite(forIndex: indexPath.row)), animated: true)
-    }
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        navigationController?.pushViewController(PostController(post: bookMarkViewModel.performPostAtFavorite(forIndex: indexPath.row)), animated: true)
+//    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
@@ -80,8 +87,6 @@ extension BookMarksController: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: BookmarksCell.self)
-        let colors: [UIColor] = [.lightGray, .red]
-        cell.backgroundColor = colors[indexPath.row]
         return cell
     }
     
