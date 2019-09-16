@@ -38,7 +38,7 @@ class BookMarksController: BaseCollectionController {
         bindViewModel()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.shadowImage = UIImage()
-//        navigationController?.hidesBarsOnSwipe = true
+       // navigationController?.hidesBarsOnSwipe = true
         navigationController?.navigationBar.isHidden = false
     }
     
@@ -48,7 +48,7 @@ class BookMarksController: BaseCollectionController {
             menuBar.topAnchor.constraint(equalTo: collectionView.topAnchor),
             menuBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             menuBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            menuBar.heightAnchor.constraint(equalToConstant: 30)
+            menuBar.heightAnchor.constraint(equalToConstant: 50)
             
             ])
     }
@@ -69,7 +69,7 @@ extension BookMarksController: UICollectionViewDelegateFlowLayout {
     
     fileprivate func setupCollection() {
         collectionView.backgroundColor = UIColor(named: "Subackground")
-        collectionView.register(cellType: BookmarksCell.self)
+        collectionView.register(cellType: BookmarkContentCell.self)
         collectionView.isPagingEnabled = true
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
@@ -86,7 +86,7 @@ extension BookMarksController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: BookmarksCell.self)
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: BookmarkContentCell.self)
         return cell
     }
     

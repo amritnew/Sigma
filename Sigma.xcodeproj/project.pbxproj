@@ -85,6 +85,7 @@
 		92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC59523154CD500E596BC /* CircleImageView.swift */; };
 		A456CE0C232DD5A2002A3306 /* MenuTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456CE0B232DD5A2002A3306 /* MenuTabBarView.swift */; };
 		A456CE0E232DD73E002A3306 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456CE0D232DD73E002A3306 /* MenuCell.swift */; };
+		A456CE10232FEDE9002A3306 /* BookmarkContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456CE0F232FEDE9002A3306 /* BookmarkContentCell.swift */; };
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
 		D0A43C0D4D117FBB8F2F2077 /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A554029AAA7722B4B939B0BC /* Pods_SigmaTests.framework */; };
 		EA529A938E15B11D79B3B242 /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B144457355A2146CD2DB3778 /* Pods_SigmaTests.framework */; };
@@ -201,6 +202,7 @@
 		A2FF8E59082EBA05CE9C5268 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A456CE0B232DD5A2002A3306 /* MenuTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabBarView.swift; sourceTree = "<group>"; };
 		A456CE0D232DD73E002A3306 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		A456CE0F232FEDE9002A3306 /* BookmarkContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkContentCell.swift; sourceTree = "<group>"; };
 		A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		A554029AAA7722B4B939B0BC /* Pods_SigmaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SigmaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B144457355A2146CD2DB3778 /* Pods_SigmaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SigmaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -446,6 +448,7 @@
 				79EB6716232563BD003188A7 /* BookmarksCell.swift */,
 				A456CE0B232DD5A2002A3306 /* MenuTabBarView.swift */,
 				A456CE0D232DD73E002A3306 /* MenuCell.swift */,
+				A456CE0F232FEDE9002A3306 /* BookmarkContentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1072,6 +1075,7 @@
 				79246F292303EEF20024A271 /* PostController.swift in Sources */,
 				79BDCC33231EE1A30043844A /* CBuilder.swift in Sources */,
 				79BBED262327D38F002F632C /* TrailHeaderView.swift in Sources */,
+				A456CE10232FEDE9002A3306 /* BookmarkContentCell.swift in Sources */,
 				92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */,
 				79B8EF002325480D00F23C14 /* CoreStack.swift in Sources */,
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
