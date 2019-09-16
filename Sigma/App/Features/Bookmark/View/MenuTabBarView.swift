@@ -10,20 +10,22 @@ import UIKit
 
 class MenuTabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    
     lazy var menuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.dataSource = self
         collection.delegate = self
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.backgroundColor = .white
         return collection
     }()
+    
+    var bookMarkController: BookMarksController?
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupCollection()
+        menuCollectionView.register(MenuCell.self, forCellWithReuseIdentifier: "cellId")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,7 +34,6 @@ class MenuTabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func setupCollection() {
         addSubview(menuCollectionView)
-        menuCollectionView.register(MenuCell.self, forCellWithReuseIdentifier: "cellId")
         NSLayoutConstraint.activate([
             menuCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             menuCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -46,8 +47,8 @@ class MenuTabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-        return cell
+        let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as? MenuCell
+        return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -57,4 +58,7 @@ class MenuTabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    
+    
 }
