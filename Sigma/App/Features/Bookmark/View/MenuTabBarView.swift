@@ -30,6 +30,10 @@ class MenuTabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
         menuCollectionView.selectItem(at: index, animated: true, scrollPosition: .init())
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        bookMarkController?.scrollToMenuIndex(indexPath.item)
+//    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -53,12 +53,20 @@ class BookMarksController: BaseCollectionController {
             ])
     }
     
+//    func scrollToMenuIndex(index: Int) {
+//        return 0
+//    }
+    
 }
 extension BookMarksController: UICollectionViewDelegateFlowLayout {
     
     fileprivate func setupCollection() {
         collectionView.backgroundColor = UIColor(named: "Subackground")
         collectionView.register(cellType: BookmarksCell.self)
+        collectionView.isPagingEnabled = true
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+        }
     }
     
     
@@ -67,17 +75,21 @@ extension BookMarksController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bookMarkViewModel.numberOfRows()
+        return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: BookmarksCell.self)
-        let cellVM = bookMarkViewModel.cellViewModel(forIndex: indexPath.row)
-        cell.setup(viewModel: cellVM)
+        let colors: [UIColor] = [.lightGray, .red]
+        cell.backgroundColor = colors[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width, height: 75)
+        return .init(width: view.frame.width, height: view.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
