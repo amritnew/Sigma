@@ -15,8 +15,6 @@ class ProfileController: UICollectionViewController {
     
     init() {
         super.init(collectionViewLayout: StretchHeaderFlowLayout())
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -97,9 +95,10 @@ extension ProfileController:HeaderProfileDelegate {
 
 extension ProfileController: CustomScrollDelegate {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offSetYCollection = collectionView.contentOffset.y
         
-        print(offSetYCollection)
+//        let offSetYCollection = collectionView.contentOffset.y
+//
+//        print(offSetYCollection)
     }
     
     private func scrollToBottom() {

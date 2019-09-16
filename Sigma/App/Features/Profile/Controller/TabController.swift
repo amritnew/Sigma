@@ -8,16 +8,26 @@
 
 import UIKit
 
-class TabController: BaseCollectionController {
+class TabController: UIViewController {
     
     weak var delegate:TabControllerDelegate?
     
-    var itensTab:[String] = []
+    lazy var tabView:TabView = {
+        let view = TabView()
+        view.collectionView.delegate = self
+        view.collectionView.dataSource = self
+        return view
+    }()
     
-    init(itensTab:[String]) {
-        super.init()
+    var itensTab:[String]?
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    convenience init(itensTab:[String]) {
+        self.init(nibName: nil, bundle: nil)
         self.itensTab = itensTab
-        self.collectionView.backgroundColor = .subBackground
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,67 +38,44 @@ class TabController: BaseCollectionController {
         super.viewDidLoad()
         setupCollection()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func loadView() {
+        view = TabView()
+    }
 }
 
-extension TabController: UICollectionViewDelegateFlowLayout {
-    
-    
+extension TabController: UICollectionViewDelegateFlowLayout,UICollectionViewDataSource, UICollectionViewDelegate {
     fileprivate func setupCollection() {
-        collectionView.register(TabCollectionCell.self, forCellWithReuseIdentifier: "cellId")
-        collectionView.backgroundColor = .white
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+        tabView.collectionView.register(TabCollectionCell.self, forCellWithReuseIdentifier: "cellId")
+        if let layout = tabView.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
             layout.estimatedItemSize = CGSize(width: 1, height: 1)
             layout.minimumLineSpacing = 16
         }
     }
-        
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let option = OptionsProfile(rawValue: indexPath.row) else {return}
         delegate?.tappedInOption(optionProfile: option)
     }
     
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itensTab.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return itensTab?.count ?? 0
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as? TabCollectionCell
-        cell?.labelCell.text = itensTab[indexPath.row]
+        cell?.labelCell.text = itensTab?[indexPath.row]
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 16, height: collectionView.frame.height)
-    }
-}
-
-class TabCollectionCell: UICollectionViewCell {
-  
-    let labelCell:UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubview(labelCell)
-        setupContraints()
-        self.backgroundColor = .actionColor
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupContraints() {
-        labelCell.centerYInSuperview()
-        labelCell.cBuilder { (make) in
-            make.leading.equal(to: self.leadingAnchor, offsetBy: 8)
-            make.trailing.equal(to: self.trailingAnchor, offsetBy: -8)
-        }
     }
 }
