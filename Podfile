@@ -6,16 +6,15 @@ target 'Sigma' do
   use_frameworks!
 
   # Pods for Sigma
-   # pod "MarkdownView"
 	pod 'Markdowner'
 
-  target 'SigmaTests' do
+  target 'AppTests' do
     inherit! :search_paths
     # Pods for testing
-
    pod 'Quick'
    pod 'Nimble'
    pod 'Nimble-Snapshots'
+   pod 'OHHTTPStubs/Swift'
   end
 
 end

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-// import MarkdownView
 import Markdowner
 
 class PostView: UIView, ConfigurableView {
