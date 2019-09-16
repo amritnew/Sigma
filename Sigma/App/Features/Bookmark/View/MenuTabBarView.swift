@@ -48,6 +48,7 @@ class MenuTabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as? MenuCell
+        
         return cell ?? UICollectionViewCell()
     }
     
@@ -55,7 +56,7 @@ class MenuTabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
         return CGSize(width: frame.width/2, height: frame.height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     

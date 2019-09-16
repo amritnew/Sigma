@@ -37,6 +37,7 @@ class BookMarksController: BaseCollectionController {
         super.viewWillAppear(animated)
         bindViewModel()
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isHidden = false
     }
     
@@ -46,7 +47,7 @@ class BookMarksController: BaseCollectionController {
             menuBar.topAnchor.constraint(equalTo: collectionView.topAnchor),
             menuBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             menuBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            menuBar.heightAnchor.constraint(equalToConstant: 20)
+            menuBar.heightAnchor.constraint(equalToConstant: 30)
             
             ])
     }
