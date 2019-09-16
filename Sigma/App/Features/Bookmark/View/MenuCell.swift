@@ -43,6 +43,16 @@ class MenuCell: UICollectionViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupTitleText(_ indexPath: Int) {
+        if(indexPath == 0) {
+            titleCell.text = "Trails"
+        } else {
+            titleCell.text = "Posts"
+        }
+        
+        
+    }
+    
     
     
 }

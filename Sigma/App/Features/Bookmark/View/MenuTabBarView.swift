@@ -48,7 +48,7 @@ class MenuTabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as? MenuCell
-        
+        cell?.setupTitleText(indexPath.row)
         return cell ?? UICollectionViewCell()
     }
     
