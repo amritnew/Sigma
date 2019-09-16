@@ -54,6 +54,6 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
 
 extension ListTrailsController: ListTrailHeaderDelegate {
     func imageHeaderDidClick() {
-        self.navigationController?.pushViewController(TrailController(), animated: true)
+        self.navigationController?.pushViewController(TrailController(trail: trailViewModel.getTrail(forIndex: 0)), animated: true)
     }
 }
