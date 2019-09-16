@@ -26,6 +26,8 @@ class MenuTabBarView: UIView, UICollectionViewDelegateFlowLayout, UICollectionVi
         super.init(frame: frame)
         setupCollection()
         menuCollectionView.register(MenuCell.self, forCellWithReuseIdentifier: "cellId")
+        let index = IndexPath(item: 0, section: 0)
+        menuCollectionView.selectItem(at: index, animated: true, scrollPosition: .init())
     }
     
     required init?(coder aDecoder: NSCoder) {

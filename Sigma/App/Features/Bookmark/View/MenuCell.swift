@@ -12,8 +12,7 @@ class MenuCell: UICollectionViewCell, Reusable {
     
     let titleCell: UILabel = {
         let label = UILabel()
-        label.text = "TRAILS"
-        label.textColor = .foreground
+        label.textColor = .subText
         label.font = UIFont.boldSystemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -44,7 +43,7 @@ class MenuCell: UICollectionViewCell, Reusable {
     }
     
     func setupTitleText(_ indexPath: Int) {
-        if(indexPath == 0) {
+        if indexPath == 0 {
             titleCell.text = "Trails"
         } else {
             titleCell.text = "Posts"
