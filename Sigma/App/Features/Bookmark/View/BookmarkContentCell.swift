@@ -21,9 +21,20 @@ class BookmarkContentCell: UICollectionViewCell, Reusable, UICollectionViewDeleg
         return collection
     }()
     
+    let bookMarkViewModel = BookMarkViewModel()
+    
+    fileprivate func bindViewModel() {
+        bookMarkViewModel.updateList = {
+            DispatchQueue.main.async {
+                self.bookmarkCollection.reloadData()
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCollection()
+        bindViewModel()
         bookmarkCollection.register(cellType: BookmarksCell.self)
         bookmarkCollection.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
     }
@@ -41,12 +52,15 @@ class BookmarkContentCell: UICollectionViewCell, Reusable, UICollectionViewDeleg
             bookmarkCollection.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return bookMarkViewModel.numberOfRows()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = bookmarkCollection.dequeueReusableCell(for: indexPath, cellType: BookmarksCell.self)
+        let cellVM = bookMarkViewModel.cellViewModel(forIndex: indexPath.row)
+        cell.setup(viewModel: cellVM)
         return cell
     }
     

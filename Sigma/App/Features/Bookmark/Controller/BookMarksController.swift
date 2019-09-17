@@ -10,8 +10,6 @@ import UIKit
 
 class BookMarksController: BaseCollectionController {
     
-    let bookMarkViewModel = BookMarkViewModel()
-    
     lazy var menuBar: MenuTabBarView = {
         let menu = MenuTabBarView()
         menu.translatesAutoresizingMaskIntoConstraints = false
@@ -25,17 +23,8 @@ class BookMarksController: BaseCollectionController {
         setupMenuBar()
         }
     
-    fileprivate func bindViewModel() {
-        bookMarkViewModel.updateList = {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        bindViewModel()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.shadowImage = UIImage()
        // navigationController?.hidesBarsOnSwipe = true
@@ -75,11 +64,6 @@ extension BookMarksController: UICollectionViewDelegateFlowLayout {
             layout.scrollDirection = .horizontal
         }
     }
-    
-    
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        navigationController?.pushViewController(PostController(post: bookMarkViewModel.performPostAtFavorite(forIndex: indexPath.row)), animated: true)
-//    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
