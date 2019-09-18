@@ -15,8 +15,6 @@ class ProfileController: UICollectionViewController {
     
     init() {
         super.init(collectionViewLayout: StretchHeaderFlowLayout())
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,8 +45,8 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         collectionView.backgroundColor = UIColor.white
         
         collectionView.register(HeaderProfileCollection.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
-        collectionView.register(MenuBarCollectionViewCell.self, forCellWithReuseIdentifier: "menuBar")
-        collectionView.register(ContainerCollectionViewCell.self, forCellWithReuseIdentifier: "container")
+        collectionView.register(cellType: MenuBarCollectionViewCell.self)
+        collectionView.register(cellType: ContainerCollectionViewCell.self)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -77,13 +75,24 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.row == 0 {
-             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuBar", for: indexPath) as? MenuBarCollectionViewCell
-            return cell ?? UICollectionViewCell()
+             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MenuBarCollectionViewCell.self)
+            cell.menuBar?.profileController = self
+            return cell
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "container", for: indexPath) as? ContainerCollectionViewCell
-        cell?.scrollDelegate = self
-        return cell ?? UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ContainerCollectionViewCell.self)
+        cell.scrollDelegate = self
+        
+        return cell
+    }
+    
+    func scrollContainerTo(row:Int) {
+        let indexPath = IndexPath(row: 1, section: 0)
+        
+        if let container = collectionView.cellForItem(at: indexPath) as? ContainerCollectionViewCell {
+            container.collectionView.scrollToItem(at: IndexPath(item: row, section: 0), at: .init(), animated: true)
+        }
+        
     }
     
 }
@@ -97,9 +106,10 @@ extension ProfileController:HeaderProfileDelegate {
 
 extension ProfileController: CustomScrollDelegate {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offSetYCollection = collectionView.contentOffset.y
         
-        print(offSetYCollection)
+//        let offSetYCollection = collectionView.contentOffset.y
+//
+//        print(offSetYCollection)
     }
     
     private func scrollToBottom() {

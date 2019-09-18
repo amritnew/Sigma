@@ -8,21 +8,30 @@
 
 import UIKit
 
-class ContainerRowCollectionViewCell: UICollectionViewCell {
-    lazy var collection:UICollectionView = {
-        let listTrailsController = ListTrailsController()
-        let collection = listTrailsController.collectionView
-        listTrailsController.scrollDelegate = self
-        return collection!
-    }()
+class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView {
+    
+//    lazy var collection:UICollectionView = {
+//        let listTrailsController = ListTrailsController()
+//        let collection = listTrailsController.collectionView
+//        listTrailsController.scrollDelegate = self
+//        return collection!
+//    }()
+    
+    var collection:UICollectionView!
     
     weak var scrollDelegate: CustomScrollDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(collection)
+        buildViewHierarchy()
         setupConstraints()
-        
+    }
+    
+    convenience init(withCollectionController controller:BaseCollectionController) {
+        self.init(frame: .zero)
+        collection = controller.collectionView
+        buildViewHierarchy()
+        setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +40,9 @@ class ContainerRowCollectionViewCell: UICollectionViewCell {
     
     func setupConstraints() {
         collection.fillSuperview()
+    }
+    func buildViewHierarchy() {
+        addSubviews([collection])
     }
 }
 

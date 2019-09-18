@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MenuBarCollectionViewCell: UICollectionViewCell {
-    let menuBar = TabController(itensTab: ["Option1","Optiasdfon2","Optioasdflkmnn3"])
+class MenuBarCollectionViewCell: UICollectionViewCell, Reusable {
+    var menuBar: TabController?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        menuBar.view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(menuBar.view)
-        
+        menuBar = TabController(itensTab: ["About", "My Trails", "Settings"])
+        menuBar?.view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(menuBar!.view)
         setupConstraints()
     }
     
@@ -24,7 +24,7 @@ class MenuBarCollectionViewCell: UICollectionViewCell {
     }
     
     func setupConstraints() {
-        if let viewMenuBar = menuBar.view {
+        if let viewMenuBar = menuBar!.view {
             NSLayoutConstraint.activate([
                 viewMenuBar.leadingAnchor.constraint(equalTo: leadingAnchor),
                 viewMenuBar.trailingAnchor.constraint(equalTo: trailingAnchor),
