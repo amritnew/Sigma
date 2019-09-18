@@ -7,18 +7,20 @@
 //
 
 import UIKit
-final class BioCollectionViewCell : UICollectionViewCell {
+
+final class BioCollectionViewCell : UIView {
     
+    lazy var bioDescription:UILabel = UILabel(text: "Your amazing story", textColor: .red, font: .systemFont(ofSize: 15), numberOfLines: 0, lineBreakMode: nil)
+
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
-        setupView()
+        buildViewHierarchy()
+        setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    lazy var bioDescription:UILabel = UILabel(text: "Your amazing story", textColor: .foreground, font: .systemFont(ofSize: 15), numberOfLines: 0, lineBreakMode: nil)
     
     
 }
@@ -29,7 +31,12 @@ extension BioCollectionViewCell: ConfigurableView {
     }
     
     func setupConstraints() {
-        bioDescription.cBuild(top: topAnchor, costantTop: 5.0, bottom: bottomAnchor, constantBottom: -5.0, left: leftAnchor, constantLeft: 5.0, right: rightAnchor, constantRight: -5.0)
+        bioDescription.cBuilder { (make) in
+            make.top.equal(to: topAnchor, offsetBy: 0)
+            make.leading.equal(to: leadingAnchor, offsetBy: 5)
+            make.trailing.equal(to: trailingAnchor, offsetBy: 0)
+            make.bottom.equal(to: bottomAnchor, offsetBy: 0)
+        }
     }
     
 }

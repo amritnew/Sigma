@@ -93,6 +93,7 @@
 		D0A43C0D4D117FBB8F2F2077 /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A554029AAA7722B4B939B0BC /* Pods_SigmaTests.framework */; };
 		EA529A938E15B11D79B3B242 /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B144457355A2146CD2DB3778 /* Pods_SigmaTests.framework */; };
 		ED056B96233268CC00649EA3 /* BioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED056B95233268CC00649EA3 /* BioCollectionViewCell.swift */; };
+		ED159E6E23326D9C001E1489 /* BioCollectionViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED159E6D23326D9C001E1489 /* BioCollectionViewCellSpec.swift */; };
 		ED413E24231EA598002A409D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED413E23231EA598002A409D /* UIColor+Extensions.swift */; };
 		F22FBCBD231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */; };
 		F22FBCC02320373E001B71A5 /* NewPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22FBCBF2320373E001B71A5 /* NewPostService.swift */; };
@@ -217,6 +218,7 @@
 		B144457355A2146CD2DB3778 /* Pods_SigmaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SigmaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B560AF46E8AA8ECC1216EFB7 /* Pods-Sigma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.debug.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.debug.xcconfig"; sourceTree = "<group>"; };
 		ED056B95233268CC00649EA3 /* BioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED159E6D23326D9C001E1489 /* BioCollectionViewCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioCollectionViewCellSpec.swift; sourceTree = "<group>"; };
 		ED413E23231EA598002A409D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		EEEEDEA125099C5AF68C9091 /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 		7980A0502315A37A00682D9A /* AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				ED159E6C23326D6B001E1489 /* SpecView */,
 				7980A0592315A4B300682D9A /* ServiceTests.swift */,
 				790974FA2323F88A00EE49C5 /* TrailTests.swift */,
 				7980A0512315A37A00682D9A /* AppTests.swift */,
@@ -753,6 +756,14 @@
 				ED056B95233268CC00649EA3 /* BioCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ED159E6C23326D6B001E1489 /* SpecView */ = {
+			isa = PBXGroup;
+			children = (
+				ED159E6D23326D9C001E1489 /* BioCollectionViewCellSpec.swift */,
+			);
+			path = SpecView;
 			sourceTree = "<group>";
 		};
 		ED3085B3232280E7008E21F2 /* Recovered References */ = {
@@ -1194,6 +1205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7980A0522315A37A00682D9A /* AppTests.swift in Sources */,
+				ED159E6E23326D9C001E1489 /* BioCollectionViewCellSpec.swift in Sources */,
 				7983E7BB2316AA1100377D28 /* ServiceTests.swift in Sources */,
 				790974FB2323F88A00EE49C5 /* TrailTests.swift in Sources */,
 			);
