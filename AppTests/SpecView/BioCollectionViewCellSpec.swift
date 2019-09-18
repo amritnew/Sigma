@@ -15,8 +15,9 @@ class BioCollectionViewCellSpec: QuickSpec {
     override func spec() {
         describe("Test of BioCollectionViewCell") {
             it("Not in the originally modeled way") {
-                let frame = CGRect(x: 0, y: 0, width: 500, height: 500)
+                let frame = CGRect(x: 0, y: 0, width: 300, height: 100)
                 let view  = BioCollectionViewCell(frame: frame)
+                view.backgroundColor = .subBackground
                 expect(view) == recordSnapshot("Bio")
             }
             

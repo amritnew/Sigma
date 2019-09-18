@@ -10,7 +10,7 @@ import UIKit
 
 final class BioCollectionViewCell : UIView {
     
-    lazy var bioDescription:UILabel = UILabel(text: "Your amazing story", textColor: .red, font: .systemFont(ofSize: 15), numberOfLines: 0, lineBreakMode: nil)
+    lazy var bioDescription:UILabel = UILabel(text: "Your amazing story", textColor: .subText, font: .systemFont(ofSize: 15), numberOfLines: 0, lineBreakMode: nil)
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -31,11 +31,12 @@ extension BioCollectionViewCell: ConfigurableView {
     }
     
     func setupConstraints() {
+        
         bioDescription.cBuilder { (make) in
-            make.top.equal(to: topAnchor, offsetBy: 0)
+            make.top.equal(to: topAnchor, offsetBy: 5)
             make.leading.equal(to: leadingAnchor, offsetBy: 5)
-            make.trailing.equal(to: trailingAnchor, offsetBy: 0)
-            make.bottom.equal(to: bottomAnchor, offsetBy: 0)
+            make.trailing.equal(to: trailingAnchor, offsetBy: -5)
+            make.bottom.equal(to: bottomAnchor, offsetBy: -5)
         }
     }
     
