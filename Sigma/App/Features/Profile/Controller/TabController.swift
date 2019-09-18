@@ -12,14 +12,16 @@ class TabController: UIViewController {
     
     weak var delegate:TabControllerDelegate?
     
-    lazy var tabView:TabView = {
+    lazy var tabView: TabView = {
         let view = TabView()
         view.collectionView.delegate = self
         view.collectionView.dataSource = self
         return view
     }()
     
-    var itensTab:[String]?
+    var itensTab:[String]!
+    
+    var profileController:ProfileController?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -36,6 +38,7 @@ class TabController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstSelected()
         setupCollection()
     }
     
@@ -44,23 +47,23 @@ class TabController: UIViewController {
     }
     
     override func loadView() {
-        view = TabView()
+        view = tabView
     }
 }
 
-extension TabController: UICollectionViewDelegateFlowLayout,UICollectionViewDataSource, UICollectionViewDelegate {
-    fileprivate func setupCollection() {
-        tabView.collectionView.register(TabCollectionCell.self, forCellWithReuseIdentifier: "cellId")
-        if let layout = tabView.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = CGSize(width: 1, height: 1)
-            layout.minimumLineSpacing = 16
-        }
+extension TabController: UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate {
+    func setupCollection() {
+        tabView.collectionView.register(cellType: TabCollectionCell.self)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let option = OptionsProfile(rawValue: indexPath.row) else {return}
-        delegate?.tappedInOption(optionProfile: option)
+        profileController?.scrollContainerTo(row: indexPath.row)
+        collectionView.cellForItem(at: indexPath)?.isSelected = true
+    }
+    
+    func firstSelected() {
+        let index = IndexPath(item: 0, section: 0)
+        tabView.collectionView.selectItem(at: index, animated: true, scrollPosition: .init())
     }
     
     
@@ -69,13 +72,23 @@ extension TabController: UICollectionViewDelegateFlowLayout,UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as? TabCollectionCell
-        cell?.labelCell.text = itensTab?[indexPath.row]
-        return cell ?? UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TabCollectionCell.self)
+        cell.labelCell.text = itensTab?[indexPath.row]
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width
+        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else {
+            return CGSize(width: 16 , height: collectionView.frame.height)
+        }
+        let numberOfRows = CGFloat(itensTab.count)
+        let numbersOfSpacing = numberOfRows - 1
+    
         
-        return CGSize(width: 16, height: collectionView.frame.height)
+        let spacingCells = layout.minimumLineSpacing
+        let widthCell = (width - (numbersOfSpacing * spacingCells)) / numberOfRows
+        
+        return CGSize(width: widthCell , height: collectionView.frame.height)
     }
 }

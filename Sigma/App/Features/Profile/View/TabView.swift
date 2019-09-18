@@ -10,15 +10,18 @@ import UIKit
 
 class TabView: UIView {
 
-    lazy var collectionView:UICollectionView = {
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collection.backgroundColor = .green
+    let collectionView:UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 16
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.backgroundColor = UIColor.subBackground
         return collection
     }()
     
     let sliderView:UIView = {
         let view = UIView()
-        view.backgroundColor = .blue
+        view.backgroundColor = UIColor.background
         return view
     }()
     

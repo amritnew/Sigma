@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerCollectionViewCell: UICollectionViewCell {
+class ContainerCollectionViewCell: UICollectionViewCell,Reusable {
     let collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -66,6 +66,4 @@ extension ContainerCollectionViewCell: CustomScrollDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollDelegate?.scrollViewDidScroll?(scrollView)
     }
-    
-    
 }
