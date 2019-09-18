@@ -18,6 +18,5 @@ struct PostService {
                 completion(post)
             }
         }
-        
     }
 }
