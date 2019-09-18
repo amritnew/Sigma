@@ -26,13 +26,11 @@ class ListTrailsController: BaseCollectionController {
                 self.collectionView.reloadData()
             }
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         bindViewModel()
-        //navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
