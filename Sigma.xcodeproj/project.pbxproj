@@ -77,6 +77,9 @@
 		929A167723291124005BF5E8 /* ContainerRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A167623291124005BF5E8 /* ContainerRowCollectionViewCell.swift */; };
 		92BAC2DE2329209E00A50B59 /* CustomScrollDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAC2DD2329209E00A50B59 /* CustomScrollDelegate.swift */; };
 		92DABC8E232FB6F100868D3F /* TabCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DABC8D232FB6F100868D3F /* TabCollectionCell.swift */; };
+		92DABC9523326CD600868D3F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DABC9423326CD600868D3F /* SettingsView.swift */; };
+		92DABC9723326E1700868D3F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DABC9623326E1700868D3F /* SettingsViewModel.swift */; };
+		92DABC9923327ABC00868D3F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DABC9823327ABC00868D3F /* SettingsController.swift */; };
 		92E8C82B23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8C82A23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift */; };
 		92FBC5822314292900E596BC /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5812314292900E596BC /* TabController.swift */; };
 		92FBC5842314295B00E596BC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FBC5832314295B00E596BC /* ProfileController.swift */; };
@@ -195,6 +198,9 @@
 		929A167623291124005BF5E8 /* ContainerRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRowCollectionViewCell.swift; sourceTree = "<group>"; };
 		92BAC2DD2329209E00A50B59 /* CustomScrollDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollDelegate.swift; sourceTree = "<group>"; };
 		92DABC8D232FB6F100868D3F /* TabCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionCell.swift; sourceTree = "<group>"; };
+		92DABC9423326CD600868D3F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		92DABC9623326E1700868D3F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		92DABC9823327ABC00868D3F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		92E8C82A23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchHeaderFlowLayout.swift; sourceTree = "<group>"; };
 		92FBC5812314292900E596BC /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		92FBC5832314295B00E596BC /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -559,6 +565,7 @@
 		793C71AE23140EDA00283C38 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				92DABC9123326C7500868D3F /* Settings */,
 				921327B2231E8B93005635F8 /* Define */,
 				793C71B123140EE900283C38 /* View */,
 				793C71B023140EE500283C38 /* ViewModel */,
@@ -700,6 +707,40 @@
 				92BAC2DD2329209E00A50B59 /* CustomScrollDelegate.swift */,
 			);
 			path = Define;
+			sourceTree = "<group>";
+		};
+		92DABC9123326C7500868D3F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				92DABC9A23327AC200868D3F /* Controller */,
+				92DABC9323326CA600868D3F /* ViewModel */,
+				92DABC9223326C9600868D3F /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		92DABC9223326C9600868D3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92DABC9423326CD600868D3F /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92DABC9323326CA600868D3F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92DABC9623326E1700868D3F /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92DABC9A23327AC200868D3F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92DABC9823327ABC00868D3F /* SettingsController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		A45F788A230448E800EBAD28 /* Extensions */ = {
@@ -1024,6 +1065,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DABC9923327ABC00868D3F /* SettingsController.swift in Sources */,
 				79B8EEFC232547EA00F23C14 /* ConfigurableDao.swift in Sources */,
 				790975032324561B00EE49C5 /* PostCellViewModel.swift in Sources */,
 				79BDCC35231EE1CA0043844A /* LayoutAnchor.swift in Sources */,
@@ -1042,6 +1084,7 @@
 				92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */,
 				92E8C82B23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift in Sources */,
 				929A167723291124005BF5E8 /* ContainerRowCollectionViewCell.swift in Sources */,
+				92DABC9523326CD600868D3F /* SettingsView.swift in Sources */,
 				92FBC59023142B5400E596BC /* HeaderProfileCollection.swift in Sources */,
 				921327B4231E8BEC005635F8 /* OptionsProfile.swift in Sources */,
 				F29135A0231EDC9500FA7CF5 /* NewPostView.swift in Sources */,
@@ -1086,6 +1129,7 @@
 				A456CE10232FEDE9002A3306 /* BookmarkContentCell.swift in Sources */,
 				92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */,
 				79B8EF002325480D00F23C14 /* CoreStack.swift in Sources */,
+				92DABC9723326E1700868D3F /* SettingsViewModel.swift in Sources */,
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
 				790974F92323E4B900EE49C5 /* NewTrailViewModel.swift in Sources */,
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
@@ -1280,7 +1324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N96A4XNBA6;
+				DEVELOPMENT_TEAM = NM36QJ4P82;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1302,7 +1346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N96A4XNBA6;
+				DEVELOPMENT_TEAM = NM36QJ4P82;
 				INFOPLIST_FILE = Sigma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
