@@ -39,7 +39,7 @@ class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView {
     }
     
     func setupConstraints() {
-        collection.fillSuperview()
+        collection.cBuild(make: .fillSuperview)
     }
     func buildViewHierarchy() {
         addSubviews([collection])
