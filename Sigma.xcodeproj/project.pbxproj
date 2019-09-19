@@ -92,9 +92,10 @@
 		A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F788B23044AD100EBAD28 /* UILabel+Extension.swift */; };
 		D0A43C0D4D117FBB8F2F2077 /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A554029AAA7722B4B939B0BC /* Pods_SigmaTests.framework */; };
 		EA529A938E15B11D79B3B242 /* Pods_SigmaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B144457355A2146CD2DB3778 /* Pods_SigmaTests.framework */; };
-		ED056B96233268CC00649EA3 /* BioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED056B95233268CC00649EA3 /* BioCollectionViewCell.swift */; };
-		ED159E6E23326D9C001E1489 /* BioCollectionViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED159E6D23326D9C001E1489 /* BioCollectionViewCellSpec.swift */; };
+		ED056B96233268CC00649EA3 /* BioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED056B95233268CC00649EA3 /* BioView.swift */; };
+		ED159E6E23326D9C001E1489 /* BioViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED159E6D23326D9C001E1489 /* BioViewSpec.swift */; };
 		ED413E24231EA598002A409D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED413E23231EA598002A409D /* UIColor+Extensions.swift */; };
+		EDFCFDE82333B013006F60A0 /* SocialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCFDE72333B013006F60A0 /* SocialCollectionViewCell.swift */; };
 		F22FBCBD231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */; };
 		F22FBCC02320373E001B71A5 /* NewPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22FBCBF2320373E001B71A5 /* NewPostService.swift */; };
 		F2913592231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */; };
@@ -217,9 +218,10 @@
 		A554029AAA7722B4B939B0BC /* Pods_SigmaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SigmaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B144457355A2146CD2DB3778 /* Pods_SigmaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SigmaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B560AF46E8AA8ECC1216EFB7 /* Pods-Sigma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.debug.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.debug.xcconfig"; sourceTree = "<group>"; };
-		ED056B95233268CC00649EA3 /* BioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioCollectionViewCell.swift; sourceTree = "<group>"; };
-		ED159E6D23326D9C001E1489 /* BioCollectionViewCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioCollectionViewCellSpec.swift; sourceTree = "<group>"; };
+		ED056B95233268CC00649EA3 /* BioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioView.swift; sourceTree = "<group>"; };
+		ED159E6D23326D9C001E1489 /* BioViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewSpec.swift; sourceTree = "<group>"; };
 		ED413E23231EA598002A409D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		EDFCFDE72333B013006F60A0 /* SocialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEEEDEA125099C5AF68C9091 /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		F22FBCBF2320373E001B71A5 /* NewPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostService.swift; sourceTree = "<group>"; };
@@ -753,7 +755,8 @@
 		ED056B94233268B900649EA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ED056B95233268CC00649EA3 /* BioCollectionViewCell.swift */,
+				ED056B95233268CC00649EA3 /* BioView.swift */,
+				EDFCFDE72333B013006F60A0 /* SocialCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -761,7 +764,7 @@
 		ED159E6C23326D6B001E1489 /* SpecView */ = {
 			isa = PBXGroup;
 			children = (
-				ED159E6D23326D9C001E1489 /* BioCollectionViewCellSpec.swift */,
+				ED159E6D23326D9C001E1489 /* BioViewSpec.swift */,
 			);
 			path = SpecView;
 			sourceTree = "<group>";
@@ -1161,11 +1164,12 @@
 				79246F272303E7940024A271 /* TrailCollectionViewCell.swift in Sources */,
 				79246F292303EEF20024A271 /* PostController.swift in Sources */,
 				79BDCC33231EE1A30043844A /* CBuilder.swift in Sources */,
+				EDFCFDE82333B013006F60A0 /* SocialCollectionViewCell.swift in Sources */,
 				79BBED262327D38F002F632C /* TrailHeaderView.swift in Sources */,
 				A456CE10232FEDE9002A3306 /* BookmarkContentCell.swift in Sources */,
 				92FBC586231429C300E596BC /* UIFont+Extension.swift in Sources */,
 				79B8EF002325480D00F23C14 /* CoreStack.swift in Sources */,
-				ED056B96233268CC00649EA3 /* BioCollectionViewCell.swift in Sources */,
+				ED056B96233268CC00649EA3 /* BioView.swift in Sources */,
 				792D70F02301DE61005859AB /* ConfigurableView.swift in Sources */,
 				790974F92323E4B900EE49C5 /* NewTrailViewModel.swift in Sources */,
 				A45F788C23044AD100EBAD28 /* UILabel+Extension.swift in Sources */,
@@ -1205,7 +1209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7980A0522315A37A00682D9A /* AppTests.swift in Sources */,
-				ED159E6E23326D9C001E1489 /* BioCollectionViewCellSpec.swift in Sources */,
+				ED159E6E23326D9C001E1489 /* BioViewSpec.swift in Sources */,
 				7983E7BB2316AA1100377D28 /* ServiceTests.swift in Sources */,
 				790974FB2323F88A00EE49C5 /* TrailTests.swift in Sources */,
 			);

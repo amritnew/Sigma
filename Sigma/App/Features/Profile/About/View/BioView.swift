@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class BioCollectionViewCell : UIView {
+final class BioView : UIView {
     
-    lazy var bioDescription:UILabel = UILabel(text: "Your amazing story", textColor: .subText, font: .systemFont(ofSize: 15), numberOfLines: 0, lineBreakMode: nil)
+    lazy var bioDescription:UILabel = UILabel(text: "No dia mais claro, na noite mais densa, o mal cairá ante a minha presença,e todo aquele que venera o mal há de penar, quando a luz do Lanterna Verde enfrentar", textColor: .subText, font: .systemFont(ofSize: 15), numberOfLines: 4, lineBreakMode: .byWordWrapping)
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -25,7 +25,7 @@ final class BioCollectionViewCell : UIView {
     
 }
 
-extension BioCollectionViewCell: ConfigurableView {
+extension BioView: ConfigurableView {
     func buildViewHierarchy() {
         addSubview(bioDescription)
     }

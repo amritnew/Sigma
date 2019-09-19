@@ -11,4 +11,3 @@ import Foundation
 protocol TabControllerDelegate: class {
     func tappedInOption(optionProfile:OptionsProfile)
 }
-
