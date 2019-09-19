@@ -747,18 +747,18 @@
 		ED056B902332688D00649EA3 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				ED056B94233268B900649EA3 /* View */,
+				EDFCFDE92333BAA1006F60A0 /* Social */,
+				ED056B94233268B900649EA3 /* Bio */,
 			);
 			path = About;
 			sourceTree = "<group>";
 		};
-		ED056B94233268B900649EA3 /* View */ = {
+		ED056B94233268B900649EA3 /* Bio */ = {
 			isa = PBXGroup;
 			children = (
 				ED056B95233268CC00649EA3 /* BioView.swift */,
-				EDFCFDE72333B013006F60A0 /* SocialCollectionViewCell.swift */,
 			);
-			path = View;
+			path = Bio;
 			sourceTree = "<group>";
 		};
 		ED159E6C23326D6B001E1489 /* SpecView */ = {
@@ -776,6 +776,22 @@
 				A554029AAA7722B4B939B0BC /* Pods_SigmaTests.framework */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		EDFCFDE92333BAA1006F60A0 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				EDFCFDEA2333BB7E006F60A0 /* View */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		EDFCFDEA2333BB7E006F60A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDFCFDE72333B013006F60A0 /* SocialCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EFF95F5AC030DA08EF73DD9D /* Frameworks */ = {
