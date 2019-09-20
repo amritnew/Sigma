@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView {
+class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView,Reusable {
     
 //    lazy var collection:UICollectionView = {
 //        let listTrailsController = ListTrailsController()
@@ -17,19 +17,13 @@ class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView {
 //        return collection!
 //    }()
     
-    var collection:UICollectionView!
+    private var collection:UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     
     weak var scrollDelegate: CustomScrollDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        buildViewHierarchy()
-        setupConstraints()
-    }
-    
-    convenience init(withCollectionController controller:BaseCollectionController) {
-        self.init(frame: .zero)
-        collection = controller.collectionView
+        self.translatesAutoresizingMaskIntoConstraints = false
         buildViewHierarchy()
         setupConstraints()
     }
@@ -43,6 +37,13 @@ class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView {
     }
     func buildViewHierarchy() {
         addSubviews([collection])
+    }
+    
+    public func setCollection(withController controller:BaseCollectionController) {
+        if let collectionView = controller.collectionView {
+            self.collection.delegate = controller
+            self.collection.dataSource = controller
+        }
     }
 }
 

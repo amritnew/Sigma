@@ -9,6 +9,9 @@
 import UIKit
 
 class ContainerCollectionViewCell: UICollectionViewCell,Reusable {
+    
+    var settingsViewController = SettingsController()
+    
     let collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -24,9 +27,9 @@ class ContainerCollectionViewCell: UICollectionViewCell,Reusable {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(collectionView)
-        setupContraints()
+        contentView.addSubview(collectionView)
         setupCollection()
+        setupConstraints()
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -36,12 +39,12 @@ class ContainerCollectionViewCell: UICollectionViewCell,Reusable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupContraints() {
-        collectionView.fillSuperview()
+    func setupConstraints() {
+        collectionView.cBuild(make: .fillSuperview)
     }
     
     func setupCollection() {
-        collectionView.register(ContainerRowCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(cellType: ContainerRowCollectionViewCell.self)
     }
     
 }
@@ -52,8 +55,9 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ContainerRowCollectionViewCell else { return UICollectionViewCell() }
-        cell.scrollDelegate = self
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ContainerRowCollectionViewCell.self)
+        
+        cell.setCollection(withController: settingsViewController)
         return cell
     }
 

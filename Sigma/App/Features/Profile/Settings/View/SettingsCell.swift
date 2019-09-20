@@ -16,6 +16,7 @@ class SettingsCells:UICollectionViewCell,Reusable,ConfigurableView {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
+        self.backgroundColor = .green
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,7 +31,7 @@ class SettingsCells:UICollectionViewCell,Reusable,ConfigurableView {
         label.cBuild(make: .fillSuperview)
     }
     
-    func setupView(withString string:String){
+    func setupView(withString string:String) {
         label.text = string
     }
 }

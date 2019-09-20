@@ -11,7 +11,12 @@ import UIKit
 class BaseCollectionController: UICollectionViewController {
     
     init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: 50, height: 50)
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.scrollDirection = .vertical
+        super.init(collectionViewLayout: flowLayout)
     }
     
     required init?(coder aDecoder: NSCoder) {

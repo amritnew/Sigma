@@ -23,29 +23,19 @@ class SettingsController: BaseCollectionController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(cellType: SettingsCells.self)
-        // Do any additional setup after loading the view.
+        self.collectionView.backgroundColor = .red
     }
     
-//    override func loadView() {
-//        view = settingsView
-//    }
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return settingsViewModel.numberOfRows()
+        return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SettingsCells.self)
-        cell.setupView(withString: settingsViewModel.optionFromIndexPath(indexPathRow: indexPath.row))
         return cell
     }
 }
 
-extension SettingsController: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 32)
-    }
-}
 
 //extension SettingsController: UITableViewDataSource, UITableViewDelegate{
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
