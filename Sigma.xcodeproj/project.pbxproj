@@ -12,6 +12,7 @@
 		575CB5B0233565DA00043063 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5AF233565DA00043063 /* RegisterView.swift */; };
 		575CB5B2233568D300043063 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5B1233568D300043063 /* RoundImage.swift */; };
 		575CB5B42335707D00043063 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 575CB5B32335707D00043063 /* GoogleService-Info.plist */; };
+		575CB5B62335736400043063 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5B52335736400043063 /* RegisterViewModel.swift */; };
 		790396CC230C3EBC00F06EBD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CB230C3EBC00F06EBD /* Post.swift */; };
 		790396CE230C3EC600F06EBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CD230C3EC600F06EBD /* User.swift */; };
 		790396D0230C3ECD00F06EBD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CF230C3ECD00F06EBD /* Topic.swift */; };
@@ -137,6 +138,7 @@
 		575CB5AF233565DA00043063 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		575CB5B1233568D300043063 /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		575CB5B32335707D00043063 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		575CB5B52335736400043063 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		60F54E9ACBC82574E0E0FA6F /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		790396CB230C3EBC00F06EBD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		790396CD230C3EC600F06EBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		575CB5AA2335640E00043063 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				575CB5B52335736400043063 /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1203,6 +1206,7 @@
 				790396D2230C3EDB00F06EBD /* Trail.swift in Sources */,
 				575CB5B0233565DA00043063 /* RegisterView.swift in Sources */,
 				ED413E24231EA598002A409D /* UIColor+Extensions.swift in Sources */,
+				575CB5B62335736400043063 /* RegisterViewModel.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
 				793C71B723143ADD00283C38 /* TrailService.swift in Sources */,
 				92DABC8E232FB6F100868D3F /* TabCollectionCell.swift in Sources */,

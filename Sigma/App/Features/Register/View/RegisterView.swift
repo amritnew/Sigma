@@ -28,6 +28,7 @@ class RegisterView: UIView, ConfigurableView {
     
     lazy var registerButton: RoundButton = {
         let roundButton = RoundButton()
+        roundButton.addTarget(self, action: #selector(didMakeRegister), for: .touchUpInside)
         return roundButton
     }()
     
