@@ -14,5 +14,16 @@ class LoginController: UIViewController, ConfigurableController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        bindViewModel()
+    }
+    
+    fileprivate func bindViewModel() {
+        (usedView as? LoginView)?.delegate = self
+    }
+}
+
+extension LoginController: LoginViewDelegate {
+    func didSignUpTapped() {
+        print("tap")
     }
 }

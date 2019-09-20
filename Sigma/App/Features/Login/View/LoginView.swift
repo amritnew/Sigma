@@ -8,6 +8,12 @@
 
 import UIKit
 
+
+protocol LoginViewDelegate: class {
+    func didSignUpTapped()
+}
+
+
 class LoginView: UIView, ConfigurableView {
    
     let imageBanner: UIImageView = {
@@ -16,19 +22,30 @@ class LoginView: UIView, ConfigurableView {
        return image
     }()
     
-    let message = UILabel(text: "Welcome", textColor: .black, font: UIFont.boldSystemFont(ofSize: 56), numberOfLines: 0, lineBreakMode: nil)
+    let message = UILabel(text: "Welcome", textColor: .white, font: UIFont.boldSystemFont(ofSize: 56), numberOfLines: 0, lineBreakMode: nil)
+    
+    let loginTf = RoundTextField(placeHolder: "E-mail")
+    
+    let passwordTf = RoundTextField(placeHolder: "Password")
     
     
-    let loginTf: UITextField = {
-       let textField = UITextField()
-       textField.backgroundColor = .black
-       return textField
+    let messageAccount = UILabel(text: "Dont have an account", textColor: .lightGray, font: UIFont(name: "Arial", size: 14), numberOfLines: nil, lineBreakMode: nil)
+    
+    let loginButton = RoundButton()
+    
+    lazy var signUp: UILabel = {
+        let signUp = UILabel(text: "Sign Up", textColor: .orange, font: UIFont(name: "Arial", size: 14), numberOfLines: nil, lineBreakMode: nil)
+        signUp.isUserInteractionEnabled = true
+        signUp.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didSignUpTapped)))
+        return signUp
     }()
+    
+    weak var delegate: LoginViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        self.backgroundColor = .white
+        self.backgroundColor = .subBackground
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,7 +53,7 @@ class LoginView: UIView, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-        addSubviews([imageBanner, message, loginTf])
+        addSubviews([imageBanner, message, loginTf, passwordTf, messageAccount, loginButton, signUp])
     }
     
     func setupConstraints() {
@@ -46,7 +63,7 @@ class LoginView: UIView, ConfigurableView {
             make.trailing.equal(to: trailingAnchor)
         }
         message.cBuilder { (make) in
-            make.top.equal(to: imageBanner.bottomAnchor, offsetBy: 50)
+            make.top.equal(to: imageBanner.bottomAnchor, offsetBy: 0)
             make.leading.equal(to: leadingAnchor, offsetBy: 20)
         }
         
@@ -56,5 +73,34 @@ class LoginView: UIView, ConfigurableView {
             make.trailing.equal(to: trailingAnchor, offsetBy: -20)
         }
         
+        passwordTf.cBuilder { (make) in
+            make.top.equal(to: loginTf.bottomAnchor, offsetBy: 20)
+            make.leading.equal(to: leadingAnchor, offsetBy: 20)
+            make.trailing.equal(to: trailingAnchor, offsetBy: -20)
+        }
+        
+        loginButton.cBuilder { (make) in
+            make.top.equal(to: passwordTf.bottomAnchor, offsetBy: 30)
+            make.leading.equal(to: leadingAnchor, offsetBy: 20)
+            make.trailing.equal(to: trailingAnchor, offsetBy: -20)
+
+        }
+        
+        messageAccount.cBuilder { (make) in
+            make.top.equal(to: loginButton.bottomAnchor, offsetBy: 20)
+        }
+        
+        messageAccount.cBuild(make: .centerXInSuperView)
+        
+        signUp.cBuilder { (make) in
+            make.top.equal(to: messageAccount.bottomAnchor, offsetBy: 10)
+        }
+        signUp.cBuild(make: .centerXInSuperView)
+    }
+}
+
+extension LoginView {
+    @objc func didSignUpTapped() {
+        self.delegate?.didSignUpTapped()
     }
 }
