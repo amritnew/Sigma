@@ -8,21 +8,30 @@
 
 import UIKit
 
+protocol RegisterViewDelegate: class {
+    func didMakeRegister()
+    func didImageChoose()
+}
+
 class RegisterView: UIView, ConfigurableView {
-   
-    
     let loginTf = RoundTextField(placeHolder: "E-mail")
     
     let passwordTf = RoundTextField(placeHolder: "Password")
     
-    
-    let roundImage: RoundedImage = {
+    lazy var roundImage: RoundedImage = {
        let roundImage = RoundedImage(image: UIImage(named: "gallery"))
        roundImage.contentMode = UIView.ContentMode.scaleAspectFit
        roundImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
        roundImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
        return roundImage
     }()
+    
+    lazy var registerButton: RoundButton = {
+        let roundButton = RoundButton()
+        return roundButton
+    }()
+    
+    weak var delegate: RegisterViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +44,7 @@ class RegisterView: UIView, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-        addSubviews([roundImage, loginTf, passwordTf])
+        addSubviews([roundImage, loginTf, passwordTf, registerButton])
     }
     
     func setupConstraints() {
@@ -56,7 +65,21 @@ class RegisterView: UIView, ConfigurableView {
             make.leading.equal(to: leadingAnchor, offsetBy: 20)
             make.trailing.equal(to: trailingAnchor, offsetBy: -20)
         }
+        
+        registerButton.cBuilder { (make) in
+            make.top.equal(to: passwordTf.bottomAnchor, offsetBy: 30)
+            make.leading.equal(to: leadingAnchor, offsetBy: 20)
+            make.trailing.equal(to: trailingAnchor, offsetBy: -20)
+        }
+    }
+}
+
+extension RegisterView {
+    @objc func didMakeRegister() {
+        delegate?.didMakeRegister()
     }
     
-    
+    @objc func didImageChoose() {
+        delegate?.didImageChoose()
+    }
 }

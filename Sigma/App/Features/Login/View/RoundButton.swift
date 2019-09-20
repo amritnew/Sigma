@@ -13,7 +13,7 @@ class RoundButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setTitle("daojndojas", for: .normal)
+        self.setTitle("Action", for: .normal)
         self.titleLabel?.textColor = .blue
     }
     
@@ -27,8 +27,8 @@ class RoundButton: UIButton {
     
     fileprivate func didSetupLayout() {
         self.layer.cornerRadius = self.frame.height/2
-        self.backgroundColor = .orange
-        self.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1).cgColor
+        self.backgroundColor = .actionColor
+        self.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
         self.layer.borderWidth = 2
         self.heightAnchor.constraint(equalToConstant: 45).isActive = true
     }
