@@ -62,6 +62,9 @@
 		79BDCC30231EDB100043844A /* NewTrailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC2F231EDB100043844A /* NewTrailView.swift */; };
 		79BDCC33231EE1A30043844A /* CBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC32231EE1A30043844A /* CBuilder.swift */; };
 		79BDCC35231EE1CA0043844A /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDCC34231EE1CA0043844A /* LayoutAnchor.swift */; };
+		79E676432335153E0098E10A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E676422335153E0098E10A /* LoginController.swift */; };
+		79E67645233515860098E10A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E67644233515860098E10A /* LoginView.swift */; };
+		79E6764723351BFE0098E10A /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6764623351BFE0098E10A /* RoundTextField.swift */; };
 		79EB670B23254ABD003188A7 /* SigmaContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79EB670923254ABD003188A7 /* SigmaContainer.xcdatamodeld */; };
 		79EB670F23254B84003188A7 /* FavoritePost+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB670E23254B84003188A7 /* FavoritePost+Class.swift */; };
 		79EB671123254B9A003188A7 /* FavoritePost+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EB671023254B9A003188A7 /* FavoritePost+Properties.swift */; };
@@ -185,6 +188,9 @@
 		79BDCC2F231EDB100043844A /* NewTrailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrailView.swift; sourceTree = "<group>"; };
 		79BDCC32231EE1A30043844A /* CBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBuilder.swift; sourceTree = "<group>"; };
 		79BDCC34231EE1CA0043844A /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
+		79E676422335153E0098E10A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		79E67644233515860098E10A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		79E6764623351BFE0098E10A /* RoundTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		79EB670A23254ABD003188A7 /* SigmaContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SigmaContainer.xcdatamodel; sourceTree = "<group>"; };
 		79EB670E23254B84003188A7 /* FavoritePost+Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePost+Class.swift"; sourceTree = "<group>"; };
 		79EB671023254B9A003188A7 /* FavoritePost+Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePost+Properties.swift"; sourceTree = "<group>"; };
@@ -356,6 +362,7 @@
 		793B05D822F25963005F3878 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				793B05B722F25925005F3878 /* AppDelegate.swift */,
 				793B05DB22F25B38005F3878 /* CustomTabBarController.swift */,
 				792D70EA2301D743005859AB /* BaseCollectionController.swift */,
 			);
@@ -376,7 +383,6 @@
 			children = (
 				793B05D822F25963005F3878 /* Coordinator */,
 				793C719A231409CD00283C38 /* Features */,
-				793B05B722F25925005F3878 /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 		793C719A231409CD00283C38 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				79E6763E233515170098E10A /* Login */,
 				792B51FD23207B4B00ECED73 /* FeedPost */,
 				F2913593231E8F3A00FA7CF5 /* NewPost */,
 				79BDCC2A231EDA640043844A /* NewTrail */,
@@ -687,6 +694,40 @@
 				79BDCC34231EE1CA0043844A /* LayoutAnchor.swift */,
 			);
 			path = CBuilder;
+			sourceTree = "<group>";
+		};
+		79E6763E233515170098E10A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				79E676412335152F0098E10A /* View */,
+				79E676402335152B0098E10A /* Controller */,
+				79E6763F233515200098E10A /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		79E6763F233515200098E10A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		79E676402335152B0098E10A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				79E676422335153E0098E10A /* LoginController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		79E676412335152F0098E10A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79E67644233515860098E10A /* LoginView.swift */,
+				79E6764623351BFE0098E10A /* RoundTextField.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		79EB670823254A64003188A7 /* DataModel */ = {
@@ -1077,6 +1118,7 @@
 				790396D9230C404800F06EBD /* TrailViewModel.swift in Sources */,
 				F291359C231E928A00FA7CF5 /* NewPostViewModel.swift in Sources */,
 				793BD0132316C97200EBA04B /* PostView.swift in Sources */,
+				79E6764723351BFE0098E10A /* RoundTextField.swift in Sources */,
 				792B5206232081E300ECED73 /* FeedPostViewModel.swift in Sources */,
 				79EB671923256531003188A7 /* BookMarkViewModel.swift in Sources */,
 				F2913596231E900B00FA7CF5 /* NewPostController.swift in Sources */,
@@ -1101,6 +1143,7 @@
 				9243B7232327D9E7004333D0 /* MenuBarCollectionViewCell.swift in Sources */,
 				79097501232437C200EE49C5 /* TrailsHeaderViewModel.swift in Sources */,
 				79B8EF022325482900F23C14 /* NSManagedObject+Extension.swift in Sources */,
+				79E67645233515860098E10A /* LoginView.swift in Sources */,
 				790396D0230C3ECD00F06EBD /* Topic.swift in Sources */,
 				792D70F22301E21D005859AB /* UIView+Extension.swift in Sources */,
 				923DD45323267CC5006DAE75 /* ContainerCollectionViewCell.swift in Sources */,
@@ -1114,6 +1157,7 @@
 				92DABC8E232FB6F100868D3F /* TabCollectionCell.swift in Sources */,
 				792B520023207B6800ECED73 /* FeedPostController.swift in Sources */,
 				79BBED242327D180002F632C /* TopicsViewModel.swift in Sources */,
+				79E676432335153E0098E10A /* LoginController.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
 				792D70F823031861005859AB /* BookMarksController.swift in Sources */,
 				79EB671123254B9A003188A7 /* FavoritePost+Properties.swift in Sources */,
