@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		575CB5A82335572300043063 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5A72335572300043063 /* RoundButton.swift */; };
+		575CB5AE2335643400043063 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5AD2335643400043063 /* RegisterController.swift */; };
+		575CB5B0233565DA00043063 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5AF233565DA00043063 /* RegisterView.swift */; };
+		575CB5B2233568D300043063 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5B1233568D300043063 /* RoundImage.swift */; };
 		790396CC230C3EBC00F06EBD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CB230C3EBC00F06EBD /* Post.swift */; };
 		790396CE230C3EC600F06EBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CD230C3EC600F06EBD /* User.swift */; };
 		790396D0230C3ECD00F06EBD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CF230C3ECD00F06EBD /* Topic.swift */; };
@@ -129,6 +132,9 @@
 		02F1751F8AE25A70DAA71738 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DDB5D44A1E4D15D52DCBAB /* Pods-SigmaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.release.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.release.xcconfig"; sourceTree = "<group>"; };
 		575CB5A72335572300043063 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		575CB5AD2335643400043063 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		575CB5AF233565DA00043063 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		575CB5B1233568D300043063 /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		60F54E9ACBC82574E0E0FA6F /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		790396CB230C3EBC00F06EBD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		790396CD230C3EC600F06EBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -265,6 +271,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		575CB5A9233563F800043063 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				575CB5AC2335641B00043063 /* View */,
+				575CB5AB2335641400043063 /* Controller */,
+				575CB5AA2335640E00043063 /* ViewModel */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		575CB5AA2335640E00043063 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		575CB5AB2335641400043063 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				575CB5AD2335643400043063 /* RegisterController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		575CB5AC2335641B00043063 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				575CB5AF233565DA00043063 /* RegisterView.swift */,
+				575CB5B1233568D300043063 /* RoundImage.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		790396CA230C3E0900F06EBD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +432,7 @@
 		793C719A231409CD00283C38 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				575CB5A9233563F800043063 /* Register */,
 				79E6763E233515170098E10A /* Login */,
 				792B51FD23207B4B00ECED73 /* FeedPost */,
 				F2913593231E8F3A00FA7CF5 /* NewPost */,
@@ -1131,6 +1172,7 @@
 				92E8C82B23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift in Sources */,
 				929A167723291124005BF5E8 /* ContainerRowCollectionViewCell.swift in Sources */,
 				92DABC9523326CD600868D3F /* SettingsView.swift in Sources */,
+				575CB5B2233568D300043063 /* RoundImage.swift in Sources */,
 				92FBC59023142B5400E596BC /* HeaderProfileCollection.swift in Sources */,
 				921327B4231E8BEC005635F8 /* OptionsProfile.swift in Sources */,
 				F29135A0231EDC9500FA7CF5 /* NewPostView.swift in Sources */,
@@ -1155,6 +1197,7 @@
 				F22FBCBD231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift in Sources */,
 				792B51F9231F2E1F00ECED73 /* NewTrail+UIPickerDelegate.swift in Sources */,
 				790396D2230C3EDB00F06EBD /* Trail.swift in Sources */,
+				575CB5B0233565DA00043063 /* RegisterView.swift in Sources */,
 				ED413E24231EA598002A409D /* UIColor+Extensions.swift in Sources */,
 				792D70ED2301DDB6005859AB /* ListTrailCollectionHeader.swift in Sources */,
 				793C71B723143ADD00283C38 /* TrailService.swift in Sources */,
@@ -1169,6 +1212,7 @@
 				79BDCC30231EDB100043844A /* NewTrailView.swift in Sources */,
 				79BDCC2E231EDABD0043844A /* NewTrailController.swift in Sources */,
 				792D70F823031861005859AB /* BookMarksController.swift in Sources */,
+				575CB5AE2335643400043063 /* RegisterController.swift in Sources */,
 				792D70F42301FA70005859AB /* ListTrailCollectionCell.swift in Sources */,
 				79246F272303E7940024A271 /* TrailCollectionViewCell.swift in Sources */,
 				79246F292303EEF20024A271 /* PostController.swift in Sources */,

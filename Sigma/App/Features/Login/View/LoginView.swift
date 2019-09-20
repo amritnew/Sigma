@@ -28,7 +28,6 @@ class LoginView: UIView, ConfigurableView {
     
     let passwordTf = RoundTextField(placeHolder: "Password")
     
-    
     let messageAccount = UILabel(text: "Dont have an account", textColor: .lightGray, font: UIFont(name: "Arial", size: 14), numberOfLines: nil, lineBreakMode: nil)
     
     let loginButton = RoundButton()

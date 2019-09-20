@@ -17,6 +17,10 @@ class LoginController: UIViewController, ConfigurableController {
         bindViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     fileprivate func bindViewModel() {
         (usedView as? LoginView)?.delegate = self
     }
@@ -24,6 +28,6 @@ class LoginController: UIViewController, ConfigurableController {
 
 extension LoginController: LoginViewDelegate {
     func didSignUpTapped() {
-        print("tap")
+        navigationController?.pushViewController(RegisterController(), animated: true)
     }
 }
