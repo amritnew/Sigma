@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginController: UIViewController, ConfigurableController {
     var usedView: UIView? = LoginView()
