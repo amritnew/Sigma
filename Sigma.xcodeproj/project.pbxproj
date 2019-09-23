@@ -13,6 +13,8 @@
 		575CB5B2233568D300043063 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5B1233568D300043063 /* RoundImage.swift */; };
 		575CB5B42335707D00043063 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 575CB5B32335707D00043063 /* GoogleService-Info.plist */; };
 		575CB5B62335736400043063 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5B52335736400043063 /* RegisterViewModel.swift */; };
+		57A36ED62338EA5300846D9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36ED52338EA5300846D9E /* LoginViewModel.swift */; };
+		57A36ED823390C7800846D9E /* LoginController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36ED723390C7800846D9E /* LoginController+Keyboard.swift */; };
 		790396CC230C3EBC00F06EBD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CB230C3EBC00F06EBD /* Post.swift */; };
 		790396CE230C3EC600F06EBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CD230C3EC600F06EBD /* User.swift */; };
 		790396D0230C3ECD00F06EBD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CF230C3ECD00F06EBD /* Topic.swift */; };
@@ -139,6 +141,8 @@
 		575CB5B1233568D300043063 /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		575CB5B32335707D00043063 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		575CB5B52335736400043063 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		57A36ED52338EA5300846D9E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Sigma/App/Features/Register/ViewModel/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		57A36ED723390C7800846D9E /* LoginController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+Keyboard.swift"; sourceTree = "<group>"; };
 		60F54E9ACBC82574E0E0FA6F /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		790396CB230C3EBC00F06EBD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		790396CD230C3EC600F06EBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -748,9 +752,9 @@
 		79E6763E233515170098E10A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				79E6763F233515200098E10A /* ViewModel */,
 				79E676412335152F0098E10A /* View */,
 				79E676402335152B0098E10A /* Controller */,
-				79E6763F233515200098E10A /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -758,6 +762,7 @@
 		79E6763F233515200098E10A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				57A36ED52338EA5300846D9E /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -766,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				79E676422335153E0098E10A /* LoginController.swift */,
+				57A36ED723390C7800846D9E /* LoginController+Keyboard.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1176,6 +1182,7 @@
 				F2913596231E900B00FA7CF5 /* NewPostController.swift in Sources */,
 				790396D7230C403200F06EBD /* UserViewModel.swift in Sources */,
 				92FBC59223142B9100E596BC /* TabControllerDelegate.swift in Sources */,
+				57A36ED823390C7800846D9E /* LoginController+Keyboard.swift in Sources */,
 				92E8C82B23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift in Sources */,
 				929A167723291124005BF5E8 /* ContainerRowCollectionViewCell.swift in Sources */,
 				92DABC9523326CD600868D3F /* SettingsView.swift in Sources */,
@@ -1191,6 +1198,7 @@
 				92586626232BD14B0079F65D /* TabView.swift in Sources */,
 				F2913592231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift in Sources */,
 				79921881230872CA00EA5054 /* Service.swift in Sources */,
+				57A36ED62338EA5300846D9E /* LoginViewModel.swift in Sources */,
 				92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */,
 				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
 				9243B7232327D9E7004333D0 /* MenuBarCollectionViewCell.swift in Sources */,

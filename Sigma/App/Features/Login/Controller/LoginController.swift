@@ -10,11 +10,13 @@ import UIKit
 
 class LoginController: UIViewController, ConfigurableController {
     var usedView: UIView? = LoginView()
+    var loginViewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         bindViewModel()
+        setupObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,6 +29,10 @@ class LoginController: UIViewController, ConfigurableController {
 }
 
 extension LoginController: LoginViewDelegate {
+    func didSignIn(result: Bool) {
+        
+    }
+    
     func didSignUpTapped() {
         navigationController?.pushViewController(RegisterController(), animated: true)
     }

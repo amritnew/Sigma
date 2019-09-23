@@ -11,14 +11,14 @@ import UIKit
 
 protocol LoginViewDelegate: class {
     func didSignUpTapped()
+    func didSignIn(result: Bool)
 }
-
 
 class LoginView: UIView, ConfigurableView {
    
     let imageBanner: UIImageView = {
        let image = UIImageView(image: UIImage(named: "banner"))
-       image.heightAnchor.constraint(equalToConstant: 400).isActive = true
+       image.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height/3).isActive = true // Magic number to test
        return image
     }()
     
@@ -30,7 +30,11 @@ class LoginView: UIView, ConfigurableView {
     
     let messageAccount = UILabel(text: "Dont have an account", textColor: .lightGray, font: UIFont(name: "Arial", size: 14), numberOfLines: nil, lineBreakMode: nil)
     
-    let loginButton = RoundButton()
+    lazy var loginButton: RoundButton = {
+       let roundButton = RoundButton()
+       roundButton.addTarget(self, action: #selector(didSignIn), for: .touchUpInside)
+       return roundButton
+    }()
     
     lazy var signUp: UILabel = {
         let signUp = UILabel(text: "Sign Up", textColor: .orange, font: UIFont(name: "Arial", size: 14), numberOfLines: nil, lineBreakMode: nil)
@@ -40,6 +44,8 @@ class LoginView: UIView, ConfigurableView {
     }()
     
     weak var delegate: LoginViewDelegate?
+    
+    let loginViewModel = LoginViewModel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -102,4 +108,11 @@ extension LoginView {
     @objc func didSignUpTapped() {
         self.delegate?.didSignUpTapped()
     }
+    
+    @objc func didSignIn(result: Bool) {
+        loginViewModel.loginAuth(withEmail: loginTf.text, withPassword: passwordTf.text) { (result) in
+            self.delegate?.didSignIn(result: result)
+        }
+    }
 }
+

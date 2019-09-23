@@ -1,15 +1,14 @@
 //
-//  ViewController+HideKey+Extension.swift
+//  LoginController+Keyboard.swift
 //  Sigma
 //
-//  Created by Vinicius Mangueira on 03/09/19.
+//  Created by aluno on 23/09/19.
 //  Copyright © 2019 Vinicius Mangueira. All rights reserved.
 //
 
 import UIKit
 
-extension NewTrailController: UITextFieldDelegate {
- 
+extension LoginController: UITextFieldDelegate {
     func didDimissViewAtTapped() {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
@@ -24,9 +23,9 @@ extension NewTrailController: UITextFieldDelegate {
     }
     
     func hideKeyboard() {
-        if let customView = usedView as? NewTrailView {
-            customView.descriptionTrail.resignFirstResponder()
-            customView.nameTrail.resignFirstResponder()
+        if let customView = usedView as? LoginView {
+            customView.loginTf.resignFirstResponder()
+            customView.passwordTf.resignFirstResponder()
         }
     }
     

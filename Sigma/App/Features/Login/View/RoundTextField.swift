@@ -11,7 +11,6 @@ import UIKit
 
 class RoundTextField: UITextField {
     
-    
     convenience init(placeHolder: String) {
         self.init(frame: .zero)
         self.placeholder = placeHolder
