@@ -278,9 +278,9 @@
 		575CB5A9233563F800043063 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				575CB5AA2335640E00043063 /* ViewModel */,
 				575CB5AC2335641B00043063 /* View */,
 				575CB5AB2335641400043063 /* Controller */,
-				575CB5AA2335640E00043063 /* ViewModel */,
 			);
 			path = Register;
 			sourceTree = "<group>";

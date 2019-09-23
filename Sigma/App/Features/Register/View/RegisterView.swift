@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol RegisterViewDelegate: class {
-    func didMakeRegister()
-    func didImageChoose()
-}
-
 class RegisterView: UIView, ConfigurableView {
     let loginTf = RoundTextField(placeHolder: "E-mail")
     
@@ -32,7 +27,7 @@ class RegisterView: UIView, ConfigurableView {
         return roundButton
     }()
     
-    weak var delegate: RegisterViewDelegate?
+    let registerViewModel = RegisterViewModel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,10 +72,10 @@ class RegisterView: UIView, ConfigurableView {
 
 extension RegisterView {
     @objc func didMakeRegister() {
-        delegate?.didMakeRegister()
+            registerViewModel.register(withEmail: loginTf.text, withPassword: passwordTf.text) {_ in }
     }
     
     @objc func didImageChoose() {
-        delegate?.didImageChoose()
+    
     }
 }
