@@ -75,6 +75,11 @@
 		9243B7232327D9E7004333D0 /* MenuBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9243B7222327D9E7004333D0 /* MenuBarCollectionViewCell.swift */; };
 		92586626232BD14B0079F65D /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92586625232BD14B0079F65D /* TabView.swift */; };
 		929A167723291124005BF5E8 /* ContainerRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A167623291124005BF5E8 /* ContainerRowCollectionViewCell.swift */; };
+		92A8742D2338F0740037E7D9 /* ContainerActionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8742C2338F0740037E7D9 /* ContainerActionsDelegate.swift */; };
+		92A874302338F0EA0037E7D9 /* SettingsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8742F2338F0EA0037E7D9 /* SettingsOptions.swift */; };
+		92A87432233900D80037E7D9 /* ContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A87431233900D80037E7D9 /* ContainerViewModel.swift */; };
+		92A87434233908D00037E7D9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A87433233908D00037E7D9 /* TestViewController.swift */; };
+		92A87436233909180037E7D9 /* ProfileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A87435233909180037E7D9 /* ProfileDelegate.swift */; };
 		92BAC2DE2329209E00A50B59 /* CustomScrollDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BAC2DD2329209E00A50B59 /* CustomScrollDelegate.swift */; };
 		92DABC8E232FB6F100868D3F /* TabCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DABC8D232FB6F100868D3F /* TabCollectionCell.swift */; };
 		92DABC9523326CD600868D3F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DABC9423326CD600868D3F /* SettingsView.swift */; };
@@ -195,6 +200,11 @@
 		9243B7222327D9E7004333D0 /* MenuBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		92586625232BD14B0079F65D /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		929A167623291124005BF5E8 /* ContainerRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRowCollectionViewCell.swift; sourceTree = "<group>"; };
+		92A8742C2338F0740037E7D9 /* ContainerActionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerActionsDelegate.swift; sourceTree = "<group>"; };
+		92A8742F2338F0EA0037E7D9 /* SettingsOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptions.swift; sourceTree = "<group>"; };
+		92A87431233900D80037E7D9 /* ContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewModel.swift; sourceTree = "<group>"; };
+		92A87433233908D00037E7D9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		92A87435233909180037E7D9 /* ProfileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDelegate.swift; sourceTree = "<group>"; };
 		92BAC2DD2329209E00A50B59 /* CustomScrollDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollDelegate.swift; sourceTree = "<group>"; };
 		92DABC8D232FB6F100868D3F /* TabCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCollectionCell.swift; sourceTree = "<group>"; };
 		92DABC9423326CD600868D3F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -577,6 +587,7 @@
 			children = (
 				92FBC5812314292900E596BC /* TabController.swift */,
 				92FBC5832314295B00E596BC /* ProfileController.swift */,
+				92A87433233908D00037E7D9 /* TestViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -585,6 +596,7 @@
 			isa = PBXGroup;
 			children = (
 				790396D6230C403200F06EBD /* UserViewModel.swift */,
+				92A87431233900D80037E7D9 /* ContainerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -593,8 +605,8 @@
 			isa = PBXGroup;
 			children = (
 				92FBC58F23142B5400E596BC /* HeaderProfileCollection.swift */,
-				923DD45223267CC5006DAE75 /* ContainerCollectionViewCell.swift */,
 				9243B7222327D9E7004333D0 /* MenuBarCollectionViewCell.swift */,
+				923DD45223267CC5006DAE75 /* ContainerCollectionViewCell.swift */,
 				929A167623291124005BF5E8 /* ContainerRowCollectionViewCell.swift */,
 				92586625232BD14B0079F65D /* TabView.swift */,
 				92DABC8D232FB6F100868D3F /* TabCollectionCell.swift */,
@@ -703,6 +715,16 @@
 				921327B3231E8BEC005635F8 /* OptionsProfile.swift */,
 				92E8C82A23268FE600A4ECC6 /* StretchHeaderFlowLayout.swift */,
 				92BAC2DD2329209E00A50B59 /* CustomScrollDelegate.swift */,
+				92A8742C2338F0740037E7D9 /* ContainerActionsDelegate.swift */,
+				92A87435233909180037E7D9 /* ProfileDelegate.swift */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		92A8742E2338F0D50037E7D9 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				92A8742F2338F0EA0037E7D9 /* SettingsOptions.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -710,6 +732,7 @@
 		92DABC9123326C7500868D3F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				92A8742E2338F0D50037E7D9 /* Define */,
 				92DABC9323326CA600868D3F /* ViewModel */,
 				92DABC9223326C9600868D3F /* View */,
 			);
@@ -1056,6 +1079,7 @@
 			files = (
 				79B8EEFC232547EA00F23C14 /* ConfigurableDao.swift in Sources */,
 				790975032324561B00EE49C5 /* PostCellViewModel.swift in Sources */,
+				92A87434233908D00037E7D9 /* TestViewController.swift in Sources */,
 				79BDCC35231EE1CA0043844A /* LayoutAnchor.swift in Sources */,
 				792B520323207DBD00ECED73 /* FeedPostViewCell.swift in Sources */,
 				792B520323207DBD00ECED73 /* FeedPostViewCell.swift in Sources */,
@@ -1074,6 +1098,7 @@
 				929A167723291124005BF5E8 /* ContainerRowCollectionViewCell.swift in Sources */,
 				92DABC9523326CD600868D3F /* SettingsView.swift in Sources */,
 				92FBC59023142B5400E596BC /* HeaderProfileCollection.swift in Sources */,
+				92A87432233900D80037E7D9 /* ContainerViewModel.swift in Sources */,
 				921327B4231E8BEC005635F8 /* OptionsProfile.swift in Sources */,
 				F29135A0231EDC9500FA7CF5 /* NewPostView.swift in Sources */,
 				92FBC59023142B5400E596BC /* HeaderProfileCollection.swift in Sources */,
@@ -1083,6 +1108,7 @@
 				793C71BA231476BB00283C38 /* ListTrailsController.swift in Sources */,
 				92586626232BD14B0079F65D /* TabView.swift in Sources */,
 				F2913592231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift in Sources */,
+				92A874302338F0EA0037E7D9 /* SettingsOptions.swift in Sources */,
 				79921881230872CA00EA5054 /* Service.swift in Sources */,
 				92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */,
 				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
@@ -1105,6 +1131,7 @@
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
 				792D70F823031861005859AB /* BookMarksController.swift in Sources */,
 				79EB671123254B9A003188A7 /* FavoritePost+Properties.swift in Sources */,
+				92A8742D2338F0740037E7D9 /* ContainerActionsDelegate.swift in Sources */,
 				F291359E231EA47200FA7CF5 /* UIAlertController+Extension.swift in Sources */,
 				79BDCC30231EDB100043844A /* NewTrailView.swift in Sources */,
 				79BDCC2E231EDABD0043844A /* NewTrailController.swift in Sources */,
@@ -1140,6 +1167,7 @@
 				790974FF232432EE00EE49C5 /* ConfigurableViewModel.swift in Sources */,
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
+				92A87436233909180037E7D9 /* ProfileDelegate.swift in Sources */,
 				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
 				790396DB230C405200F06EBD /* TrailsViewModel.swift in Sources */,
 			);

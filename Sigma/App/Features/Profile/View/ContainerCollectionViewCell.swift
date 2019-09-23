@@ -21,7 +21,11 @@ class ContainerCollectionViewCell: UICollectionViewCell,Reusable {
         return collection
     }()
     
+    let containerViewModel = ContainerViewModel()
+    
     weak var scrollDelegate: CustomScrollDelegate?
+    
+    weak var profileDelegate: ProfileDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,7 +59,7 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SettingsView.self)
-        
+        cell.containerDelegate = self
         return cell
     }
 
@@ -67,5 +71,11 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
 extension ContainerCollectionViewCell: CustomScrollDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollDelegate?.scrollViewDidScroll?(scrollView)
+    }
+}
+
+extension ContainerCollectionViewCell: ContainerActionsDelegate {
+    func tappedInSettings(withOption option: SettingsOptions) {
+        profileDelegate?.presentModally(viewController: containerViewModel.instantiateViewController(fromSettingsOption: option))
     }
 }

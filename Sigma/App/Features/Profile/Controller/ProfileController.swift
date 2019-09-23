@@ -82,7 +82,7 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ContainerCollectionViewCell.self)
         cell.scrollDelegate = self
-        
+        cell.profileDelegate = self
         return cell
     }
     
@@ -120,5 +120,11 @@ extension ProfileController: CustomScrollDelegate {
         let indexPath = IndexPath(item: lastItemIndex, section: lastSectionIndex)
         
         collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+    }
+}
+
+extension ProfileController: ProfileDelegate {
+    func presentModally(viewController: UIViewController) {
+        self.present(viewController, animated: true, completion: nil)
     }
 }

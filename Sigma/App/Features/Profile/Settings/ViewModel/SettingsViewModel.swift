@@ -8,10 +8,8 @@
 
 import Foundation
 
-class SettingsViewModel: ConfigurableViewModel {
-    var updateList: UpdateClosure?
-    
-    private var options:[String] = ["Language App","Logout"]
+struct SettingsViewModel {
+    private var options:[String] = SettingsOptions.getArrayAllCases()
     
     public func numberOfRows() -> Int {
         return options.count

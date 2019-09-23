@@ -12,6 +12,8 @@ class SettingsView: UICollectionViewCell,Reusable,ConfigurableView {
     
     let settingsViewModel = SettingsViewModel()
     
+    weak var containerDelegate: ContainerActionsDelegate?
+    
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero)
         table.dataSource = self
@@ -54,5 +56,11 @@ extension SettingsView: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = settingsViewModel.optionFromIndexPath(indexPathRow: indexPath.row)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let caseSetting = SettingsOptions.getCase(withIndex: indexPath.row)
+        
+        containerDelegate?.tappedInSettings(withOption: caseSetting)
     }
 }
