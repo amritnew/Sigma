@@ -10,10 +10,13 @@ import UIKit
 
 class SettingsView: UICollectionViewCell,Reusable,ConfigurableView {
     
+    let settingsViewModel = SettingsViewModel()
     
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero)
-        table.translatesAutoresizingMaskIntoConstraints = false
+        table.dataSource = self
+        table.delegate = self
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()
     
@@ -40,4 +43,16 @@ class SettingsView: UICollectionViewCell,Reusable,ConfigurableView {
         }
     }
 
+}
+
+extension SettingsView: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settingsViewModel.numberOfRows()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = settingsViewModel.optionFromIndexPath(indexPathRow: indexPath.row)
+        return cell
+    }
 }

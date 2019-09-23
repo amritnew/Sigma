@@ -10,8 +10,6 @@ import UIKit
 
 class ContainerCollectionViewCell: UICollectionViewCell,Reusable {
     
-    var settingsViewController = SettingsController()
-    
     let collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -44,7 +42,8 @@ class ContainerCollectionViewCell: UICollectionViewCell,Reusable {
     }
     
     func setupCollection() {
-        collectionView.register(cellType: ContainerRowCollectionViewCell.self)
+        collectionView.register(cellType: SettingsView.self)
+//        collectionView.register(cellType: ContainerRowCollectionViewCell.self)
     }
     
 }
@@ -55,9 +54,8 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ContainerRowCollectionViewCell.self)
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SettingsView.self)
         
-        cell.setCollection(withController: settingsViewController)
         return cell
     }
 
