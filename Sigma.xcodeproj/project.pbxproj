@@ -16,6 +16,8 @@
 		57A36ED62338EA5300846D9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36ED52338EA5300846D9E /* LoginViewModel.swift */; };
 		57A36ED823390C7800846D9E /* LoginController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36ED723390C7800846D9E /* LoginController+Keyboard.swift */; };
 		57A36EDA233913C900846D9E /* RegisterController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36ED9233913C900846D9E /* RegisterController+Keyboard.swift */; };
+		57A36EE0233939FE00846D9E /* RegisterController+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36EDF233939FE00846D9E /* RegisterController+Camera.swift */; };
+		57A36EE323394C6500846D9E /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36EE223394C6500846D9E /* DataHandler.swift */; };
 		790396CC230C3EBC00F06EBD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CB230C3EBC00F06EBD /* Post.swift */; };
 		790396CE230C3EC600F06EBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CD230C3EC600F06EBD /* User.swift */; };
 		790396D0230C3ECD00F06EBD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CF230C3ECD00F06EBD /* Topic.swift */; };
@@ -145,6 +147,8 @@
 		57A36ED52338EA5300846D9E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Sigma/App/Features/Register/ViewModel/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
 		57A36ED723390C7800846D9E /* LoginController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+Keyboard.swift"; sourceTree = "<group>"; };
 		57A36ED9233913C900846D9E /* RegisterController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterController+Keyboard.swift"; sourceTree = "<group>"; };
+		57A36EDF233939FE00846D9E /* RegisterController+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterController+Camera.swift"; sourceTree = "<group>"; };
+		57A36EE223394C6500846D9E /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		60F54E9ACBC82574E0E0FA6F /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		790396CB230C3EBC00F06EBD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		790396CD230C3EC600F06EBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 		575CB5A9233563F800043063 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				57A36EE123394C5900846D9E /* Bussiness */,
 				575CB5AA2335640E00043063 /* ViewModel */,
 				575CB5AC2335641B00043063 /* View */,
 				575CB5AB2335641400043063 /* Controller */,
@@ -304,6 +309,7 @@
 			children = (
 				575CB5AD2335643400043063 /* RegisterController.swift */,
 				57A36ED9233913C900846D9E /* RegisterController+Keyboard.swift */,
+				57A36EDF233939FE00846D9E /* RegisterController+Camera.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,6 +321,14 @@
 				575CB5B1233568D300043063 /* RoundImage.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		57A36EE123394C5900846D9E /* Bussiness */ = {
+			isa = PBXGroup;
+			children = (
+				57A36EE223394C6500846D9E /* DataHandler.swift */,
+			);
+			path = Bussiness;
 			sourceTree = "<group>";
 		};
 		790396CA230C3E0900F06EBD /* Entities */ = {
@@ -1179,6 +1193,7 @@
 				790396D9230C404800F06EBD /* TrailViewModel.swift in Sources */,
 				F291359C231E928A00FA7CF5 /* NewPostViewModel.swift in Sources */,
 				793BD0132316C97200EBA04B /* PostView.swift in Sources */,
+				57A36EE0233939FE00846D9E /* RegisterController+Camera.swift in Sources */,
 				79E6764723351BFE0098E10A /* RoundTextField.swift in Sources */,
 				792B5206232081E300ECED73 /* FeedPostViewModel.swift in Sources */,
 				79EB671923256531003188A7 /* BookMarkViewModel.swift in Sources */,
@@ -1223,6 +1238,7 @@
 				92DABC8E232FB6F100868D3F /* TabCollectionCell.swift in Sources */,
 				792B520023207B6800ECED73 /* FeedPostController.swift in Sources */,
 				79BBED242327D180002F632C /* TopicsViewModel.swift in Sources */,
+				57A36EE323394C6500846D9E /* DataHandler.swift in Sources */,
 				79E676432335153E0098E10A /* LoginController.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
 				792D70F823031861005859AB /* BookMarksController.swift in Sources */,

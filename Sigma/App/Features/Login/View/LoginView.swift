@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol LoginViewDelegate: class {
     func didSignUpTapped()
     func didSignIn(result: Bool)
@@ -39,7 +38,7 @@ class LoginView: UIView, ConfigurableView {
     let messageAccount = UILabel(text: "Dont have an account", textColor: .lightGray, font: UIFont(name: "Arial", size: 14), numberOfLines: nil, lineBreakMode: nil)
     
     lazy var loginButton: RoundButton = {
-       let roundButton = RoundButton()
+       let roundButton = RoundButton(textButton: "Login")
        roundButton.addTarget(self, action: #selector(didSignIn), for: .touchUpInside)
        return roundButton
     }()

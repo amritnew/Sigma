@@ -10,6 +10,7 @@ target 'Sigma' do
 	pod 'Markdowner'
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Storage'
 
   target 'SigmaTests' do
     inherit! :search_paths

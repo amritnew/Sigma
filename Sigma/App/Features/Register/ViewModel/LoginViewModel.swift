@@ -19,7 +19,7 @@ struct LoginViewModel {
         
         firebaseAuth.signIn(withEmail: userEmail, password: userPassword) { (result, error) in
             if error != nil {
-                completion(false)
+                return completion(false)
             }
             completion(true)
         }

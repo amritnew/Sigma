@@ -10,11 +10,15 @@ import UIKit
 
 class RegisterController: UIViewController, ConfigurableController {
     var usedView: UIView? = RegisterView()
+    let imagePickerController = UIImagePickerController()
+    
+    var imageAlbum: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupObserver()
+        (usedView as? RegisterView)?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,3 +27,10 @@ class RegisterController: UIViewController, ConfigurableController {
         navigationController?.navigationBar.tintColor = .actionColor
     }
 }
+
+extension RegisterController: RegisterViewDelegate {
+    func didImageChoose() {
+        self.presentImagePickerOptions()
+    }
+}
+

@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 extension RegisterController: UITextFieldDelegate {
     func didDimissViewAtTapped() {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))

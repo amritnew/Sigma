@@ -8,26 +8,44 @@
 
 import UIKit
 
+protocol RegisterViewDelegate {
+    func didImageChoose()
+}
+
 class RegisterView: UIView, ConfigurableView {
-    let loginTf = RoundTextField(placeHolder: "E-mail")
+    let loginTf: RoundTextField = {
+        let roundTextField = RoundTextField(placeHolder: "E-mail")
+        roundTextField.keyboardType = UIKeyboardType.emailAddress
+        return roundTextField
+    }()
     
-    let passwordTf = RoundTextField(placeHolder: "Password")
+    let passwordTf: RoundTextField = {
+       let roundTextField = RoundTextField(placeHolder: "Password")
+       roundTextField.isSecureTextEntry = true
+        return roundTextField
+    }()
     
     lazy var roundImage: RoundedImage = {
        let roundImage = RoundedImage(image: UIImage(named: "gallery"))
        roundImage.contentMode = UIView.ContentMode.scaleAspectFit
        roundImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
        roundImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
+       roundImage.isUserInteractionEnabled = true
+        roundImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didImageChoose)))
        return roundImage
     }()
     
     lazy var registerButton: RoundButton = {
-        let roundButton = RoundButton()
+        let roundButton = RoundButton(textButton: "Sign Up")
         roundButton.addTarget(self, action: #selector(didMakeRegister), for: .touchUpInside)
         return roundButton
     }()
     
+    var imageAlbum: UIImage?
+    
     let registerViewModel = RegisterViewModel()
+    
+    var delegate: RegisterViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,10 +90,14 @@ class RegisterView: UIView, ConfigurableView {
 
 extension RegisterView {
     @objc func didMakeRegister() {
-            registerViewModel.register(withEmail: loginTf.text, withPassword: passwordTf.text) {_ in }
+            registerViewModel.register(withEmail: loginTf.text, withPassword: passwordTf.text) {_ in
+                guard let image = self.imageAlbum else {return}
+                let data = DataHandler.transform(image: image)
+        self.registerViewModel.createReferenceImage(withImageData: data ?? Data())
+        }
     }
     
     @objc func didImageChoose() {
-    
+        delegate?.didImageChoose()
     }
 }
