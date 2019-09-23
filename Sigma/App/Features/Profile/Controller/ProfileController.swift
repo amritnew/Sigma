@@ -125,6 +125,7 @@ extension ProfileController: CustomScrollDelegate {
 
 extension ProfileController: ProfileDelegate {
     func presentModally(viewController: UIViewController) {
+        viewController.modalPresentationStyle = .formSheet
         self.present(viewController, animated: true, completion: nil)
     }
 }
