@@ -30,7 +30,12 @@ class LoginController: UIViewController, ConfigurableController {
 
 extension LoginController: LoginViewDelegate {
     func didSignIn(result: Bool) {
-        
+        switch result {
+        case true:
+            navigationController?.present(CustomTabBarController(), animated: true, completion: nil)
+        case false:
+            break
+        }
     }
     
     func didSignUpTapped() {

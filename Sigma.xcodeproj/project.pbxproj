@@ -15,6 +15,7 @@
 		575CB5B62335736400043063 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5B52335736400043063 /* RegisterViewModel.swift */; };
 		57A36ED62338EA5300846D9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36ED52338EA5300846D9E /* LoginViewModel.swift */; };
 		57A36ED823390C7800846D9E /* LoginController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36ED723390C7800846D9E /* LoginController+Keyboard.swift */; };
+		57A36EDA233913C900846D9E /* RegisterController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A36ED9233913C900846D9E /* RegisterController+Keyboard.swift */; };
 		790396CC230C3EBC00F06EBD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CB230C3EBC00F06EBD /* Post.swift */; };
 		790396CE230C3EC600F06EBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CD230C3EC600F06EBD /* User.swift */; };
 		790396D0230C3ECD00F06EBD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790396CF230C3ECD00F06EBD /* Topic.swift */; };
@@ -143,6 +144,7 @@
 		575CB5B52335736400043063 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		57A36ED52338EA5300846D9E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Sigma/App/Features/Register/ViewModel/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
 		57A36ED723390C7800846D9E /* LoginController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+Keyboard.swift"; sourceTree = "<group>"; };
+		57A36ED9233913C900846D9E /* RegisterController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterController+Keyboard.swift"; sourceTree = "<group>"; };
 		60F54E9ACBC82574E0E0FA6F /* Pods-SigmaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.debug.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		790396CB230C3EBC00F06EBD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		790396CD230C3EC600F06EBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				575CB5AD2335643400043063 /* RegisterController.swift */,
+				57A36ED9233913C900846D9E /* RegisterController+Keyboard.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1250,6 +1253,7 @@
 				79EB670B23254ABD003188A7 /* SigmaContainer.xcdatamodeld in Sources */,
 				790396D5230C401E00F06EBD /* PostViewModel.swift in Sources */,
 				92BAC2DE2329209E00A50B59 /* CustomScrollDelegate.swift in Sources */,
+				57A36EDA233913C900846D9E /* RegisterController+Keyboard.swift in Sources */,
 				F22FBCC02320373E001B71A5 /* NewPostService.swift in Sources */,
 				92FBC5822314292900E596BC /* TabController.swift in Sources */,
 				793B05B822F25925005F3878 /* AppDelegate.swift in Sources */,

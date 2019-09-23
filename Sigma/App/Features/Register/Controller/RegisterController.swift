@@ -14,6 +14,7 @@ class RegisterController: UIViewController, ConfigurableController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -24,9 +24,17 @@ class LoginView: UIView, ConfigurableView {
     
     let message = UILabel(text: "Welcome", textColor: .white, font: UIFont.boldSystemFont(ofSize: 56), numberOfLines: 0, lineBreakMode: nil)
     
-    let loginTf = RoundTextField(placeHolder: "E-mail")
+    let loginTf: RoundTextField = {
+        let roundTextField = RoundTextField(placeHolder: "E-mail")
+        roundTextField.keyboardType = UIKeyboardType.emailAddress
+        return roundTextField
+    }()
     
-    let passwordTf = RoundTextField(placeHolder: "Password")
+    let passwordTf: RoundTextField = {
+       let roundTextField = RoundTextField(placeHolder: "Password")
+       roundTextField.isSecureTextEntry = true
+       return roundTextField
+    }()
     
     let messageAccount = UILabel(text: "Dont have an account", textColor: .lightGray, font: UIFont(name: "Arial", size: 14), numberOfLines: nil, lineBreakMode: nil)
     
@@ -37,7 +45,7 @@ class LoginView: UIView, ConfigurableView {
     }()
     
     lazy var signUp: UILabel = {
-        let signUp = UILabel(text: "Sign Up", textColor: .orange, font: UIFont(name: "Arial", size: 14), numberOfLines: nil, lineBreakMode: nil)
+        let signUp = UILabel(text: "Sign Up", textColor: .actionColor, font: UIFont(name: "Arial", size: 14), numberOfLines: nil, lineBreakMode: nil)
         signUp.isUserInteractionEnabled = true
         signUp.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didSignUpTapped)))
         return signUp
