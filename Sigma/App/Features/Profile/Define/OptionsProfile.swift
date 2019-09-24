@@ -8,23 +8,31 @@
 
 import UIKit
 
-enum OptionsProfile:Int {
-    case about = 0
-    case myTrails = 1
-    case settings = 2
+enum OptionsProfile: String,CaseIterable {
+    case about = "About"
+    case myTrails = "My Trails"
+    case myPosts = "My Posts"
+    case settings = "Settings"
 }
 
 extension OptionsProfile {
-    func getStringDescription() -> String {
-        switch self {
-        case .about:
-            return "about"
-        case .myTrails:
-            return "myTrails"
-        case .settings:
-            return "settings"
+    static func getArrayAllCases() -> [String] {
+        var options = [String]()
+        for type in OptionsProfile.allCases {
+            options.append(type.rawValue)
         }
+        return options
     }
+//    func getStringDescription() -> String {
+//        switch self {
+//        case .about:
+//            return "about"
+//        case .myTrails:
+//            return "myTrails"
+//        case .settings:
+//            return "settings"
+//        }
+//    }
     
 //    func typeViewController<T: UIViewController>() -> T.Type {
 //        switch self {

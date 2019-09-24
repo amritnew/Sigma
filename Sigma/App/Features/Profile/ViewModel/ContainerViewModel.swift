@@ -9,6 +9,9 @@
 import UIKit
 
 struct ContainerViewModel {
+    
+    private let options:[String] = OptionsProfile.getArrayAllCases()
+    
     func instantiateViewController(fromSettingsOption option:SettingsOptions) -> UIViewController {
         switch option {
         case .language:

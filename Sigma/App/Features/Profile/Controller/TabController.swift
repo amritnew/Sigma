@@ -19,17 +19,12 @@ class TabController: UIViewController {
         return view
     }()
     
-    var itensTab:[String]!
+    let tabViewModel = TabViewModel()
     
     var profileController:ProfileController?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    convenience init(itensTab:[String]) {
-        self.init(nibName: nil, bundle: nil)
-        self.itensTab = itensTab
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -68,12 +63,12 @@ extension TabController: UICollectionViewDelegateFlowLayout,UICollectionViewData
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itensTab?.count ?? 0
+        return tabViewModel.numberOfItens()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TabCollectionCell.self)
-        cell.labelCell.text = itensTab?[indexPath.row]
+        cell.labelCell.text = tabViewModel.option(fromIndexPathRow: indexPath.row)
         return cell
     }
     
@@ -82,7 +77,7 @@ extension TabController: UICollectionViewDelegateFlowLayout,UICollectionViewData
         guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else {
             return CGSize(width: 16 , height: collectionView.frame.height)
         }
-        let numberOfRows = CGFloat(itensTab.count)
+        let numberOfRows = CGFloat(tabViewModel.numberOfItens())
         let numbersOfSpacing = numberOfRows - 1
     
         

@@ -13,7 +13,8 @@ class MenuBarCollectionViewCell: UICollectionViewCell, Reusable {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        menuBar = TabController(itensTab: ["About", "My Trails", "Settings"])
+//        menuBar = TabController(itensTab: ["About", "My Trails", "Settings"])
+        menuBar = TabController()
         menuBar?.view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(menuBar!.view)
         setupConstraints()
