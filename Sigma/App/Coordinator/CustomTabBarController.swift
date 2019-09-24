@@ -52,7 +52,7 @@ extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate
         navigation.navigationBar.tintColor = .green
         viewController.view.backgroundColor =  .subBackground
         navigation.navigationBar.barTintColor = .background
-        navigation.navigationBar.prefersLargeTitles = true
+        navigation.navigationBar.prefersLargeTitles = false
         viewController.navigationItem.title = title
         navigation.tabBarItem.title = title
         navigation.tabBarItem.image = UIImage(named: imageNamed)

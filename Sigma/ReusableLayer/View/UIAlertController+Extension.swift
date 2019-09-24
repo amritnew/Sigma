@@ -10,6 +10,17 @@ import UIKit
 
 extension UIAlertController {
     
+    
+    static func buildAlert(title: String, message: String) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.view.tintColor = .foreground
+        alert.changeAlertBackgroundColor(color: .subBackground)
+        alert.changeAlertCornerRadius(radius: 12)
+        return alert
+    }
+    
+    
     static func buildActionSheet(title: String, message: String?) -> UIAlertController {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         

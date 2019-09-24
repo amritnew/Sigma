@@ -13,7 +13,7 @@ class RoundableImage: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-    self.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,12 +27,10 @@ class RoundableImage: UIImageView {
         self.layer.shadowRadius = 8
         self.layer.shadowColor = UIColor.darkGray.cgColor
         self.layer.shadowOpacity = 1
-        
     }
 }
 
 extension UIAlertController {
-    
     static func createActionSheet(title: String, message: String) -> UIAlertController {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         actionSheet.view.backgroundColor = .subBackground
