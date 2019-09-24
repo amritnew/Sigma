@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: LoginController())
+        window?.rootViewController = UINavigationController(rootViewController: CustomTabBarController())
         // Override point for customization after application launch.
         return true
     }

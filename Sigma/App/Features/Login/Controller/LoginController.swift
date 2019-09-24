@@ -33,6 +33,7 @@ extension LoginController: LoginViewDelegate {
     func didSignIn(result: Bool) {
         switch result {
         case true:
+            navigationController?.modalPresentationStyle = .overFullScreen
             navigationController?.present(CustomTabBarController(), animated: true, completion: nil)
         case false:
             break

@@ -32,7 +32,7 @@ extension RegisterController: RegisterViewDelegate {
             case false:
                 break
             case true:
-                navigationController?.modalPresentationStyle = .formSheet
+                navigationController?.modalPresentationStyle = .fullScreen
                 navigationController?.present(CustomTabBarController(), animated: true, completion: nil)
         }
     }
