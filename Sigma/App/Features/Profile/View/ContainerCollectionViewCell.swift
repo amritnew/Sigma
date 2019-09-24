@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerCollectionViewCell: UICollectionViewCell,Reusable {
+class ContainerCollectionViewCell: UICollectionViewCell {
     
     let collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -54,12 +54,11 @@ class ContainerCollectionViewCell: UICollectionViewCell,Reusable {
 
 extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return containerViewModel.numberOfItens()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SettingsView.self)
-        cell.containerDelegate = self
+        let cell = containerViewModel.cellForItem(collectionView, cellForItemAt: indexPath)
         return cell
     }
 

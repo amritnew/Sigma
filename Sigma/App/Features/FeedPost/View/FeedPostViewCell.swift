@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedPostViewCell: UICollectionViewCell, ConfigurableView, Reusable {
+class FeedPostViewCell: UICollectionViewCell, ConfigurableView {
     
     let imagePost: RoundableImage = {
         let imageView = RoundableImage(frame: .zero)

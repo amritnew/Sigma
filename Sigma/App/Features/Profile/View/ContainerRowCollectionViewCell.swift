@@ -8,7 +8,7 @@
 
 //import UIKit
 //
-//class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView,Reusable {
+//class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView {
 //    
 //    lazy var collectionView: UICollectionView = {
 //        let layout = UICollectionViewFlowLayout()

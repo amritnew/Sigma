@@ -10,13 +10,11 @@ import UIKit
 
 public extension UICollectionView {
     
-    final func register<T: UICollectionViewCell>(cellType: T.Type)
-        where T: Reusable {
+    final func register<T: UICollectionViewCell>(cellType: T.Type) {
             self.register(cellType.self, forCellWithReuseIdentifier: cellType.reuseIdentifier)
     }
     
-    final func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath, cellType: T.Type = T.self) -> T
-        where T: Reusable {
+    final func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath, cellType: T.Type = T.self) -> T {
             let bareCell = self.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath)
             guard let cell = bareCell as? T else {
                 fatalError(

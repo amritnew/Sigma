@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabCollectionCell: UICollectionViewCell,ConfigurableView, Reusable {
+class TabCollectionCell: UICollectionViewCell,ConfigurableView {
     
     let labelCell:UILabel = {
         let label = UILabel()

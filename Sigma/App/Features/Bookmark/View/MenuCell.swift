@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuCell: UICollectionViewCell, Reusable {
+class MenuCell: UICollectionViewCell {
     
     let titleCell: UILabel = {
         let label = UILabel()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsView: UICollectionViewCell,Reusable,ConfigurableView {
+class SettingsView: UICollectionViewCell,ConfigurableView {
     
     let settingsViewModel = SettingsViewModel()
     

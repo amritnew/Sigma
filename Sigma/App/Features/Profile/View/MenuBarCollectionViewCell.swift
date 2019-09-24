@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuBarCollectionViewCell: UICollectionViewCell, Reusable {
+class MenuBarCollectionViewCell: UICollectionViewCell {
     var menuBar: TabController?
     
     override init(frame: CGRect) {

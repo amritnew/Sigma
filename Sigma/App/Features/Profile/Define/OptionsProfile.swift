@@ -23,6 +23,11 @@ extension OptionsProfile {
         }
         return options
     }
+    
+    static func getOption(withIndex index:Int) -> OptionsProfile {
+        let option = OptionsProfile.allCases
+        return option[index]
+    }
 //    func getStringDescription() -> String {
 //        switch self {
 //        case .about:

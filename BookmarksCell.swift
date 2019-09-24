@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookmarksCell: UICollectionViewCell, ConfigurableView, Reusable {
+class BookmarksCell: UICollectionViewCell, ConfigurableView {
     
     let trailImage: UIImageView = {
         let image = RoundableImage(frame: .zero)
