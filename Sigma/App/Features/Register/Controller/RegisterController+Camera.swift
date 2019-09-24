@@ -45,7 +45,7 @@ extension RegisterController: UIImagePickerControllerDelegate,UINavigationContro
                 loginView.roundImage.image = selectedImage
                 loginView.roundImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
                 loginView.roundImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
-                imageAlbum = selectedImage
+                loginView.imageAlbum = selectedImage
             }
         }
         

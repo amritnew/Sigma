@@ -22,7 +22,7 @@ struct RegisterViewModel {
         
         firebaseAuth.createUser(withEmail: userEmail, password: userPassword) { (result, error) in
             if error != nil {
-                completion(false)
+                return completion(false)
             }
             completion(true)
         }
@@ -30,9 +30,17 @@ struct RegisterViewModel {
     
     func createReferenceImage(withImageData data: Data) {
         let randomId = UUID.init().uuidString
-        let storageRef = Storage.storage().reference(forURL: "gs://lvlopers.appspot.com/")
+        let uploadRef = Storage.storage().reference(withPath: "images_user/\(randomId).jpg")
         
-        storageRef.child("images/user/\(randomId)")
+        let uploadMetaData = StorageMetadata.init()
+        uploadMetaData.contentType = "image/jpeg"
+        
+        uploadRef.putData(data, metadata: uploadMetaData) { (downloadMetaData, error) in
+            if let err = error {
+                print("Error in task to reference: \(err)")
+                return
+            }
+        }
     }
 }
 

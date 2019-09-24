@@ -12,8 +12,6 @@ class RegisterController: UIViewController, ConfigurableController {
     var usedView: UIView? = RegisterView()
     let imagePickerController = UIImagePickerController()
     
-    var imageAlbum: UIImage?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -29,6 +27,16 @@ class RegisterController: UIViewController, ConfigurableController {
 }
 
 extension RegisterController: RegisterViewDelegate {
+    func didMakeRegister(result: Bool) {
+        switch result {
+            case false:
+                break
+            case true:
+                navigationController?.modalPresentationStyle = .formSheet
+                navigationController?.present(CustomTabBarController(), animated: true, completion: nil)
+        }
+    }
+    
     func didImageChoose() {
         self.presentImagePickerOptions()
     }

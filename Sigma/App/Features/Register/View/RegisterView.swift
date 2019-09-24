@@ -10,6 +10,7 @@ import UIKit
 
 protocol RegisterViewDelegate {
     func didImageChoose()
+    func didMakeRegister(result: Bool)
 }
 
 class RegisterView: UIView, ConfigurableView {
@@ -26,7 +27,7 @@ class RegisterView: UIView, ConfigurableView {
     }()
     
     lazy var roundImage: RoundedImage = {
-       let roundImage = RoundedImage(image: UIImage(named: "gallery"))
+       let roundImage = RoundedImage(image: UIImage(named: "profille"))
        roundImage.contentMode = UIView.ContentMode.scaleAspectFit
        roundImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
        roundImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
@@ -89,11 +90,12 @@ class RegisterView: UIView, ConfigurableView {
 }
 
 extension RegisterView {
-    @objc func didMakeRegister() {
-            registerViewModel.register(withEmail: loginTf.text, withPassword: passwordTf.text) {_ in
-                guard let image = self.imageAlbum else {return}
+    @objc func didMakeRegister(result: Bool) {
+            registerViewModel.register(withEmail: loginTf.text, withPassword: passwordTf.text) { (result) in
+                guard let image = self.imageAlbum else {self.delegate?.didMakeRegister(result: result); return}
                 let data = DataHandler.transform(image: image)
-        self.registerViewModel.createReferenceImage(withImageData: data ?? Data())
+                self.registerViewModel.createReferenceImage(withImageData: data ?? Data())
+                self.delegate?.didMakeRegister(result: result)
         }
     }
     
