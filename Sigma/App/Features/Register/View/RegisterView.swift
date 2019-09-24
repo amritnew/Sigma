@@ -94,7 +94,7 @@ extension RegisterView {
             registerViewModel.register(withEmail: loginTf.text, withPassword: passwordTf.text) { (result) in
                 guard let image = self.imageAlbum else {self.delegate?.didMakeRegister(result: result); return}
                 let data = DataHandler.transform(image: image)
-                self.registerViewModel.createReferenceImage(withImageData: data ?? Data())
+                self.registerViewModel.createReferenceImage(withImageData: data)
                 self.delegate?.didMakeRegister(result: result)
         }
     }

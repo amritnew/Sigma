@@ -29,8 +29,8 @@ struct RegisterViewModel {
     }
     
     func createReferenceImage(withImageData data: Data) {
-        let randomId = UUID.init().uuidString
-        let uploadRef = Storage.storage().reference(withPath: "images_user/\(randomId).jpg")
+        let userId = firebaseAuth.currentUser?.uid
+        let uploadRef = Storage.storage().reference(withPath: "users/\(userId ?? "")/\(userId ?? "").jpg")
         
         let uploadMetaData = StorageMetadata.init()
         uploadMetaData.contentType = "image/jpeg"
@@ -43,5 +43,3 @@ struct RegisterViewModel {
         }
     }
 }
-
-

@@ -9,7 +9,7 @@
 import UIKit
 
 struct DataHandler {
-    static func transform(image: UIImage) -> Data? {
-        return image.pngData()
+    static func transform(image: UIImage) -> Data {
+        return image.pngData()!
     }
 }
