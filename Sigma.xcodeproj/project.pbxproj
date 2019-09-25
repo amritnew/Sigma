@@ -95,6 +95,7 @@
 		ED056B96233268CC00649EA3 /* BioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED056B95233268CC00649EA3 /* BioView.swift */; };
 		ED159E6E23326D9C001E1489 /* BioViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED159E6D23326D9C001E1489 /* BioViewSpec.swift */; };
 		ED413E24231EA598002A409D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED413E23231EA598002A409D /* UIColor+Extensions.swift */; };
+		ED44ABE7233B8654000B60AF /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED44ABE6233B8654000B60AF /* UIStackView+Extension.swift */; };
 		EDFCFDE82333B013006F60A0 /* SocialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCFDE72333B013006F60A0 /* SocialCollectionViewCell.swift */; };
 		F22FBCBD231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */; };
 		F22FBCC02320373E001B71A5 /* NewPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22FBCBF2320373E001B71A5 /* NewPostService.swift */; };
@@ -221,6 +222,7 @@
 		ED056B95233268CC00649EA3 /* BioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioView.swift; sourceTree = "<group>"; };
 		ED159E6D23326D9C001E1489 /* BioViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewSpec.swift; sourceTree = "<group>"; };
 		ED413E23231EA598002A409D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		ED44ABE6233B8654000B60AF /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		EDFCFDE72333B013006F60A0 /* SocialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEEEDEA125099C5AF68C9091 /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 				F2913591231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift */,
 				F22FBCBC231EF7D3001B71A5 /* UIBarButtonItem+Extension.swift */,
 				ED413E23231EA598002A409D /* UIColor+Extensions.swift */,
+				ED44ABE6233B8654000B60AF /* UIStackView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1209,6 +1212,7 @@
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
 				792D70F62302F08C005859AB /* RoundableImage.swift in Sources */,
+				ED44ABE7233B8654000B60AF /* UIStackView+Extension.swift in Sources */,
 				790396DB230C405200F06EBD /* TrailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
