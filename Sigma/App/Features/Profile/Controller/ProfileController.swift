@@ -13,8 +13,17 @@ class ProfileController: UICollectionViewController {
     
     lazy var heightHeader = self.view.frame.height / 2.5
     
+    var blockedScroll: Bool = true {
+        didSet {
+            self.collectionView.isScrollEnabled = blockedScroll
+            propagateEnableScroll(modeScroll: !blockedScroll)
+            print("blockedScroll == \(blockedScroll)")
+        }
+    }
+    
     init() {
         super.init(collectionViewLayout: StretchHeaderFlowLayout())
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,12 +34,16 @@ class ProfileController: UICollectionViewController {
         super.viewDidLoad()
         setupCollection()
         self.view.backgroundColor = UIColor.yellow
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        blockedScroll = true
     }
 }
 
@@ -40,7 +53,6 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
             layout.scrollDirection = .vertical
             layout.minimumLineSpacing = 0
             layout.minimumInteritemSpacing = 0
-            
         }
         collectionView.backgroundColor = UIColor.white
         
@@ -104,6 +116,19 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         }
     }
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height) {
+            blockedScroll = false
+        }
+    }
+    
+    func propagateEnableScroll(modeScroll: Bool) {
+        let indexPath = IndexPath(row: 1, section: 0)
+        guard let containerCell = collectionView.cellForItem(at: indexPath) as? ContainerCollectionViewCell else { return }
+        guard let cells = containerCell.collectionView.visibleCells as? [ContainerRowCell] else { return }
+        cells.forEach { $0.scrollEnable = modeScroll }
+    }
+    
 }
 
 extension ProfileController:HeaderProfileDelegate {
@@ -114,12 +139,6 @@ extension ProfileController:HeaderProfileDelegate {
 }
 
 extension ProfileController: CustomScrollDelegate {
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-//        let offSetYCollection = collectionView.contentOffset.y
-//
-//        print(offSetYCollection)
-    }
     
     private func scrollToBottom() {
         

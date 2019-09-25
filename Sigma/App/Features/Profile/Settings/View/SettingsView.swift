@@ -12,6 +12,11 @@ class SettingsView: ContainerRowCell, ConfigurableView {
     
     let settingsViewModel = SettingsViewModel()
     
+    override var scrollEnable: Bool {
+        didSet {
+            tableView.isScrollEnabled = scrollEnable
+        }
+    }
 //    weak var containerDelegate: ContainerActionsDelegate?
     
     lazy var tableView: UITableView = {

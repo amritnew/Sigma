@@ -9,4 +9,5 @@
 import UIKit
 class ContainerRowCell: UICollectionViewCell {
     weak var containerDelegate: ContainerActionsDelegate?
+    var scrollEnable:Bool = false
 }
