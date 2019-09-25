@@ -47,7 +47,7 @@ class ContainerCollectionViewCell: UICollectionViewCell {
     
     func setupCollection() {
         collectionView.register(cellType: SettingsView.self)
-//        collectionView.register(cellType: ContainerRowCollectionViewCell.self)
+        collectionView.register(cellType: BookmarkContentCell.self)
     }
     
 }
@@ -58,7 +58,7 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = containerViewModel.cellForItem(collectionView, cellForItemAt: indexPath)
+        let cell = containerViewModel.cellForItem(collectionView, cellForItemAt: indexPath, view: self)
         return cell
     }
 

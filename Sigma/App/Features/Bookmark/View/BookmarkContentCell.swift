@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookmarkContentCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class BookmarkContentCell: ContainerRowCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     lazy var bookmarkCollection: UICollectionView = {

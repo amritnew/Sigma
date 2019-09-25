@@ -16,24 +16,26 @@ struct ContainerViewModel {
         return options.count
     }
     
-    private func getCellType<T: UICollectionViewCell>(withIndexPathRow index: Int) -> T.Type? {
+    private func getCellType<T: ContainerRowCell>(withIndexPathRow index: Int) -> T.Type? {
         let option = OptionsProfile.getOption(withIndex: index)
         
         switch option {
         case .about:
             return SettingsView.self as? T.Type
         case .myPosts:
-            return SettingsView.self as? T.Type
+            return BookmarkContentCell.self as? T.Type
         case .myTrails:
-            return SettingsView.self as? T.Type
+            return BookmarkContentCell.self as? T.Type
         case .settings:
             return SettingsView.self as? T.Type
         }
     }
     
-    func cellForItem(_ collectionView: UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell {
+    func cellForItem<T: ContainerActionsDelegate >(_ collectionView: UICollectionView, cellForItemAt indexPath:IndexPath, view:T ) -> UICollectionViewCell {
         guard let type = getCellType(withIndexPathRow: indexPath.row) else { fatalError("Not registered") }
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: type)
+        cell.containerDelegate = view
+        
         return cell
     }
     
@@ -48,4 +50,3 @@ struct ContainerViewModel {
         }
     }
 }
-

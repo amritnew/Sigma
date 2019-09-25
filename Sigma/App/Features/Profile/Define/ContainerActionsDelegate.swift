@@ -6,8 +6,8 @@
 //  Copyright © 2019 Vinicius Mangueira. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol ContainerActionsDelegate: class {
+protocol ContainerActionsDelegate: ContainerCollectionViewCell {
     func tappedInSettings(withOption option:SettingsOptions)
 }

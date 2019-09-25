@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SettingsView: UICollectionViewCell,ConfigurableView {
+class SettingsView: ContainerRowCell, ConfigurableView {
     
     let settingsViewModel = SettingsViewModel()
     
-    weak var containerDelegate: ContainerActionsDelegate?
+//    weak var containerDelegate: ContainerActionsDelegate?
     
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero)
