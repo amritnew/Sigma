@@ -83,6 +83,7 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ContainerCollectionViewCell.self)
         cell.scrollDelegate = self
         cell.profileDelegate = self
+        cell.profileController = self
         return cell
     }
     
@@ -92,7 +93,15 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         if let container = collectionView.cellForItem(at: indexPath) as? ContainerCollectionViewCell {
             container.collectionView.scrollToItem(at: IndexPath(item: row, section: 0), at: .init(), animated: true)
         }
+    }
+    
+    func scrollMenuBarTo(index:Int) {
+        let indexPath = IndexPath(row: 0, section: 0)
         
+        if let menuCell = collectionView.cellForItem(at: indexPath) as? MenuBarCollectionViewCell {
+            let indexToScroll = IndexPath(row: index, section: 0)
+            menuCell.menuBar?.tabView.collectionView.selectItem(at: indexToScroll, animated: true, scrollPosition: .init())
+        }
     }
     
 }

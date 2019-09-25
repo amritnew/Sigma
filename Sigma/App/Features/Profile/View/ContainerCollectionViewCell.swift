@@ -27,6 +27,8 @@ class ContainerCollectionViewCell: UICollectionViewCell {
     
     weak var profileDelegate: ProfileDelegate?
     
+    var profileController:ProfileController?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(collectionView)
@@ -64,6 +66,11 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource,UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = scrollView.contentOffset.x / self.frame.width
+        profileController?.scrollMenuBarTo(index: Int(index))
     }
 }
 
