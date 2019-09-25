@@ -30,7 +30,7 @@ class HeaderProfileCollection: UICollectionReusableView, ConfigurableView {
     let profileEditLabel: UILabel = {
         let label = UILabel()
         label.text = "Edit Profile"
-        label.textColor = UIColor.subText
+        label.textColor = UIColor.subTitleGray
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(font: .mediumSystem, size: 12)
        
@@ -40,7 +40,7 @@ class HeaderProfileCollection: UICollectionReusableView, ConfigurableView {
     let profileNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Nome Lindo"
-        label.textColor = UIColor.foreground
+        label.textColor = UIColor.titleWhite
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(font: .boldSystem, size: 20)
         return label

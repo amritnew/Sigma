@@ -16,7 +16,7 @@ protocol ListTrailHeaderDelegate: ListTrailsController {
 class ListTrailCollectionHeader: UICollectionReusableView, ConfigurableView, Reusable {
     
     let tagHeader = UILabel(text: "Swift", textColor: .orange,font: nil, numberOfLines: nil, lineBreakMode: nil)
-    let publisherHeader = UILabel(text: "Published by: @Chris Lattner", textColor: .subText, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let publisherHeader = UILabel(text: "Published by: @Chris Lattner", textColor: .subTitleGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
     let titleHeader = UILabel(text: "Basic Swift, Learning the new things about the awesome language", textColor: .white, font: UIFont.systemFont(ofSize: 22), numberOfLines: 2, lineBreakMode: .byWordWrapping)
     
     lazy var imageHeader: UIImageView = {
