@@ -15,13 +15,13 @@ class TabView: UIView {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 16
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.backgroundColor = UIColor.subBackground
+        collection.backgroundColor = UIColor.backgroundColor
         return collection
     }()
     
     let sliderView:UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.background
+        view.backgroundColor = UIColor.subBackground
         return view
     }()
     
