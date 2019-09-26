@@ -47,6 +47,7 @@ class ProfileController: UICollectionViewController {
     }
 }
 
+// MARK: Collection Methods
 extension ProfileController: UICollectionViewDelegateFlowLayout {
     fileprivate func setupCollection() {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
@@ -85,20 +86,22 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if indexPath.row == 0 {
              let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MenuBarCollectionViewCell.self)
             cell.menuBar?.profileController = self
             return cell
+        }else {
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ContainerCollectionViewCell.self)
+            cell.scrollDelegate = self
+            cell.profileDelegate = self
+            cell.profileController = self
+            return cell
         }
-        
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: ContainerCollectionViewCell.self)
-        cell.scrollDelegate = self
-        cell.profileDelegate = self
-        cell.profileController = self
-        return cell
     }
-    
+}
+
+// MARK: Scroll Methods
+extension ProfileController {
     func scrollContainerTo(row:Int) {
         let indexPath = IndexPath(row: 1, section: 0)
         
@@ -129,25 +132,21 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         cells.forEach { $0.scrollEnable = modeScroll }
     }
     
+//    private func scrollToBottom() {
+//
+//        guard let countSectionIndex = collectionView?.numberOfSections else { return }
+//        let lastSectionIndex = countSectionIndex - 1
+//        let lastItemIndex = collectionView.numberOfItems(inSection: lastSectionIndex) - 1
+//        let indexPath = IndexPath(item: lastItemIndex, section: lastSectionIndex)
+//
+//        collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+//    }
 }
 
 extension ProfileController:HeaderProfileDelegate {
     func wasSelectedOption(option: OptionsProfile) {
         selectedOption = option
         self.collectionView.reloadData()
-    }
-}
-
-extension ProfileController: CustomScrollDelegate {
-    
-    private func scrollToBottom() {
-        
-        guard let countSectionIndex = collectionView?.numberOfSections else { return }
-        let lastSectionIndex = countSectionIndex - 1
-        let lastItemIndex = collectionView.numberOfItems(inSection: lastSectionIndex) - 1
-        let indexPath = IndexPath(item: lastItemIndex, section: lastSectionIndex)
-        
-        collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
     }
 }
 
