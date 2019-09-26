@@ -13,7 +13,7 @@ class MenuCell: UICollectionViewCell, Reusable {
     let titleCell: UILabel = {
         let label = UILabel()
         label.lineBreakMode = .byWordWrapping
-        label.textColor = .subTitleGray
+        label.textColor = .subTitleColor
         label.font = UIFont(font: Font.boldSystem, size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -21,13 +21,13 @@ class MenuCell: UICollectionViewCell, Reusable {
     
     override var isSelected: Bool {
         didSet {
-            titleCell.textColor = isSelected ? .actionColor : .subTitleGray
+            titleCell.textColor = isSelected ? .actionColor : .subTitleColor
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .background
+        backgroundColor = .subBackground
         setupTitleCell()
     }
     

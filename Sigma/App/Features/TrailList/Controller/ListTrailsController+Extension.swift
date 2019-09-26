@@ -13,7 +13,7 @@ extension ListTrailsController: UICollectionViewDelegateFlowLayout {
     func setupCollection() {
         collectionView.register(cellType: ListTrailCollectionCell.self)
         collectionView.register(supplementaryViewType: ListTrailCollectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
-        collectionView.backgroundColor = .subBackground
+        collectionView.backgroundColor = .backgroundColor
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

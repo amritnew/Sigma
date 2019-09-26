@@ -10,7 +10,7 @@ import UIKit
 
 private protocol ConfigurableTabBar {
     func setupTabBar()
-    func createNavigation(viewController: UIViewController, title: String, imageNamed: String) -> UINavigationController
+    func createNavigation(viewController: UIViewController, title: String, imageNamed: String) -> UIViewController
 }
 
 class CustomTabBarController: UITabBarController {
@@ -24,56 +24,46 @@ class CustomTabBarController: UITabBarController {
     func showControllerModal(_ viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-}
+}w
 
 extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate {
     fileprivate func setupTabBar() {
         self.viewControllers = [
             createNavigation(viewController: ListTrailsController(), title: "Home", imageNamed: "tab1"),
               createNavigation(viewController: FeedPostController(), title: "Posts", imageNamed: "tab4"),
-              createNavigation(viewController: UIViewController(), title: "New", imageNamed: "tab3"),
+             createNavigation(viewController: CreatorController(), title: "", imageNamed: "tab3"),
             createNavigation(viewController: BookMarksController(), title: "Bookmarks", imageNamed: "tab2"),
                         createNavigation(viewController: ProfileController(), title: "Profile", imageNamed: "profile")
         ]
         tabBar.tintColor = .actionColor
-        tabBar.barTintColor = .background
+        tabBar.barTintColor = .subBackground
         tabBar.isTranslucent = false
     }
     
-    fileprivate func createNavigation(viewController: UIViewController, title: String, imageNamed: String) -> UINavigationController {
+    fileprivate func createNavigation(viewController: UIViewController, title: String, imageNamed: String) -> UIViewController {
         let navigation = UINavigationController(rootViewController: viewController)
-        navigation.navigationBar.isTranslucent = false
-        navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "Foreground") ?? .titleWhite]
-        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "Foreground") ?? .titleWhite]
+        
+        navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "Foreground") ?? .titleColor]
+        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "Foreground") ?? .titleColor]
         navigation.navigationBar.tintColor = .green
-        viewController.view.backgroundColor =  .subBackground
-        navigation.navigationBar.barTintColor = .background
-        navigation.navigationBar.prefersLargeTitles = false
+        viewController.view.backgroundColor =  .backgroundColor
         viewController.navigationItem.title = title
         navigation.tabBarItem.title = title
         navigation.tabBarItem.image = UIImage(named: imageNamed)
+        
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.backgroundColor = .backgroundColor
+            navigation.navigationBar.standardAppearance = navBarAppearance
+            navigation.navigationBar.scrollEdgeAppearance = navBarAppearance
+        }
+        
+        
         return navigation
     }
-    
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if tabBarController.viewControllers?.firstIndex(of: viewController) != 2 { return true }
-        
-        let actionSheet = UIAlertController.buildActionSheet(title: "Time to create", message: "You can create a new trail or a new blog post to share")
-        actionSheet.addActions(actions: [
-            UIAlertAction(title: "Make a Trail", style: .default) { [weak self] _ in self?.showControllerModal(UINavigationController(rootViewController: NewTrailController())) },
-            UIAlertAction(title: "Write a Post", style: .default) { [weak self] _ in self?.showControllerModal(UINavigationController(rootViewController: NewPostController(comeFrom: .newToTrail, trailViewModel: nil))) },
-            UIAlertAction(title: "Cancel", style: .destructive) { _ in print("Cancel Pressed") }
-        ])
-        
-        present(actionSheet, animated: true, completion: nil)
-        
-        return false
-    }
-    
 }
 
 extension UINavigationController {

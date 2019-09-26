@@ -17,7 +17,7 @@ class BookmarkContentCell: UICollectionViewCell, Reusable, UICollectionViewDeleg
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.dataSource = self
         collection.delegate = self
-        collection.backgroundColor = .subBackground
+        collection.backgroundColor = .backgroundColor
         return collection
     }()
     

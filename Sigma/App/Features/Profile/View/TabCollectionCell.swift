@@ -15,13 +15,13 @@ class TabCollectionCell: UICollectionViewCell,ConfigurableView, Reusable {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(font: Font.boldSystem, size: 16)
         label.textAlignment = NSTextAlignment.center
-        label.textColor = UIColor.subTitleGray
+        label.textColor = UIColor.subTitleColor
         return label
     }()
     
     override var isSelected: Bool {
         willSet(newValue) {
-            labelCell.textColor = newValue ? UIColor.actionColor : UIColor.subTitleGray
+            labelCell.textColor = newValue ? UIColor.actionColor : UIColor.subTitleColor
         }
     }
     
@@ -29,7 +29,7 @@ class TabCollectionCell: UICollectionViewCell,ConfigurableView, Reusable {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
-        self.backgroundColor = .subBackground
+        self.backgroundColor = .backgroundColor
     }
     
     required init?(coder aDecoder: NSCoder) {

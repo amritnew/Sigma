@@ -18,11 +18,11 @@ class FeedPostViewCell: UICollectionViewCell, ConfigurableView, Reusable {
         return imageView
     }()
     
-    let titlePost = UILabel(text: "Teste de Label gigante só para ver se quebra linha.", textColor: .titleWhite, font: .boldSystemFont(ofSize: 20), numberOfLines: 0, lineBreakMode: nil)
+    let titlePost = UILabel(text: "Teste de Label gigante só para ver se quebra linha.", textColor: .titleColor, font: .boldSystemFont(ofSize: 20), numberOfLines: 0, lineBreakMode: nil)
 
-    let authorPost = UILabel(text: "Bergamora Matheus", textColor: .subTitleGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let authorPost = UILabel(text: "Bergamora Matheus", textColor: .subTitleColor, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
-    let progress = UILabel(text: "10 / 10", textColor: .subTitleGray, font: .systemFont(ofSize: 15), numberOfLines: nil, lineBreakMode: nil)
+    let progress = UILabel(text: "10 / 10", textColor: .subTitleColor, font: .systemFont(ofSize: 15), numberOfLines: nil, lineBreakMode: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
