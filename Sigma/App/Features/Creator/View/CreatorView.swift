@@ -8,9 +8,13 @@
 
 import UIKit
 
+
+protocol CreatorViewDelegate: class {
+    func didTappedToPost()
+    func didTappedToTrail()
+}
+
 class CreatorView: UIView, ConfigurableView {
-  
-    
     fileprivate let lineView: UIView = {
         let view = UIView()
         view.backgroundColor = .actionColor
@@ -21,7 +25,6 @@ class CreatorView: UIView, ConfigurableView {
     
     fileprivate let messageLabel = UILabel(text: "Teach Something", textColor: .white, font: .boldSystemFont(ofSize: 32), numberOfLines: nil, lineBreakMode: nil)
     
-    
     fileprivate let imageBanner: UIImageView = {
        let image = UIImageView(image: UIImage(named: "creator"))
        image.contentMode = .scaleAspectFit
@@ -29,18 +32,23 @@ class CreatorView: UIView, ConfigurableView {
        return image
     }()
     
-    fileprivate let cardPost: CardView = {
-           let cardView = CardView(title: "Write a new Post", messsage: "Write a single post and share something you consider cool with other developers!", icon: UIImage())
+    fileprivate lazy var cardPost: CardView = {
+           let cardView = CardView(title: "Write a new Post", messsage: "Write a single post and share something you consider cool with other developers!", icon: #imageLiteral(resourceName: "postIcon"))
            cardView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+           cardView.isUserInteractionEnabled = true
+        cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedToPost)))
            return cardView
        }()
     
-    fileprivate let cardTrail: CardView = {
-        let cardView = CardView(title: "Create a new Trail", messsage: "Create a group of topics on a trail to guide people to learn something amazing!", icon: UIImage())
+    fileprivate lazy var cardTrail: CardView = {
+        let cardView = CardView(title: "Create a new Trail", messsage: "Create a group of topics on a trail to guide people to learn something amazing!", icon: #imageLiteral(resourceName: "trailIcon"))
         cardView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        cardView.isUserInteractionEnabled = true
+        cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedToTrail)))
         return cardView
     }()
     
+    weak var delegate: CreatorViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,4 +94,16 @@ class CreatorView: UIView, ConfigurableView {
             make.trailing.equal(to: trailingAnchor, offsetBy: -10)
         }
     }
+}
+
+extension CreatorView {
+    
+    @objc fileprivate func didTappedToPost() {
+        delegate?.didTappedToPost()
+    }
+    
+    @objc fileprivate func didTappedToTrail() {
+        delegate?.didTappedToTrail()
+    }
+    
 }

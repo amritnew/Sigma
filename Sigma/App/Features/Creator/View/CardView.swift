@@ -10,16 +10,21 @@ import UIKit
 
 class CardView: UIView, ConfigurableView {
    
-    
-    
-    fileprivate let titleLabel = UILabel(text: "", textColor: .white, font: UIFont.boldSystemFont(ofSize: 16), numberOfLines: 0, lineBreakMode: nil)
+    fileprivate let titleLabel = UILabel(text: "", textColor: .white, font: UIFont.boldSystemFont(ofSize: 24), numberOfLines: 0, lineBreakMode: nil)
     
     fileprivate let messageLabel = UILabel(text: "", textColor: .lightGray, font: nil, numberOfLines: 0, lineBreakMode: .byWordWrapping)
+
+    fileprivate let imageIcon: UIImageView = {
+          let imageView = UIImageView()
+          return imageView
+       }()
+    
     
     convenience init(title: String, messsage: String, icon: UIImage) {
         self.init(frame: .zero)
         titleLabel.text = title
         messageLabel.text = messsage
+        imageIcon.image = icon
     }
     
     
@@ -39,7 +44,6 @@ class CardView: UIView, ConfigurableView {
             let radius: CGFloat = 10
             self.layer.cornerRadius = radius
             self.layer.masksToBounds = true
-
             self.layer.shadowColor = UIColor.black.cgColor
             self.layer.shadowOffset = CGSize(width: 0, height: 1.0)
             self.layer.shadowRadius = 3.0
@@ -49,7 +53,7 @@ class CardView: UIView, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-           addSubviews([titleLabel, messageLabel])
+           addSubviews([titleLabel, messageLabel, imageIcon])
     }
        
     func setupConstraints() {
@@ -64,10 +68,9 @@ class CardView: UIView, ConfigurableView {
             make.trailing.equal(to: trailingAnchor, offsetBy: -10)
         }
         
-      
-        
-        
-        
-        
+        imageIcon.cBuilder { (make) in
+            make.top.equal(to: topAnchor, offsetBy: 10)
+            make.leading.equal(to: leadingAnchor, offsetBy: 10)
+        }
     }
 }

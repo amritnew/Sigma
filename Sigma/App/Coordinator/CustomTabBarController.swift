@@ -29,7 +29,7 @@ class CustomTabBarController: UITabBarController {
 extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate {
     fileprivate func setupTabBar() {
         self.viewControllers = [
-            createNavigation(viewController: CreatorController(), title: "Home", imageNamed: "tab1"),
+            createNavigation(viewController: ListTrailsController(), title: "Home", imageNamed: "tab1"),
               createNavigation(viewController: FeedPostController(), title: "Posts", imageNamed: "tab4"),
              createNavigation(viewController: CreatorController(), title: "Creator", imageNamed: "tab3"),
             createNavigation(viewController: BookMarksController(), title: "Bookmarks", imageNamed: "tab2"),
