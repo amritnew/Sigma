@@ -24,7 +24,7 @@ class CustomTabBarController: UITabBarController {
     func showControllerModal(_ viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
     }
-}w
+}
 
 extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate {
     fileprivate func setupTabBar() {
