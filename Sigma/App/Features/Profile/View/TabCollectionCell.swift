@@ -15,13 +15,13 @@ class TabCollectionCell: UICollectionViewCell,ConfigurableView, Reusable {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(font: Font.boldSystem, size: 16)
         label.textAlignment = NSTextAlignment.center
-        label.textColor = UIColor.subText
+        label.textColor = UIColor.subTitleGray
         return label
     }()
     
     override var isSelected: Bool {
         willSet(newValue) {
-            labelCell.textColor = newValue ? UIColor.actionColor : UIColor.subText
+            labelCell.textColor = newValue ? UIColor.actionColor : UIColor.subTitleGray
         }
     }
     

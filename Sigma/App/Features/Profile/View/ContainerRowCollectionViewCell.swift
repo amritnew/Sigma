@@ -19,7 +19,6 @@ class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView {
     
     var collection:UICollectionView!
     
-    weak var scrollDelegate: CustomScrollDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,6 +32,9 @@ class ContainerRowCollectionViewCell: UICollectionViewCell,ConfigurableView {
         buildViewHierarchy()
         setupConstraints()
     }
+    
+    weak var scrollDelegate: CustomScrollDelegate!
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

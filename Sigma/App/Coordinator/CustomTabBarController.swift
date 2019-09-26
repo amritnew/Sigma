@@ -47,8 +47,8 @@ extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate
     fileprivate func createNavigation(viewController: UIViewController, title: String, imageNamed: String) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: viewController)
         navigation.navigationBar.isTranslucent = false
-        navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "foreground") ?? .foreground]
-        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "foreground") ?? .foreground]
+        navigation.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "Foreground") ?? .titleWhite]
+        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "Foreground") ?? .titleWhite]
         navigation.navigationBar.tintColor = .green
         viewController.view.backgroundColor =  .subBackground
         navigation.navigationBar.barTintColor = .background
