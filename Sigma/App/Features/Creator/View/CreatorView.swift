@@ -28,13 +28,11 @@ class CreatorView: UIView, ConfigurableView {
     fileprivate let imageBanner: UIImageView = {
        let image = UIImageView(image: UIImage(named: "creator"))
        image.contentMode = .scaleAspectFit
-        image.heightAnchor.constraint(equalToConstant: 300).isActive = true
        return image
     }()
     
     fileprivate lazy var cardPost: CardView = {
            let cardView = CardView(title: "Write a new Post", messsage: "Write a single post and share something you consider cool with other developers!", icon: #imageLiteral(resourceName: "postIcon"))
-           cardView.heightAnchor.constraint(equalToConstant: 120).isActive = true
            cardView.isUserInteractionEnabled = true
         cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedToPost)))
            return cardView
@@ -42,7 +40,6 @@ class CreatorView: UIView, ConfigurableView {
     
     fileprivate lazy var cardTrail: CardView = {
         let cardView = CardView(title: "Create a new Trail", messsage: "Create a group of topics on a trail to guide people to learn something amazing!", icon: #imageLiteral(resourceName: "trailIcon"))
-        cardView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         cardView.isUserInteractionEnabled = true
         cardView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedToTrail)))
         return cardView
@@ -82,17 +79,23 @@ class CreatorView: UIView, ConfigurableView {
         
         imageBanner.cBuild(make: .centerXInSuperView)
         
+        
+        imageBanner.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
+        
         cardPost.cBuilder { (make) in
                   make.top.equal(to: imageBanner.bottomAnchor, offsetBy: 20)
                   make.leading.equal(to: leadingAnchor, offsetBy: 10)
                   make.trailing.equal(to: trailingAnchor, offsetBy: -10)
               }
+        
+        cardPost.heightAnchor.constraint(equalTo: imageBanner.heightAnchor, multiplier: 0.6).isActive = true
               
         cardTrail.cBuilder { (make) in
             make.top.equal(to: cardPost.bottomAnchor, offsetBy: 20)
             make.leading.equal(to: leadingAnchor, offsetBy: 10)
             make.trailing.equal(to: trailingAnchor, offsetBy: -10)
         }
+        cardTrail.heightAnchor.constraint(equalTo: imageBanner.heightAnchor, multiplier: 0.6).isActive = true
     }
 }
 

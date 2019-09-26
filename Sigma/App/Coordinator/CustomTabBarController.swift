@@ -24,14 +24,14 @@ class CustomTabBarController: UITabBarController {
     func showControllerModal(_ viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
     }
-}
+}w
 
 extension CustomTabBarController: ConfigurableTabBar, UITabBarControllerDelegate {
     fileprivate func setupTabBar() {
         self.viewControllers = [
             createNavigation(viewController: ListTrailsController(), title: "Home", imageNamed: "tab1"),
               createNavigation(viewController: FeedPostController(), title: "Posts", imageNamed: "tab4"),
-             createNavigation(viewController: CreatorController(), title: "Creator", imageNamed: "tab3"),
+             createNavigation(viewController: CreatorController(), title: "", imageNamed: "tab3"),
             createNavigation(viewController: BookMarksController(), title: "Bookmarks", imageNamed: "tab2"),
                         createNavigation(viewController: ProfileController(), title: "Profile", imageNamed: "profile")
         ]
