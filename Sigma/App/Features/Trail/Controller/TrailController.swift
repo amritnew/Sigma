@@ -29,7 +29,7 @@ extension TrailController: UICollectionViewDelegateFlowLayout {
     fileprivate func setupCollection() {
         navigationController?.navigationBar.tintColor = .actionColor
         navigationController?.navigationBar.prefersLargeTitles = false
-        collectionView.backgroundColor = .subBackground
+        collectionView.backgroundColor = .backgroundColor
         collectionView.register(cellType: TrailCollectionViewCell.self)
         collectionView.register(supplementaryViewType: TrailHeaderView.self, ofKind: UICollectionView.elementKindSectionHeader)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createPostAtTrail))

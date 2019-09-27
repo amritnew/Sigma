@@ -19,7 +19,7 @@ extension MarkdownTextView {
         self.backgroundColor = .clear
         self.setStyleConfigurationWith(
             font: UIFont.systemFont(ofSize: size),
-            textColor: .titleWhite,
+            textColor: .titleColor,
             symbolsColor: .lightGray)
     }
     

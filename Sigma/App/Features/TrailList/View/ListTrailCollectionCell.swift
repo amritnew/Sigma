@@ -19,13 +19,13 @@ class ListTrailCollectionCell: UICollectionViewCell, ConfigurableView, Reusable 
     }()
     
     let trailName = UILabel(text: "Swift Basic", textColor: .white, font: nil, numberOfLines: nil, lineBreakMode: nil)
-    let trailPublisher = UILabel(text: "Published by: @Chris Lattner", textColor: .subTitleGray, font: nil, numberOfLines: nil, lineBreakMode: nil)
+    let trailPublisher = UILabel(text: "Published by: @Chris Lattner", textColor: .subTitleColor, font: nil, numberOfLines: nil, lineBreakMode: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
-        self.backgroundColor = .subBackground
+        self.backgroundColor = .backgroundColor
     }
     
     required init?(coder aDecoder: NSCoder) {

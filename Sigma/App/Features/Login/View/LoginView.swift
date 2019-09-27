@@ -57,7 +57,7 @@ class LoginView: UIView, ConfigurableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        self.backgroundColor = .subBackground
+        self.backgroundColor = .backgroundColor
     }
     
     required init?(coder aDecoder: NSCoder) {

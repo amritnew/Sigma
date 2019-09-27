@@ -34,7 +34,7 @@ class FeedPostController: BaseCollectionController {
 
 extension FeedPostController: UICollectionViewDelegateFlowLayout {
     func setupCollection() {
-        collectionView.backgroundColor = .subBackground
+        collectionView.backgroundColor = .backgroundColor
         collectionView.register(cellType: FeedPostViewCell.self)
     }
     

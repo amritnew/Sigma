@@ -14,8 +14,8 @@ extension UIAlertController {
     static func buildAlert(title: String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alert.view.tintColor = .titleWhite
-        alert.changeAlertBackgroundColor(color: .subBackground)
+        alert.view.tintColor = .titleColor
+        alert.changeAlertBackgroundColor(color: .backgroundColor)
         alert.changeAlertCornerRadius(radius: 12)
         return alert
     }
@@ -24,8 +24,8 @@ extension UIAlertController {
     static func buildActionSheet(title: String, message: String?) -> UIAlertController {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        actionSheet.view.tintColor = .titleWhite
-        actionSheet.changeAlertBackgroundColor(color: .subBackground)
+        actionSheet.view.tintColor = .titleColor
+        actionSheet.changeAlertBackgroundColor(color: .backgroundColor)
         actionSheet.changeAlertCornerRadius(radius: 12)
         
         return actionSheet

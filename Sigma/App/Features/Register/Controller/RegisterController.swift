@@ -21,7 +21,7 @@ class RegisterController: UIViewController, ConfigurableController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.barTintColor = .background
+        navigationController?.navigationBar.barTintColor = .subBackground
         navigationController?.navigationBar.tintColor = .actionColor
     }
 }

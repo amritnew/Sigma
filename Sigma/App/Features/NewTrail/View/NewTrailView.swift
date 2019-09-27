@@ -58,7 +58,7 @@ class NewTrailView: UIView, ConfigurableView {
         super.init(frame: frame)
         buildViewHierarchy()
         setupConstraints()
-        self.backgroundColor = .subBackground
+        self.backgroundColor = .backgroundColor
     }
     
     required init?(coder aDecoder: NSCoder) {

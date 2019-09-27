@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		573CE8FF233B9118007B610F /* FireAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573CE8FE233B9118007B610F /* FireAccess.swift */; };
+		573CE906233CD478007B610F /* CreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573CE905233CD478007B610F /* CreatorController.swift */; };
+		573CE908233CD4BA007B610F /* CreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573CE907233CD4BA007B610F /* CreatorView.swift */; };
+		573CE90A233CE630007B610F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573CE909233CE630007B610F /* CardView.swift */; };
 		575CB5A82335572300043063 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5A72335572300043063 /* RoundButton.swift */; };
 		575CB5AE2335643400043063 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5AD2335643400043063 /* RegisterController.swift */; };
 		575CB5B0233565DA00043063 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575CB5AF233565DA00043063 /* RegisterView.swift */; };
@@ -140,6 +143,9 @@
 		02F1751F8AE25A70DAA71738 /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DDB5D44A1E4D15D52DCBAB /* Pods-SigmaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SigmaTests.release.xcconfig"; path = "Target Support Files/Pods-SigmaTests/Pods-SigmaTests.release.xcconfig"; sourceTree = "<group>"; };
 		573CE8FE233B9118007B610F /* FireAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAccess.swift; sourceTree = "<group>"; };
+		573CE905233CD478007B610F /* CreatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorController.swift; sourceTree = "<group>"; };
+		573CE907233CD4BA007B610F /* CreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorView.swift; sourceTree = "<group>"; };
+		573CE909233CE630007B610F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		575CB5A72335572300043063 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		575CB5AD2335643400043063 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		575CB5AF233565DA00043063 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -293,6 +299,40 @@
 				573CE8FE233B9118007B610F /* FireAccess.swift */,
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		573CE901233CD403007B610F /* Creator */ = {
+			isa = PBXGroup;
+			children = (
+				573CE903233CD44E007B610F /* ViewModel */,
+				573CE902233CD447007B610F /* View */,
+				573CE904233CD452007B610F /* Controller */,
+			);
+			path = Creator;
+			sourceTree = "<group>";
+		};
+		573CE902233CD447007B610F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				573CE907233CD4BA007B610F /* CreatorView.swift */,
+				573CE909233CE630007B610F /* CardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		573CE903233CD44E007B610F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		573CE904233CD452007B610F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				573CE905233CD478007B610F /* CreatorController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		575CB5A9233563F800043063 /* Register */ = {
@@ -469,6 +509,7 @@
 		793C719A231409CD00283C38 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				573CE901233CD403007B610F /* Creator */,
 				575CB5A9233563F800043063 /* Register */,
 				79E6763E233515170098E10A /* Login */,
 				792B51FD23207B4B00ECED73 /* FeedPost */,
@@ -1229,6 +1270,7 @@
 				F2913592231DE2AF00FA7CF5 /* MarkdownTextView+Extension.swift in Sources */,
 				79921881230872CA00EA5054 /* Service.swift in Sources */,
 				57A36ED62338EA5300846D9E /* LoginViewModel.swift in Sources */,
+				573CE906233CD478007B610F /* CreatorController.swift in Sources */,
 				92FBC59623154CD500E596BC /* CircleImageView.swift in Sources */,
 				790396DF230CA7E300F06EBD /* Reusable+Extension.swift in Sources */,
 				9243B7232327D9E7004333D0 /* MenuBarCollectionViewCell.swift in Sources */,
@@ -1252,6 +1294,7 @@
 				79BBED242327D180002F632C /* TopicsViewModel.swift in Sources */,
 				57A36EE323394C6500846D9E /* DataHandler.swift in Sources */,
 				79E676432335153E0098E10A /* LoginController.swift in Sources */,
+				573CE908233CD4BA007B610F /* CreatorView.swift in Sources */,
 				92FBC58823142A7D00E596BC /* HeaderProfileDelegate.swift in Sources */,
 				792D70F823031861005859AB /* BookMarksController.swift in Sources */,
 				79EB671123254B9A003188A7 /* FavoritePost+Properties.swift in Sources */,
@@ -1289,6 +1332,7 @@
 				790396CE230C3EC600F06EBD /* User.swift in Sources */,
 				792B5208232081F100ECED73 /* PostService.swift in Sources */,
 				79EB6715232561FC003188A7 /* BookmarkCellViewModel.swift in Sources */,
+				573CE90A233CE630007B610F /* CardView.swift in Sources */,
 				790974FF232432EE00EE49C5 /* ConfigurableViewModel.swift in Sources */,
 				79921883230877A500EA5054 /* Decodable+Extension.swift in Sources */,
 				793B05DC22F25B38005F3878 /* CustomTabBarController.swift in Sources */,
